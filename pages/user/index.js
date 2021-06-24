@@ -172,11 +172,11 @@
                                 path: a.path
                             });
                         }
-						if (a.url.indexOf('shopping/shopping') != -1) {
-							r.redirectTo({
-							    url: "/pagesB/pages/shopping/shopping"
-							});
-						}
+												if (a.url.indexOf('shopping/shopping') != -1) {
+													i.redirectTo({
+															url: "/pagesB/pages/shopping/shopping"
+													});
+												}
                         if (5 != a.adtype) if (4 != a.adtype) 2 != a.adtype && 3 != a.adtype || (e = s.globalData.util.url("entry/wxapp/api", {
                             m: s.globalData.module_name,
                             o: "ad_kefubind"

@@ -73,7 +73,7 @@
                                 <view class="tui-icon-box">
                                     <image class="tui-order-icon" src="../../static/images/my/creditorder.png"></image>
                                 </view>
-                                <view class="tui-order-text">商品订单</view>
+                                <view class="tui-order-text">积分订单</view>
                             </view>
                             <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'myorder',['$event'] ] ] ] ]}}" wx:if="{{setting.user_my_order==1}}">
                                 <view class="tui-icon-box">
@@ -127,12 +127,12 @@
                                 </view>
                                 <view class="tui-order-text">邀请海报</view>
                             </view>
-                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'toposter',['$event'] ] ] ] ]}}">
+                            <!-- <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'toposter',['$event'] ] ] ] ]}}">
                                 <view class="tui-icon-box">
                                     <image class="tui-order-icon" src="../../static/images/user/icon/sw.png"></image>
                                 </view>
                                 <view class="tui-order-text">海报中心</view>
-                            </view>
+                            </view> -->
                             <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'ranking',['$event'] ] ] ] ]}}" wx:if="{{userinfo.nickname&&setting.user_fans_ranking==1}}">
                                 <view class="tui-icon-box">
                                     <image class="tui-order-icon" src="../../static/images/user/icon/rank2.png"></image>
