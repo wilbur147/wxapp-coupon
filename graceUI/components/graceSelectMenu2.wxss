@@ -1,0 +1,99 @@
+.grace-select-menu-wrap.data-v-0dbea036 {
+    width: 100%;
+    position: relative;
+}
+
+.grace-select-menu-title.data-v-0dbea036 {
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 28rpx;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.grace-select-menu-icon.data-v-0dbea036 {
+    font-family: grace-iconfont;
+    margin-left: 10rpx;
+    font-size: 22rpx;
+}
+
+.icon-allow-b.data-v-0dbea036:after {
+    content: "\e603";
+}
+
+.icon-allow-t.data-v-0dbea036:after {
+    content: "\e654";
+}
+
+.grace-select-menu.data-v-0dbea036 {
+    position: fixed;
+    width: 750rpx;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 9999;
+    overflow: hidden;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    text-align: left;
+}
+
+.grace-select-menus.data-v-0dbea036 {
+    background: #fff;
+    padding: 0;
+    height: 300px;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.grace-select-item.data-v-0dbea036 {
+    line-height: 100rpx;
+    width: 700rpx;
+    padding: 0 10rpx;
+    font-size: 28rpx;
+    color: #333;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.grace-select-item.data-v-0dbea036:last-child {
+    border: 0;
+}
+
+.grace-selected.data-v-0dbea036 {
+    font-weight: 700;
+}
+
+.grace-selected-icon.data-v-0dbea036 {
+    margin-right: 15rpx;
+    font-family: grace-iconfont;
+}
+
+.grace-selected-icon.data-v-0dbea036:after {
+    content: "\e7f8";
+}
+
+.grace-select-input-wrap.data-v-0dbea036 {
+    width: 700rpx;
+}
+
+.grace-select-input.data-v-0dbea036 {
+    line-height: 60rpx;
+    padding: 25rpx 0;
+    font-size: 28rpx;
+}
+
+.grace-select-input-btn.data-v-0dbea036 {
+    width: 120rpx;
+    line-height: 60rpx;
+    height: 60rpx;
+    text-align: center;
+    background: #f8f8f8;
+    font-size: 24rpx;
+    border-radius: 6rpx;
+    color: #3688ff;
+    flex-shrink: 0;
+}

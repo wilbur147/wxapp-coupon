@@ -1,0 +1,9 @@
+<view class="data-v-41bf5b09">
+    <view class="grace-header data-v-41bf5b09" style="{{'background:'+background+';'+'height:'+height+'rpx'+';'+'padding-top:'+top+'px'+';'+'z-index:'+zIndex+';'}}">
+        <view class="grace-header-main data-v-41bf5b09">
+            <slot></slot>
+        </view>
+        <view class="data-v-41bf5b09" style="{{'width:'+BoundingWidth+';'+'height:'+'10px'+';'}}"></view>
+    </view>
+    <view class="data-v-41bf5b09" style="{{'height:'+viewHeight+'px'+';'}}" wx:if="{{isSeize}}"></view>
+</view>

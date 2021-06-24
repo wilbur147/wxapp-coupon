@@ -1,0 +1,20 @@
+{
+    "navigationBarBackgroundColor": "#ff5756",
+    "backgroundColor": "#ff5756",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "兑换中心",
+    "usingComponents": {
+        "sj-tab-bar": "/components/sj-tab-bar/sj-tab-bar",
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-search": "/graceUI/components/graceSearch",
+        "grace-swiper": "/graceUI/components/graceSwiper",
+        "add-mini-tip": "/components/add-mini-tip/add-mini-tip",
+        "grace-dialog": "/graceUI/components/graceDialog",
+        "grace-coupons": "/graceUI/components/graceCoupons",
+        "grace-loading": "/graceUI/components/graceLoading",
+        "grace-full-loading": "/graceUI/components/graceFullLoading",
+        "grace-img": "/graceUI/components/graceImg",
+        "grace-empty-new": "/graceUI/components/graceEmptyNew"
+    }
+}

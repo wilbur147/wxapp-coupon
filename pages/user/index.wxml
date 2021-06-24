@@ -1,0 +1,231 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" headerBG="#FFFFFF" vueId="5c2bbbc2-1" vueSlots="{{['gBody']}}">
+        <view class="grace-flex-v1" id="gBody" slot="gBody">
+            <view>
+                <view class="tui-mybg-box">
+                    <image class="tui-my-bg" mode="widthFix" src="../../static/images/user/userbg.png"></image>
+                    <view bindtap="__e" class="tui-header-center" data-event-opts="{{[ [ 'tap',[ [ 'info',['$event'] ] ] ] ]}}">
+                        <open-data class="tui-avatar" type="userAvatarUrl"></open-data>
+                        <view class="tui-info">
+                            <grace-flex bind:__l="__l" classes="{{['row','nowrap']}}" vueId="{{'5c2bbbc2-2'+','+'5c2bbbc2-1'}}" vueSlots="{{['default']}}">
+                                <view class="tui-nickname">
+                                    <open-data class="text-cut" type="userNickName"></open-data>
+                                </view>
+                                <view class="grace-flex1" style="margin-left:20rpx;">
+                                    <text class="grace-tags-large grace-tbr-large grace-bg-black level" style="color:transparent;background:linear-gradient(90deg,#e9e1b0,#be985d);-webkit-background-clip:text;height:30rpx;line-height:25rpx;font-size:22rpx;">{{userinfo.userleveltext}}</text>
+                                </view>
+                            </grace-flex>
+                            <view class="grace-flex1" style="color:#FFFFFF;font-size:28rpx;margin-top:20rpx;">{{'ID:'+userinfo.uid}}<text class="margin-left-xs grace-icons icon-article" style="margin-left:10rpx;color:#FFFFFF;"></text>
+                            </view>
+                            <view class="tui-explain"></view>
+                        </view>
+                    </view>
+                </view>
+                <view class="tui-content-box" style="{{'top: -'+top+'rpx;'}}">
+                    <view class="tui-box tui-assets-box">
+                        <view class="withdrawbox">
+                            <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'cash',['$event'] ] ] ] ]}}" style="width:600rpx;">
+                                <view>{{setting.cash_can_name}}<text style="font-weight:550;margin-left:10rpx;"></text>
+                                    <text style="font-size:38rpx;font-weight:550;">{{userinfo.money}}</text>
+                                </view>
+                                <view style="font-size:24rpx;margin-top:10rpx;color:#b7b7b7;">{{setting.cash_desc?setting.cash_desc:'分享给朋友可获得奖励'}}</view>
+                            </view>
+                            <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'cash',['$event'] ] ] ] ]}}" style="text-align:right;width:180rpx;" wx:if="{{setting.income_type==0}}">
+                                <text style="background:#feefc6;padding:10rpx 25rpx;color:#a07c53;border-radius:100rpx;font-size:24rpx;">{{setting.cash_name}}</text>
+                            </view>
+                        </view>
+                        <view class="tui-order-list tui-assets-list" wx:if="{{setting.income_type==0}}">
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'todayorder',['$event'] ] ] ] ]}}">
+                                <view class="tui-assets-num">
+                                    <text>{{'￥'+user_income.today}}</text>
+                                </view>
+                                <view class="tui-assets-text">{{setting.user_index_jr}}</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'monthorder',['$event'] ] ] ] ]}}">
+                                <view class="tui-assets-num">
+                                    <text>{{'￥'+user_income.month}}</text>
+                                </view>
+                                <view class="tui-assets-text">{{setting.user_index_by}}</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'lastmonthorder',['$event'] ] ] ] ]}}">
+                                <view class="tui-assets-num">
+                                    <text>{{'￥'+user_income.last_month}}</text>
+                                </view>
+                                <view class="tui-assets-text">{{setting.user_index_sy}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="tui-box tui-order-box" wx:if="{{setting.user_order_center==1}}">
+                        <tui-list-cell bind:__l="__l" padding="0" vueId="{{'5c2bbbc2-3'+','+'5c2bbbc2-1'}}" vueSlots="{{['default']}}">
+                            <view class="tui-cell-header">
+                                <view class="tui-cell-title">订单中心</view>
+                                <view class="tui-cell-sub"></view>
+                            </view>
+                        </tui-list-cell>
+                        <view class="tui-order-list">
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'movieorder',['$event'] ] ] ] ]}}" wx:if="{{setting.user_movie_order==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/my/movieorder.png"></image>
+                                </view>
+                                <view class="tui-order-text">电影票订单</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'creditorder',['$event'] ] ] ] ]}}" wx:if="{{setting.user_credit_order==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/my/creditorder.png"></image>
+                                </view>
+                                <view class="tui-order-text">商品订单</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'myorder',['$event'] ] ] ] ]}}" wx:if="{{setting.user_my_order==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/my/myorder.png"></image>
+                                </view>
+                                <view class="tui-order-text">我的订单</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'fansorder',['$event'] ] ] ] ]}}" wx:if="{{setting.user_fans_order==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/my/fansorder.png"></image>
+                                </view>
+                                <view class="tui-order-text">粉丝订单</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'findorder',['$event'] ] ] ] ]}}" wx:if="{{setting.user_find_order==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/my/findorder.png"></image>
+                                </view>
+                                <view class="tui-order-text">订单找回</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="tui-box tui-order-box" wx:if="{{setting.user_fans_center==1}}">
+                        <tui-list-cell bind:__l="__l" padding="0" vueId="{{'5c2bbbc2-4'+','+'5c2bbbc2-1'}}" vueSlots="{{['default']}}">
+                            <view class="tui-cell-header">
+                                <view class="tui-cell-title">粉丝中心</view>
+                                <view class="tui-cell-sub"></view>
+                            </view>
+                        </tui-list-cell>
+                        <view class="tui-order-list">
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'myfans',['$event'] ] ] ] ]}}" wx:if="{{setting.user_fans_zhiyao==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/myfans.png"></image>
+                                </view>
+                                <view class="tui-order-text">直邀粉丝</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'otherfans',['$event'] ] ] ] ]}}" wx:if="{{setting.user_fans_other==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/otherfans.png"></image>
+                                </view>
+                                <view class="tui-order-text">其他粉丝</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'getposter_mtwm1',['$event'] ] ] ] ]}}" wx:if="{{userinfo.nickname&&setting.user_fans_poster==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/user/icon/sw.png"></image>
+                                </view>
+                                <view class="tui-order-text">邀请海报</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'userlogin',['$event'] ] ] ] ]}}" wx:if="{{!userinfo.nickname&&setting.user_fans_poster==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/user/icon/sw.png"></image>
+                                </view>
+                                <view class="tui-order-text">邀请海报</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'toposter',['$event'] ] ] ] ]}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/user/icon/sw.png"></image>
+                                </view>
+                                <view class="tui-order-text">海报中心</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'ranking',['$event'] ] ] ] ]}}" wx:if="{{userinfo.nickname&&setting.user_fans_ranking==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/user/icon/rank2.png"></image>
+                                </view>
+                                <view class="tui-order-text">邀请排行榜</view>
+                            </view>
+                            <view bindtap="__e" class="tui-order-item" data-event-opts="{{[ [ 'tap',[ [ 'userlogin',['$event'] ] ] ] ]}}" wx:if="{{!userinfo.nickname&&setting.user_fans_ranking==1}}">
+                                <view class="tui-icon-box">
+                                    <image class="tui-order-icon" src="../../static/images/user/icon/rank2.png"></image>
+                                </view>
+                                <view class="tui-order-text">邀请排行榜</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="tui-box tui-tool-box">
+                        <tui-list-cell bind:__l="__l" lineLe="{{false}}" padding="0" vueId="{{'5c2bbbc2-5'+','+'5c2bbbc2-1'}}" vueSlots="{{['default']}}">
+                            <view class="tui-cell-header">
+                                <view class="tui-cell-title">常用工具</view>
+                            </view>
+                        </tui-list-cell>
+                        <view class="tui-order-list tui-flex-wrap">
+                            <view bindtap="__e" class="tui-tool-item" data-adid="{{item.item_id}}" data-adtype="{{item.adtype}}" data-appid="{{item.appid}}" data-appid_type="{{item.appid_type}}" data-event-opts="{{[ [ 'tap',[ [ 'opentools',['$event'] ] ] ] ]}}" data-is_ios="{{item.is_ios}}" data-link_desc="{{item.link_desc}}" data-link_thumb="{{item.link_thumb}}" data-link_title="{{item.link_title}}" data-link_url="{{item.link_url}}" data-path="{{item.path}}" data-reply_text="{{item.reply_text}}" data-reply_thumb="{{item.reply_thumb}}" data-thumb="{{item.thumb}}" data-title="{{item.title}}" data-title_desc="{{item.title_desc}}" data-title_text="{{item.title_text}}" data-url="{{item.url}}" wx:for="{{tools}}" wx:key="index">
+                                <view class="tui-icon-box">
+                                    <image class="tui-tool-icon" src="{{item.img}}"></image>
+                                </view>
+                                <view class="tui-tool-text">{{item.title}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <grace-dialog bind:__l="__l" bind:closeDialog="__e" class="vue-ref" data-event-opts="{{[ [ '^closeDialog',[ ['closeDialog2'] ] ] ]}}" data-ref="showAlert_login" isBtns="{{true}}" isCloseBtn="{{false}}" isTitle="{{false}}" show="{{showAlert_login}}" vueId="{{'5c2bbbc2-6'+','+'5c2bbbc2-1'}}" vueSlots="{{['content']}}" zIndex="9999999">
+                <view class="layer" slot="content">
+                    <view class="auth-dialog auth">
+                        <view class="body">
+                            <view class="avatar">
+                                <open-data type="userAvatarUrl"></open-data>
+                            </view>
+                            <view class="nickname">
+                                <open-data type="userNickName"></open-data>
+                            </view>
+                            <view class="btn-wrapper">
+                                <button bindgetuserinfo="__e" class="btn login" data-event-opts="{{[ [ 'getuserinfo',[ [ 'login',['$event'] ] ] ] ]}}" openType="getUserInfo" type="primary">微信一键登录</button>
+                            </view>
+                            <text bindtap="__e" class="cancel-login" data-event-opts="{{[ [ 'tap',[ [ 'closeAlert',['$event'] ] ] ] ]}}">暂不登录</text>
+                        </view>
+                    </view>
+                </view>
+            </grace-dialog>
+            <grace-dialog bind:__l="__l" bind:closeDialog="__e" canCloseByShade="{{true}}" class="vue-ref" data-event-opts="{{[ [ '^closeDialog',[ ['closeDialog3'] ] ] ]}}" data-ref="showAlert" isCloseBtn="{{true}}" isTitle="{{false}}" show="{{showAlert}}" vueId="{{'5c2bbbc2-7'+','+'5c2bbbc2-1'}}" vueSlots="{{['content','btns']}}" zIndex="{{99999999}}">
+                <view class="box-alert" slot="content">
+                    <view class="bd" wx:if="{{contact_title_desc!=''}}">{{''+contact_title_desc+''}}</view>
+                    <view class="bd" wx:else>操作提示：点击“ 立即购买”后，再点击右下角“点我发送”，即可获取购买链接。</view>
+                    <view class="hd">
+                        <image class="alert-banner" src="../../static/images/kefu_send.png"></image>
+                    </view>
+                </view>
+                <view class="grace-space-between" slot="btns">
+                    <button class="grace-dialog-buttons" openType="contact" sendMessageImg="{{contact_thumb}}" sendMessagePath="pages/index/index" sendMessageTitle="{{contact_title}}" sessionFrom="{{'{type:'+contact_type+',id:'+contact_id+'}'}}" showMessageCard="true" wx:if="{{contact_title_text!=''}}">{{contact_title_text}}</button>
+                    <button class="grace-dialog-buttons" openType="contact" sendMessageImg="{{contact_thumb}}" sendMessagePath="pages/index/index" sendMessageTitle="{{contact_title}}" sessionFrom="{{'{type:'+contact_type+',id:'+contact_id+'}'}}" showMessageCard="true" wx:else>立即购买</button>
+                </view>
+            </grace-dialog>
+            <grace-dialog bind:__l="__l" bind:closeDialog="__e" class="vue-ref" data-event-opts="{{[ [ '^closeDialog',[ ['closeDialog1'] ] ] ]}}" data-ref="showAlert_taobaoauth" isBtns="{{true}}" show="{{showAlert_taobaoauth}}" vueId="{{'5c2bbbc2-8'+','+'5c2bbbc2-1'}}" vueSlots="{{['content']}}" zIndex="9999999">
+                <view class="content2" slot="content">
+                    <view style="margin:20rpx 20rpx 10rpx 20rpx;font-size:35rpx;font-weight:520;">您好，请输入订单号找回订单：</view>
+                    <form bindsubmit="__e" class="grace-form" data-event-opts="{{[ [ 'submit',[ [ 'findorder_do',['$event'] ] ] ] ]}}" style="margin-top:0rpx;">
+                        <view class="grace-form-item grace-border-b">
+                            <view class="grace-form-body">
+                                <input bindinput="__e" class="grace-form-input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','orderno','$event',[] ] ] ] ] ]}}" name="orderno" placeholder="请输入订单号" type="number" value="{{orderno}}"></input>
+                            </view>
+                        </view>
+                        <view class="grace-margin-top">
+                            <button class="grace-button grace-border-radius grace-gtbg-orange" formType="submit" type="primary">找回订单</button>
+                        </view>
+                    </form>
+                </view>
+            </grace-dialog>
+            <view class="poster-dialog" wx:if="{{show_poster}}">
+                <view class="content">
+                    <view class="header" wx:if="{{imgSrc}}"></view>
+                    <view class="body" wx:if="{{imgSrc}}">
+                        <image bindtap="__e" class="img" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',['$event'] ] ] ] ]}}" data-src="{{imgSrc}}" mode="widthFix" showMenuByLongpress="true" src="{{imgSrc}}"></image>
+                        <text class="tip">长按图片发送给朋友或者保存到相册</text>
+                    </view>
+                    <view class="footer" wx:if="{{imgSrc}}">
+                        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'close_poster',['$event'] ] ] ] ]}}">关闭</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </grace-page>
+    <view class="canvas-in" style="width:0px;height:0px;overflow:hidden;">
+        <canvas canvasId="graceCanvas" class="grace-canvas" style="{{'width:'+widthIn+'px'+'; height:'+heightIn+'px'+';background: rgba(0,0,0,0);'}}"></canvas>
+    </view>
+    <sj-tab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="5c2bbbc2-9" wx:if="{{tabBar}}"></sj-tab-bar>
+</view>

@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#feda2a",
+  "backgroundColor": "#feda2a",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "u-search": "/pagesB/uview-ui/components/u-search/u-search",
+    "u-tabs-swiper": "/pagesB/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
+    "u-lazy-load": "/pagesB/uview-ui/components/u-lazy-load/u-lazy-load",
+    "u-loadmore": "/pagesB/uview-ui/components/u-loadmore/u-loadmore",
+    "u-empty": "/pagesB/uview-ui/components/u-empty/u-empty"
+  }
+}

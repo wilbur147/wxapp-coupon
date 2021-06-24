@@ -1,0 +1,100 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" headerBG="#FFFFFF" vueId="2a369a88-1" vueSlots="{{['gBody']}}">
+        <view class="grace-flex-v1" id="gBody" slot="gBody" style="background-color:#ececec;">
+            <view class="orderDetail">
+                <view class="orderDetail_top">
+                    <view class="orderDetail_top_infor">
+                        <text>{{goodsDetail.name}}</text>
+                        <text>{{goodsDetail.mobile}}</text>
+                    </view>
+                    <view class="orderDetail_top_addr">{{''+goodsDetail.address+''}}</view>
+                </view>
+                <view class="orderDetail_detail">
+                    <view class="orderDetail_detail_top_left">
+                        <view class="orderDetail_img">
+                            <image src="{{goodsDetail.photo}}"></image>
+                        </view>
+                        <view class="orderDetail_goodsName">
+                            <view class="orderDetail_goodsName_h1">{{goodsDetail.title}}</view>
+                        </view>
+                    </view>
+                    <view class="orderDetail_price">
+                        <view class="orderDetail_price_h1" wx:if="{{goodsDetail.price>0}}">
+                            <text class="grace-icons ali-icon ali-icon-jifen icon-left-margin">{{goodsDetail.price}}</text>
+                        </view>
+                        <view class="orderDetail_price_h1" wx:if="{{goodsDetail.market_price>0}}">
+                            <text>{{'¥'+goodsDetail.market_price}}</text>
+                        </view>
+                        <view class="orderDetail_price_h2">{{'x'+goodsDetail.num}}</view>
+                    </view>
+                    <view class="orderDetail_detail_bottom" wx:if="{{goodsDetail.pay_type==4}}">来源：任务奖品</view>
+                    <view class="orderDetail_detail_bottom" wx:if="{{goodsDetail.pay_type==5}}">来源：抽奖奖品</view>
+                    <view class="orderDetail_detail_bottom" wx:if="{{goodsDetail.pay_type<4}}">实付：<text class="grace-icons ali-icon ali-icon-jifen icon-left-margin orderDetail_detail_bottom_price" wx:if="{{goodsDetail.pay_type==1||goodsDetail.pay_type==3}}">{{goodsDetail.price}}</text>
+                        <text wx:if="{{goodsDetail.pay_type==2||goodsDetail.pay_type==3}}">+</text>
+                        <text class="orderDetail_detail_bottom_price" wx:if="{{goodsDetail.pay_type==2||goodsDetail.pay_type==3}}">{{'¥'+goodsDetail.market_price}}</text>
+                    </view>
+                </view>
+                <view class="orderDetail_other" wx:if="{{goodsDetail.reback}}">
+                    <view class="orderDetail_other_item">
+                        <view class="orderDetail_other_item_left">
+                            <view class="orderDetail_other_item_title" style="font-weight:700;">发货信息：</view>
+                        </view>
+                        <view bindtap="__e" class="orderDetail_other_item_right" data-event-opts="{{[ [ 'tap',[ [ 'bindCopy3',['$event'] ] ] ] ]}}">复制</view>
+                    </view>
+                    <view class="orderDetail_other_item" wx:if="{{goodsDetail.reback}}">
+                        <view class="orderDetail_top_addr">{{goodsDetail.reback}}</view>
+                    </view>
+                </view>
+                <view class="orderDetail_other">
+                    <view class="orderDetail_other_item">
+                        <view class="orderDetail_other_item_left">
+                            <view class="orderDetail_other_item_title">订单编号:</view>
+                            <view class="orderDetail_other_item_text">{{goodsDetail.orderid}}</view>
+                        </view>
+                        <view bindtap="__e" class="orderDetail_other_item_right" data-event-opts="{{[ [ 'tap',[ [ 'bindCopy1',['$event'] ] ] ] ]}}">复制</view>
+                    </view>
+                    <view class="orderDetail_other_item">
+                        <view class="orderDetail_other_item_left">
+                            <view class="orderDetail_other_item_title">订单状态:</view>
+                            <view class="orderDetail_other_item_text">{{''+(goodsDetail.status==0?'待发货':goodsDetail.status==1?'已发货':goodsDetail.status==2?'已完成':'订单状态不正确')+''}}</view>
+                        </view>
+                    </view>
+                    <view class="orderDetail_other_item" wx:if="{{goodsDetail.courier_name}}">
+                        <view class="orderDetail_other_item_left">
+                            <view class="orderDetail_other_item_title">快递公司:</view>
+                            <view class="orderDetail_other_item_text">{{goodsDetail.courier_name}}</view>
+                        </view>
+                    </view>
+                    <view class="orderDetail_other_item" wx:if="{{goodsDetail.courier_number}}">
+                        <view class="orderDetail_other_item_left">
+                            <view class="orderDetail_other_item_title">快递单号:</view>
+                            <view class="orderDetail_other_item_text">{{goodsDetail.courier_number}}</view>
+                        </view>
+                        <view bindtap="__e" class="orderDetail_other_item_right" data-event-opts="{{[ [ 'tap',[ [ 'bindCopy2',['$event'] ] ] ] ]}}">复制</view>
+                    </view>
+                    <view class="orderDetail_other_item" wx:if="{{goodsDetail.create_time}}">
+                        <view class="orderDetail_other_item_left">
+                            <view class="orderDetail_other_item_title">下单时间:</view>
+                            <view class="orderDetail_other_item_text">{{goodsDetail.create_time}}</view>
+                        </view>
+                    </view>
+                    <view class="orderDetail_other_item" wx:if="{{goodsDetail.delivery_time}}">
+                        <view class="orderDetail_other_item_left">
+                            <view class="orderDetail_other_item_title">发货时间:</view>
+                            <view class="orderDetail_other_item_text">{{goodsDetail.delivery_time}}</view>
+                        </view>
+                    </view>
+                    <view class="orderDetail_other_item" wx:if="{{goodsDetail.complete_time}}">
+                        <view class="orderDetail_other_item_left">
+                            <view class="orderDetail_other_item_title">完成时间:</view>
+                            <view class="orderDetail_other_item_text">{{goodsDetail.complete_time}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="orderDetail_btn">
+                    <view bindtap="__e" class="orderDetail_btn_o" data-event-opts="{{[ [ 'tap',[ [ 'bindSh',['$event'] ] ] ] ]}}" wx:if="{{goodsDetail.status==1}}">确认收货</view>
+                </view>
+            </view>
+        </view>
+    </grace-page>
+</view>

@@ -1,0 +1,40 @@
+<view class="eat-container">
+    <image class="eat-bg" src="{{setting.eatwhat_bgpic?setting.eatwhat_bgpic:setting.static_domain+'addons/'+module_name+'/static/images/eatWhat_bgpic.png'}}"></image>
+    <view class="eat-temp" wx:if="{{isRun}}">
+        <view class="eat-temp-text" style="{{'top:'+item.top+'px;left:'+item.left+'px;color:'+item.color+';font-size:'+item.textSize+'px;'}}" wx:for="{{tempFoodList}}" wx:key="index">{{item.text}}</view>
+    </view>
+    <view class="wing-item" style="{{'top:'+item.top+'px;'}}" wx:for="{{wingList}}" wx:key="index">
+        <image class="wing-item-img" src="../../../static/images/avatar_defalut.png"></image>
+        <view class="wing-item-text">{{item.text}}</view>
+    </view>
+    <view class="eat-content">
+        <view class="eat-content-title">{{setting.eatwhat_my}}</view>
+        <view class="eat-content-desc">{{eatWhat}}</view>
+    </view>
+    <view class="eat-content-bottom">
+        <view bindtap="__e" class="eat-content-bottom-button" data-event-opts="{{[ [ 'tap',[ [ 'clickButton',['$event'] ] ] ] ]}}">{{btnText}}</view>
+        <view bindtap="__e" class="eat-content-bottom-modify" data-event-opts="{{[ [ 'tap',[ [ 'clickModifyMenu',['$event'] ] ] ] ]}}">我要修改菜单</view>
+    </view>
+    <view class="food-panel" wx:if="{{showMenu}}">
+        <view class="panel-border">
+            <view class="panel-select">
+                <view class="food-item" wx:for="{{foodList}}" wx:key="index">
+                    <view class="food-item-text">{{item}}</view>
+                    <image bindtap="__e" class="food-item-close" data-event-opts="{{[ [ 'tap',[ [ 'deleteItem',['$event'] ] ] ] ]}}" data-id="{{index}}" src="../../../static/images/panel_close.png"></image>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="panel-add" data-event-opts="{{[ [ 'tap',[ [ 'addToMenu',['$event'] ] ] ] ]}}">新增菜品</view>
+        <image bindtap="__e" class="panel-close" data-event-opts="{{[ [ 'tap',[ [ 'clickCloseMenu',['$event'] ] ] ] ]}}" src="../../../static/images/panel_close.png"></image>
+    </view>
+    <view class="add-food-popup" wx:if="{{showPopup}}">
+        <view class="popup-inner">
+            <view class="inner-border">
+                <input bindinput="__e" class="inner-input" data-event-opts="{{[ [ 'input',[ [ 'inputMenu',['$event'] ] ] ] ]}}" placeholder="请输入菜品"></input>
+                <view class="inner-line"></view>
+                <view bindtap="__e" class="inner-button" data-event-opts="{{[ [ 'tap',[ [ 'clickEnsureAdd',['$event'] ] ] ] ]}}">确定</view>
+            </view>
+            <image bindtap="__e" class="inner-close" data-event-opts="{{[ [ 'tap',[ [ 'closePopup',['$event'] ] ] ] ]}}" src="../../../static/images/panel_close.png"></image>
+        </view>
+    </view>
+</view>

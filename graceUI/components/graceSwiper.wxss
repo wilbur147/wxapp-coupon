@@ -1,0 +1,113 @@
+.grace-swiper-card-wrap.data-v-ec366746 {
+    position: relative;
+}
+
+.grace-swiper-card.data-v-ec366746 {
+    overflow: hidden;
+}
+
+.grace-swiper-card-item.data-v-ec366746 {
+    box-sizing: border-box;
+    font-size: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.grace-swiper-card-nav.data-v-ec366746 {
+    font-size: 0;
+    display: block;
+    position: relative;
+}
+
+.grace-indicator-dots.data-v-ec366746 {
+    width: 750rpx;
+    height: 68rpx;
+    overflow: hidden;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.grace-indicator-dot.data-v-ec366746 {
+    margin: 6rpx;
+}
+
+.grace-indicator-dots-wrap.data-v-ec366746 {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 20rpx;
+}
+
+.grace-indicator-dot-text.data-v-ec366746 {
+    display: block;
+    text-align: center;
+    line-height: 68rpx;
+    padding: 0 4rpx;
+    color: #fff;
+    font-size: 32rpx;
+    flex-shrink: 0;
+}
+
+.grace-indicator-dot-numbers.data-v-ec366746 {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+}
+
+.grace-swiper-text.data-v-ec366746 {
+    width: 750rpx;
+    line-height: 68rpx;
+    padding-right: 25rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@-webkit-keyframes dot-show-data-v-ec366746 {
+    from {
+        opacity: .1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dot-show-data-v-ec366746 {
+    from {
+        opacity: .1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.dot-show.data-v-ec366746 {
+    animation: dot-show-data-v-ec366746 .3s linear forwards;
+}

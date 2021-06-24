@@ -1,0 +1,97 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" vueId="0f966177-1" vueSlots="{{['gBody']}}">
+        <view class="grace-flex-v1" id="gBody" slot="gBody">
+            <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+                <view class="movie_order">
+                    <view class="bg"></view>
+                    <view class="container_order">
+                        <view class="header">
+                            <view class="detail">
+                                <view class="img">
+                                    <image class="filmPic" src="{{order.filmPic}}"></image>
+                                </view>
+                                <view class="info">
+                                    <view class="top">
+                                        <text class="title">{{order.filmName}}</text>
+                                        <view class="count">
+                                            <view class="grace-icons icon-time2 icon-right-margin"></view>
+                                            <grace-count-down bgrColor="#f7f2df" bind:__l="__l" bind:endDo="__e" borderColor="#f7f2df" data-event-opts="{{[ [ '^endDo',[ [ 'endDo',[1] ] ] ] ]}}" fontColor="#c39b00" fontSize="28rpx" show="{{true}}" splitorColor="#c39b00" timer="{{timer1}}" vueId="{{'0f966177-2'+','+'0f966177-1'}}" width="32rpx"></grace-count-down>
+                                        </view>
+                                    </view>
+                                    <view class="time">{{order.time}}</view>
+                                    <view class="cinema">{{order.cinemaName}}</view>
+                                    <view class="hall">{{order.hallName+':'}}<text class="seats">{{order.seat}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="origin">
+                                <view class="name">
+                                    <text class="icon-font iconfont-delete"></text>不支持退票<text class="icon-font iconfont-delete"></text>不支持改签</view>
+                                <text class="price">{{order.ticketNum+'张 原价 ￥'+order.selectedOriginPrice}}</text>
+                            </view>
+                            <view class="discount">
+                                <text class="name">优惠</text>
+                                <text class="price">{{'-'+discount}}</text>
+                            </view>
+                            <view class="total">
+                                <text class="name">票价合计</text>
+                                <text class="price">
+                                    <text class="unit">￥</text>{{order.selectedRealPrice}}</text>
+                            </view>
+                        </view>
+                        <view class="phone" style="font-size:28rpx;width:705rpx;border-radius:20rpx;">
+                            <view class="mobile">
+                                <view class="grace-form-item" style="width:100%;">
+                                    <text class="grace-form-label" style="color:#ca0000;">手机号码：</text>
+                                    <view class="grace-form-body">
+                                        <input class="grace-form-input" name="mobile" placeholder="必填" style="text-align:left;" type="tel" value="{{mobile}}" wx:if="{{mobile}}"></input>
+                                        <button bindgetphonenumber="__e" class="grace-form-input" data-event-opts="{{[ [ 'getphonenumber',[ [ 'loginToCall',['$event'] ] ] ] ]}}" openType="getPhoneNumber" style="text-align:left;color:#9c9c9c;" wx:if="{{!mobile}}">请填写手机号</button>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="tip">
+                                <text class="name">仅用于出票异常联系，取票码不会通过短信发送</text>
+                            </view>
+                        </view>
+                        <view class="seat">
+                            <view class="switch">
+                                <text class="name">无座位时，接受系统调整</text>
+                                <switch checked="{{true}}" color="#ff5756" name="applyseat" style="zoom:0.7;"></switch>
+                            </view>
+                            <view class="tip">
+                                <text class="name">1.接受调座，当您选择的座位已售出时，自动为您选择最佳观影座位。</text>
+                                <text class="name">2.若不接受调座则出票率较低，请谨慎选择。</text>
+                            </view>
+                        </view>
+                        <view class="tips">
+                            <view class="known">
+                                <text class="name">购票须知</text>
+                                <checkbox-group class="grace-wrap" name="xuzhi">
+                                    <label class="grace-check-item">
+                                        <checkbox color="#ff5756" style="zoom:0.7;" value="1">
+                                            <text class="name" style="font-size:30rpx;color:#ff5756;">已读</text>
+                                        </checkbox>
+                                    </label>
+                                </checkbox-group>
+                            </view>
+                            <view class="rules">
+                                <text class="name">1、请确认好该场次的播放时间、片名、人数、座位，付款成功后5-40分钟为您出票。</text>
+                                <text class="name">2、此电影票为特价电影票，已经出票的订单<text class="red">不可改签、退票</text>；</text>
+                                <text class="name">3、凭取票码可在影院任意自助机或前台取票；</text>
+                                <text class="name">4、若因设备故障、影院排片变化等情况导致出票失败，系统会在1小时内将款项退回原账户；</text>
+                                <text bindtap="__e" class="name" data-event-opts="{{[ [ 'tap',[ [ 'xieyi',['$event'] ] ] ] ]}}">5、下单支付即表示同意<text style="color:#0062cc;">{{'《'+setting.movie_xieyi_name+'》'}}</text>；</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="pay">
+                        <view class="priceInfo">
+                            <text class="warn" style="font-weight:600;">提示：特价票出票时间为5-40分钟</text>应付：<text class="unit">￥</text>
+                            <text class="price">{{order.selectedRealPrice}}</text>
+                        </view>
+                        <button class="button" formType="submit" type="primary">立即支付</button>
+                    </view>
+                </view>
+            </form>
+        </view>
+    </grace-page>
+</view>

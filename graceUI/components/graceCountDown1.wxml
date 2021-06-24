@@ -1,0 +1,6 @@
+<view class="grace-countdown data-v-3f2e7e6c" wx:if="{{show}}">
+    <view class="grace-countdown-numbers data-v-3f2e7e6c" style="{{'border-color:'+borderColor+';'+'width:'+width+';'+'height:'+width+';'+'font-size:'+fontSize+';'+'line-height:'+width+';'+'color:'+fontColor+';'+'background:'+bgrColor+';'}}">{{i}}</view>
+    <view class="grace-countdown-splitor data-v-3f2e7e6c" style="{{'color:'+splitorColor+';'+'line-height:'+width+';'+'font-size:'+fontSize+';'}}">{{splitorText[2]}}</view>
+    <view class="grace-countdown-numbers data-v-3f2e7e6c" style="{{'border-color:'+borderColor+';'+'width:'+width+';'+'height:'+width+';'+'font-size:'+fontSize+';'+'line-height:'+width+';'+'color:'+fontColor+';'+'background:'+bgrColor+';'}}">{{s}}</view>
+    <view class="grace-countdown-splitor data-v-3f2e7e6c" style="{{'color:'+splitorColor+';'+'line-height:'+width+';'+'font-size:'+fontSize+';'}}">{{splitorText[3]}}</view>
+</view>

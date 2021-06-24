@@ -1,0 +1,233 @@
+.grace-sbody {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.grace-sbody {
+    min-height: 100vh;
+}
+
+.grace-page-header {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    border-bottom: 0 solid #fff;
+}
+
+.grace-page-status-bar {
+    width: 100%;
+    height: 0;
+}
+
+.grace-page-header-nav {
+    width: 100%;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.grace-header-main {
+    width: 300rpx;
+    -webkit-box-flex: 1;
+    flex: auto;
+    overflow: hidden;
+    min-height: 44px;
+}
+
+.grace-page-body {
+    width: 100%;
+    -webkit-box-flex: 1;
+    flex: 1;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.grace-page-footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.gui-page-rb-area {
+    width: 100rpx;
+    position: fixed;
+    right: 20rpx;
+    bottom: 100rpx;
+    z-index: 1;
+}
+
+.grace-page-loading {
+    width: 100%;
+    height: 100%;
+    background: hsla(0,0%,100%,.1);
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.grace-page-loading-point {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.grace-page-loading-points {
+    width: 20rpx;
+    height: 20rpx;
+    background-color: #3688ff;
+    border-radius: 50rpx;
+    margin: 10rpx;
+    opacity: .5;
+}
+
+@-webkit-keyframes pageLoading1 {
+    0% {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    60% {
+        opacity: .5;
+        transform: scale(1);
+    }
+}
+
+@keyframes pageLoading1 {
+    0% {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    60% {
+        opacity: .5;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes pageLoading2 {
+    20% {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    80% {
+        opacity: .5;
+        transform: scale(1);
+    }
+}
+
+@keyframes pageLoading2 {
+    20% {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    80% {
+        opacity: .5;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes pageLoading3 {
+    40% {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: .5;
+        transform: scale(1);
+    }
+}
+
+@keyframes pageLoading3 {
+    40% {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: .5;
+        transform: scale(1);
+    }
+}
+
+.animate1 {
+    animation: pageLoading1 1.2s infinite linear;
+}
+
+.animate2 {
+    animation: pageLoading2 1.2s infinite linear;
+}
+
+.animate3 {
+    animation: pageLoading3 1.2s infinite linear;
+}
+
+.grace-page-fixed-top {
+    position: fixed;
+    top: 44px;
+    left: 0;
+    width: 750rpx;
+    z-index: 99998;
+}

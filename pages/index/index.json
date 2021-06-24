@@ -1,0 +1,19 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "add-mini-tip": "/components/add-mini-tip/add-mini-tip",
+        "sj-tab-bar": "/components/sj-tab-bar/sj-tab-bar",
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-search": "/graceUI/components/graceSearch",
+        "grace-swiper": "/graceUI/components/graceSwiper",
+        "grace-dialog": "/graceUI/components/graceDialog",
+        "grace-coupons": "/graceUI/components/graceCoupons",
+        "grace-full-loading": "/graceUI/components/graceFullLoading",
+        "grace-img": "/graceUI/components/graceImg"
+    }
+}

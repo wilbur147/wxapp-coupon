@@ -1,0 +1,35 @@
+<view class="grace-sbody">
+    <view wx:if="{{customHeader}}">
+        <view class="grace-page-header" style="{{'z-index:'+headerIndex+';'+'background:'+headerBG+';'+'border-bottom-width:'+borderWidth+';'+'border-bottom-color:'+borderColor+';'}}">
+            <view class="grace-page-status-bar" style="{{'height:'+statusBarHeight+'px'+';'+'background:'+statusBarBG+';'}}"></view>
+            <view class="grace-page-header-nav" id="gracePageHeader" style="{{'min-height:'+headerHeight+'px'+';'+'height:'+headerHeight+'px'+';'+'overflow:'+'hidden'+';'}}">
+                <view class="grace-header-main">
+                    <slot name="gHeader"></slot>
+                </view>
+                <view style="{{'width:'+BoundingWidth+';'+'flex-shrink:'+'0'+';'}}" wx:if="{{bounding}}"></view>
+            </view>
+        </view>
+        <view style="{{'width:'+'100%'+';'+'height:'+100+'px'+';'}}"></view>
+    </view>
+    <view class="grace-page-body">
+        <slot name="gBody"></slot>
+    </view>
+    <view style="{{'width:'+'100%'+';'+'height:'+iphoneXButtomHeight+'px'+';'}}" wx:if="{{!isSwitchPage}}"></view>
+    <view class="grace-page-footer" style="{{'z-index:'+footerIndex+';'+'background:'+footerBg+';'}}">
+        <slot name="gFooter"></slot>
+        <view style="{{'width:'+'100%'+';'+'height:'+iphoneXButtomHeight+'px'+';'}}" wx:if="{{!isSwitchPage}}"></view>
+    </view>
+    <view class="gui-page-rb-area" style="{{'right:'+rbRight+'rpx'+';'+'bottom:'+rbBottom+'rpx'+';'+'width:'+rbWidth+'rpx'+';'+'z-index:'+rbIndex+';'}}">
+        <slot name="gRTArea"></slot>
+    </view>
+    <view class="grace-page-fixed-top" style="{{'top:'+fixedTop+'px'+';'}}">
+        <slot name="gFixedTop"></slot>
+    </view>
+    <view catchtap="__e" catchtouchmove="__e" class="grace-page-loading" data-event-opts="{{[ [ 'tap',[ [ 'stopfun',['$event'] ] ] ],[ 'touchmove',[ [ 'stopfun',['$event'] ] ] ] ]}}" style="{{'background:'+loadingBG+';'}}" wx:if="{{isLoading}}">
+        <view class="grace-page-loading-point">
+            <view class="grace-page-loading-points animate1" style="{{'background:'+loadingPointBg+';'}}"></view>
+            <view class="grace-page-loading-points animate2" style="{{'background:'+loadingPointBg+';'}}"></view>
+            <view class="grace-page-loading-points animate3" style="{{'background:'+loadingPointBg+';'}}"></view>
+        </view>
+    </view>
+</view>

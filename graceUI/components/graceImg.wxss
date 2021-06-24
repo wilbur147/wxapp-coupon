@@ -1,0 +1,41 @@
+.grace-img.data-v-4c0bf1ad {
+    width: 300rpx;
+    height: 300rpx;
+    overflow: hidden;
+    font-size: 0;
+    position: relative;
+}
+
+.grace-img-loading.data-v-4c0bf1ad {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #f8f8f8;
+    font-size: 80rpx;
+    color: #999;
+    text-align: center;
+}
+
+.grace-shade-out.data-v-4c0bf1ad {
+    animation: grace-shade-out-a-data-v-4c0bf1ad .3s ease-out forwards;
+}
+
+@-webkit-keyframes grace-shade-out-a-data-v-4c0bf1ad {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes grace-shade-out-a-data-v-4c0bf1ad {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

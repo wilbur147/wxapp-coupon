@@ -1,0 +1,20 @@
+.grace-header.data-v-41bf5b09 {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 44px;
+    padding-top: 20px;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.grace-header-main.data-v-41bf5b09 {
+    width: 300rpx;
+    -webkit-box-flex: 1;
+    flex: auto;
+}

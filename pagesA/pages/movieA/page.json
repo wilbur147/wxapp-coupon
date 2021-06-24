@@ -1,0 +1,12 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff5756",
+    "backgroundColor": "#ff5756",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-analysis": "/graceUI/components/graceAnalysis",
+        "grace-dialog": "/graceUI/components/graceDialog"
+    }
+}

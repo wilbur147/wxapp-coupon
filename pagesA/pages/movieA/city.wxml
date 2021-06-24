@@ -1,0 +1,23 @@
+<grace-page bind:__l="__l" customHeader="{{false}}" vueId="5fab9d6c-1" vueSlots="{{['gBody']}}">
+    <view class="grace-flex-v1" id="gBody" slot="gBody">
+        <view id="hSearch" style="padding:20rpx 100rpx;background-color:#F6F7F8;">
+            <grace-search bind:__l="__l" bind:clear="__e" bind:inputting="__e" data-event-opts="{{[ [ '^clear',[ ['search'] ] ],[ '^inputting',[ ['search'] ] ] ]}}" vueId="{{'5fab9d6c-2'+','+'5fab9d6c-1'}}"></grace-search>
+        </view>
+        <scroll-view scrollIntoView="{{showCityId}}" scrollY="true" style="{{'height:'+mainHeight+'px'+';'}}">
+            <view class="grace-body grace-margin-top" id="pageTop">
+                <view bindtap="__e" class="grace-title" data-citycode="{{currentCityid}}" data-cityname="{{currentCity}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseCity',['$event'] ] ] ] ]}}">{{'当前城市 : '+currentCity}}</view>
+                <view class="grace-title">热门城市</view>
+                <view class="grace-wrap" style="padding-bottom:20rpx;">
+                    <view bindtap="__e" class="hotcity-item" data-citycode="{{item.cityId}}" data-cityname="{{item.regionName}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseCity',['$event'] ] ] ] ]}}" wx:for="{{hotCities}}" wx:key="index">{{item.regionName}}</view>
+                </view>
+                <block wx:for="{{cityData}}" wx:for-item="cities" wx:key="index">
+                    <view class="grace-city-AZ" id="{{'grace-city-AZ-'+index}}">{{index}}</view>
+                    <view bindtap="__e" class="city-item" data-citycode="{{city.cityId}}" data-cityname="{{city.regionName}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseCity',['$event'] ] ] ] ]}}" id="{{'grace-city-list-'+city.cityId}}" wx:for="{{cities}}" wx:for-index="cindex" wx:for-item="city" wx:key="cindex">{{city.regionName}}</view>
+                </block>
+                <view class="grace-city-AZ-right">
+                    <view bindtap="__e" data-char="{{char}}" data-event-opts="{{[ [ 'tap',[ [ 'changAZ',['$event'] ] ] ] ]}}" wx:for="{{AZ}}" wx:for-item="char" wx:key="index">{{char}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</grace-page>

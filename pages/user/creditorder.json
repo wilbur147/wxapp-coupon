@@ -1,0 +1,14 @@
+{
+    "navigationBarBackgroundColor": "#ff5756",
+    "backgroundColor": "#ff5756",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "积分订单",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-nav-bar": "/graceUI/components/graceNavBar",
+        "grace-empty": "/graceUI/components/graceEmptyNew",
+        "grace-loading": "/graceUI/components/graceLoading",
+        "grace-dialog": "/graceUI/components/graceDialog"
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "navigationBarTitleText": "特惠领券购物",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+	"sj-tab-bar": "/components/sj-tab-bar/sj-tab-bar",
+    "u-navbar": "/pagesB/uview-ui/components/u-navbar/u-navbar",
+    "u-search": "/pagesB/uview-ui/components/u-search/u-search",
+    "u-row": "/pagesB/uview-ui/components/u-row/u-row",
+    "u-col": "/pagesB/uview-ui/components/u-col/u-col",
+    "u-lazy-load": "/pagesB/uview-ui/components/u-lazy-load/u-lazy-load",
+    "u-loadmore": "/pagesB/uview-ui/components/u-loadmore/u-loadmore",
+    "u-empty": "/pagesB/uview-ui/components/u-empty/u-empty",
+    "u-popup": "/pagesB/uview-ui/components/u-popup/u-popup",
+    "u-divider": "/pagesB/uview-ui/components/u-divider/u-divider",
+    "u-button": "/pagesB/uview-ui/components/u-button/u-button"
+  }
+}

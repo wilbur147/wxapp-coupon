@@ -1,0 +1,27 @@
+<view>
+    <cover-view class="cu-bar tabbar bg-white  foot flex-direction" wx:if="{{mode=='2'}}">
+        <cover-view style="flex-shrink:0;height:2px;width:100%;background-color:#F2F2F2;"></cover-view>
+        <cover-view class="flex justify-between align-center" style="{{'width:100%;height:104rpx;'+(tabBar.tabBarHight==undefind||tabBar.tabBarHight==''?'':'height: '+tabBar.tabBarHight)}}">
+            <cover-view bindtap="__e" class="action" data-event-opts="{{[ [ 'tap',[ [ 'NavChange',['$0'],[ [ ['tabBar.list','',index,'key'] ] ] ] ] ] ]}}" wx:for="{{tabBar.list}}" wx:key="index">
+                <cover-view class="cuIcon-cu-image  justify-center" style="display:flex;">
+                    <cover-image src="{{curKey==item.key?item.selectedIconPath:item.iconPath}}" style="{{'height:44rpx;width:44rpx;'+'height:'+(tabBar.iconHight==undefind||tabBar.iconHight==''?'':tabBar.iconHight)+';'+'width:'+(tabBar.iconWidth==undefind||tabBar.iconWidth==''?'':tabBar.iconWidth)+';'}}"></cover-image>
+                </cover-view>
+                <cover-view style="{{'display:flex;height:8rpx;'+(tabBar.intervalHight==undefind||tabBar.intervalHight==''?'':'height: '+tabBar.intervalHight)}}"></cover-view>
+                <cover-view style="{{'color:'+(curKey==item.key?tabBar.selectedColor:tabBar.color)+';'+'font-size:'+(tabBar.fontSize==undefind||tabBar.fontSize==''?'':tabBar.fontSize)+';'}}">{{item.text}}</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <block wx:if="{{mode=='1'}}">
+        <view class="cu-bar tabbar bg-white shadow foot flex-direction" style="{{'box-shadow:'+(tabBar.boxShadow==undefind||tabBar.boxShadow==''?'':tabBar.boxShadow)+';'}}" wx:if="{{tabBar.list}}">
+            <view class="flex justify-between align-center" style="{{'width:100%;height:104rpx;'+(tabBar.tabBarHight==undefind||tabBar.tabBarHight==''?'':'height: '+tabBar.tabBarHight+'rpx;')}}">
+                <view bindtap="__e" class="action" data-event-opts="{{[ [ 'tap',[ [ 'NavChange',['$0'],[ [ ['tabBar.list','',index,'key'] ] ] ] ] ] ]}}" wx:for="{{tabBar.list}}" wx:key="index">
+                    <view class="cuIcon-cu-image  justify-center" style="display:flex;">
+                        <image src="{{ckey==item.key?item.selectedIconPath:item.iconPath}}" style="{{'height:44rpx;width:44rpx;'+'height:'+(tabBar.iconHight==undefind||tabBar.iconHight==''?'':tabBar.iconHight+'rpx;')+';'+'width:'+(tabBar.iconWidth==undefind||tabBar.iconWidth==''?'':tabBar.iconWidth+'rpx;')+';'}}"></image>
+                    </view>
+                    <view style="{{'display:flex;height:8rpx;'+(tabBar.intervalHight==undefind||tabBar.intervalHight==''?'':'height: '+tabBar.intervalHight+'rpx;')}}"></view>
+                    <view style="{{'color:'+(ckey==item.key?tabBar.selectedColor:tabBar.color)+';'+'font-size:'+(tabBar.fontSize==undefind||tabBar.fontSize==''?'':tabBar.fontSize+'rpx;')+';'}}">{{item.text}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

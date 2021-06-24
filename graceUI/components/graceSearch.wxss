@@ -1,0 +1,24 @@
+.gui-search.data-v-a4f669f0 {
+    border-radius: 66rpx;
+    box-sizing: border-box;
+    padding: 0 10rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.gui-search-icon.data-v-a4f669f0 {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.gui-search-input.data-v-a4f669f0 {
+    width: 100%;
+    margin: 0 10rpx;
+    border: none;
+    padding: 0;
+}

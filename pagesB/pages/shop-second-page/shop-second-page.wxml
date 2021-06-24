@@ -1,0 +1,98 @@
+<view class="data-v-1440ecb4">
+	<view class="top-wrap data-v-1440ecb4">
+		<view class="title-wrap data-v-1440ecb4">
+			<view class="item-image data-v-1440ecb4">
+				<block wx:if="{{queryParams.cpType=='pdd'}}">
+					<image src="../../static/shop/pdd_logo.png" mode="widthFix" class="data-v-1440ecb4"></image>
+				</block>
+				<block wx:if="{{queryParams.cpType=='jd'}}">
+					<image src="../../static/shop/jd_logo_1.png" mode="widthFix" class="data-v-1440ecb4"></image>
+				</block>
+				<block wx:if="{{queryParams.cpType=='wph'}}">
+					<image src="../../static/shop/wph_logo.png" mode="widthFix" class="data-v-1440ecb4"></image>
+				</block>
+			</view>
+			<view class="item-text-wrap data-v-1440ecb4">
+				<view class="text-top data-v-1440ecb4">{{title+"全网优惠"}}</view>
+				<view class="text-bottom data-v-1440ecb4">领券下单一年省千元</view>
+			</view>
+		</view>
+		<u-search vue-id="73dba7c0-1" placeholder="输入商品名称或粘贴标题" clearabled="{{false}}" margin="30rpx 20rpx"
+			show-action="{{true}}" border-color="#feda2a" disabled="{{true}}" height="86"
+			action-style="{{searchActionStyle}}" action-text="搜索优惠券" input-style="position: relative;"
+			value="{{searchValue}}"
+			data-event-opts="{{[['^click',[['toSearch']]],['^input',[['__set_model',['','searchValue','$event',[]]]]]]}}"
+			bind:click="__e" bind:input="__e" class="data-v-1440ecb4" bind:__l="__l"></u-search>
+		<view class="step-wrap data-v-1440ecb4">
+			<view class="num data-v-1440ecb4">1</view>
+			<view class="text data-v-1440ecb4">领取大额优惠券</view>
+			<view class="num data-v-1440ecb4">2</view>
+			<view class="text data-v-1440ecb4">下单购物</view>
+		</view>
+	</view>
+	<view hidden="{{!(features)}}" class="section data-v-1440ecb4">
+		<view class="section-bottom data-v-1440ecb4">
+			<scroll-view class="scroll-view_X data-v-1440ecb4" scroll-x="true">
+				<block wx:for="{{features}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+					<view class="section-bottom-item data-v-1440ecb4">
+						<image src="{{item.src}}" mode="aspectFit"
+							data-event-opts="{{[['tap',[['toPath',['$0'],[[['features','',index]]]]]]]}}" bindtap="__e"
+							class="data-v-1440ecb4"></image>
+						<block wx:if="{{item.toPath&&item.toPath.title}}">
+							<view class="name data-v-1440ecb4">{{item.toPath.title}}</view>
+						</block>
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+	<view class="shop-type-box data-v-1440ecb4" style="width:100%;background-color:#FFFFFF;">
+		<u-tabs-swiper vue-id="73dba7c0-2" list="{{shopTypeList}}" active-color="#ff6052" inactive-color="#757575"
+			font-size="26" current="{{tabCurrent}}" gutter="50" bar-width="40" bar-height="4"
+			data-event-opts="{{[['^change',[['toSwitch']]]]}}" bind:change="__e" class="data-v-1440ecb4" bind:__l="__l">
+		</u-tabs-swiper>
+	</view>
+	<view class="item-list data-v-1440ecb4">
+		<block wx:if="{{list&&list.length}}">
+			<block class="data-v-1440ecb4">
+				<block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+					<view data-event-opts="{{[['tap',[['goDetail',['$0'],[[['list','',index]]]]]]]}}"
+						class="item-item data-v-1440ecb4" bindtap="__e">
+						<u-lazy-load class="item-thumbnail data-v-1440ecb4" vue-id="{{'73dba7c0-3-'+index}}"
+							image="{{item.$orig.img}}" threshold="300" bind:__l="__l"></u-lazy-load>
+						<image class="item-shop-type data-v-1440ecb4" src="{{shopTypeIcon}}"></image>
+						<view class="item-title data-v-1440ecb4">{{item.$orig.goodsName}}</view>
+						<view class="item-price-box data-v-1440ecb4">
+							<view class="item-price-prefix data-v-1440ecb4">￥</view>
+							<view class="item-price data-v-1440ecb4">{{item.m0}}</view>
+						</view>
+						<block wx:if="{{item.$orig.discount>0}}">
+							<view class="item-coupon-box data-v-1440ecb4">
+								<image style="width:100%;height:100%;" src="../../static/shop/img_coupon.png"
+									class="data-v-1440ecb4"></image>
+								<view class="item-coupon-prefix data-v-1440ecb4">券</view>
+								<view class="item-coupon-price data-v-1440ecb4">{{item.m1}}</view>
+							</view>
+						</block>
+						<view class="item-line data-v-1440ecb4"></view>
+						<view class="item-price-origin data-v-1440ecb4">{{"￥"+item.m2}}</view>
+						<block wx:if="{{item.$orig.sales}}">
+							<view class="item-sale data-v-1440ecb4">{{"已售"+(item.$orig.sales||0)+"笔"}}</view>
+						</block>
+						<view class="item-money-earn data-v-1440ecb4" style="background-color:#feda2a;color:#2D2D2D;">
+							领券下单</view>
+					</view>
+				</block>
+				<u-loadmore style="margin:auto;" vue-id="73dba7c0-4" status="{{loadStatus}}" font-size="26"
+					data-event-opts="{{[['^loadmore',[['loadmore']]]]}}" bind:loadmore="__e" class="data-v-1440ecb4"
+					bind:__l="__l"></u-loadmore>
+			</block>
+		</block>
+		<block wx:else>
+			<block class="data-v-1440ecb4">
+				<u-empty style="margin:30rpx auto;" vue-id="73dba7c0-5" text="数据为空" mode="data" class="data-v-1440ecb4"
+					bind:__l="__l"></u-empty>
+			</block>
+		</block>
+	</view>
+</view>

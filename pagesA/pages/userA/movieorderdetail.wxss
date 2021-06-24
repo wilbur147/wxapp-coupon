@@ -1,0 +1,218 @@
+.moviedetail {
+    padding: 18rpx;
+}
+
+.moviedetail .moviecontainer {
+    border-radius: 8rpx;
+    background-color: #fff;
+}
+
+.moviedetail .moviecontainer .header {
+    padding: 44rpx 44rpx 0;
+    position: relative;
+}
+
+.moviedetail .moviecontainer .header .content {
+    display: flex;
+    padding-bottom: 44rpx;
+    border-bottom: 1rpx dashed #eee;
+}
+
+.moviedetail .moviecontainer .header .content .left {
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.moviedetail .moviecontainer .header .content .left .name {
+    font-size: 34rpx;
+    font-weight: 700;
+    padding: 8rpx 0;
+}
+
+.moviedetail .moviecontainer .header .content .left .item {
+    margin-top: 8rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.moviedetail .moviecontainer .header .content .right {
+    margin-left: 20rpx;
+}
+
+.moviedetail .moviecontainer .header .content .right .pic {
+    width: 127rpx;
+    height: 180rpx;
+}
+
+.moviedetail .moviecontainer .header::after,.moviedetail .moviecontainer .header::before {
+    content: "";
+    position: absolute;
+    bottom: -22rpx;
+    width: 44rpx;
+    height: 44rpx;
+    border-radius: 50%;
+    background-color: #ff5756;
+}
+
+.moviedetail .moviecontainer .header::before {
+    left: -24rpx;
+}
+
+.moviedetail .moviecontainer .header::after {
+    right: -24rpx;
+}
+
+.moviedetail .moviecontainer .moviebody {
+    padding: 10rpx 44rpx 0;
+}
+
+.moviedetail .moviecontainer .moviebody .item {
+    text-align: center;
+    padding: 40rpx 0;
+    border-bottom: 1rpx solid #eee;
+}
+
+.moviedetail .moviecontainer .moviebody .item.left {
+    text-align: left;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code {
+    font-size: 26rpx;
+    color: #666;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code.orange {
+    color: #f3837f;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code.bold {
+    font-weight: 700;
+    margin-top: 10rpx;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code.bold .normal {
+    font-weight: 400;
+    color: #333;
+    font-size: 26rpx;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code.bold .iconfont-kefu {
+    font-size: 28rpx;
+    margin-left: 6rpx;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code.bold .btn {
+    display: inline;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background-color: initial;
+    color: #f3837f;
+    font-size: 26rpx;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code.bold .btn:after {
+    border: 0;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code .value {
+    margin-top: 20rpx;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 48rpx;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code .value .chunk {
+    margin-right: 10rpx;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code .value .chunk:last-of-type {
+    margin-right: 0;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code .value .splitCode {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code .value .splitCode .spliter {
+    width: 2rpx;
+    height: 30rpx;
+    background-color: #bbb;
+    margin: 0 10rpx;
+}
+
+.moviedetail .moviecontainer .moviebody .item .code .value .splitCode .chunk {
+    margin-right: 0;
+}
+
+.moviedetail .moviecontainer .moviebody .item .url {
+    width: 320rpx;
+    height: 320rpx;
+}
+
+.moviedetail .moviecontainer .footer {
+    padding: 0 44rpx 44rpx;
+}
+
+.moviedetail .moviecontainer .footer .group {
+    margin-top: 22rpx;
+    padding-bottom: 22rpx;
+    border-bottom: 1rpx dashed #eee;
+}
+
+.moviedetail .moviecontainer .footer .group:last-child {
+    border-bottom: 0;
+}
+
+.moviedetail .moviecontainer .footer .cell {
+    font-size: 24rpx;
+    margin-top: 8rpx;
+}
+
+.moviedetail .moviecontainer .footer .cell .copy {
+    color: #999;
+    margin-left: 20rpx;
+}
+
+.moviedetail .moviecontainer .footer .btn {
+    margin-top: 55rpx;
+    width: 400rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    border: 0;
+    outline: 0;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.movietitle {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 60rpx;
+}
+
+.movietitle .label {
+    font-size: 30rpx;
+    font-weight: 600;
+}
+
+.movietitle .extra {
+    font-size: 26rpx;
+    color: #999;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.movietitle .extra.red {
+    color: #df4c3d;
+}

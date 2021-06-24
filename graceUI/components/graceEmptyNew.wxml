@@ -1,0 +1,5 @@
+<view class="grace-empty data-v-751fa30e">
+    <slot name="img"></slot>
+    <slot name="text"></slot>
+    <slot name="other"></slot>
+</view>

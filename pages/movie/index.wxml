@@ -1,0 +1,76 @@
+<view>
+    <grace-page bind:__l="__l" bounding="false" headerBG="#ffffff" statusBarBG="#ffffff" vueId="baa77b08-1" vueSlots="{{['gHeader','gBody']}}">
+        <view class="grace-header-body1" slot="gHeader">
+            <view class="grace-header-leader grace-nowrap grace-space-between grace-flex-vcenter" style="background-color:#ffffff;margin-left:10rpx;padding-left:0rpx;">
+                <view bindtap="__e" class="grace-header-leader-btns grace-icons icon-address icon-right-margin" data-event-opts="{{[ [ 'tap',[ [ 'again_getLocation',['$event'] ] ] ] ]}}" style="{{'width: 200rpx;font-size: '+cityfontsize+'rpx;padding: 10rpx 0rpx 15rpx;'}}">{{(city?city:'定位中')+''}}</view>
+            </view>
+            <view class="grace-header-content grace-flex-center" style="padding:20rpx 20rpx 20rpx 20rpx;">
+                <grace-search background="#f1f1f1" bind:__l="__l" bind:clear="__e" bind:confirm="__e" data-event-opts="{{[ [ '^clear',[ ['clear'] ] ],[ '^confirm',[ ['confirm'] ] ] ]}}" kwd="{{value1}}" placeholder="搜索影片、影院" vueId="{{'baa77b08-2'+','+'baa77b08-1'}}"></grace-search>
+            </view>
+        </view>
+        <view class="grace-flex-v1" id="gBody" slot="gBody" style="margin-bottom:100rpx;">
+            <view id="nav" style="background-color:#ffffff;top:0px;height:70rpx;">
+                <grace-nav-bar activeColor="#ec4300" activeDirection="center" activeFontSize="35rpx" activeLineBg="#ec4300" bind:__l="__l" bind:change="__e" currentIndex="{{currentIndex}}" data-event-opts="{{[ [ '^change',[ ['navChange'] ] ] ]}}" fontSize="32rpx" isCenter="true" items="{{tabs}}" size="130" textAlign="center" vueId="{{'baa77b08-3'+','+'baa77b08-1'}}"></grace-nav-bar>
+            </view>
+            <swiper bindchange="__e" class="swiper" current="{{currentIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}">
+                <swiper-item class="demo" wx:for="{{$root.l1}}" wx:key="index">
+                    <scroll-view bindscroll="__e" bindscrolltolower="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" data-event-opts="{{[ [ 'scrolltolower',[ [ 'scrollend',['$event'] ] ] ],[ 'scroll',[ [ 'scroll',['$event'] ] ] ],[ 'touchstart',[ [ 'touchstart',['$event'] ] ] ],[ 'touchmove',[ [ 'touchmove',['$event'] ] ] ],[ 'touchend',[ [ 'touchend',['$event'] ] ] ] ]}}" scrollTop="{{scrollTops[currentIndex]}}" scrollY="{{true}}" style="{{'height:'+mainHeight+'px'}}">
+                        <grace-empty-new bind:__l="__l" vueId="{{'baa77b08-4-'+index+','+'baa77b08-1'}}" vueSlots="{{['img','text']}}" wx:if="{{movielist[index].length==0}}">
+                            <view class="empty-view" slot="img">
+                                <image class="empty-img" mode="widthFix" src="../../static/images/empty.png"></image>
+                            </view>
+                            <text class="grace-text-small grace-gray" slot="text">抱歉，没有搜索到任何数据</text>
+                        </grace-empty-new>
+                        <view class="movielistbox" data-movieid="{{item.$orig.id}}" wx:if="{{index!=1&&movielist[index].length>0}}" wx:for="{{item.l0}}" wx:for-index="index2" wx:key="index2">
+                            <view bindtap="__e" class="text-left movielist" data-event-opts="{{[ [ 'tap',[ [ 'openMovieInfo',['$event'] ] ] ] ]}}" data-movie="{{item.$orig}}">
+                                <view class="moviewlistleft">
+                                    <view class="movieImg">
+                                        <image class="cover" src="{{item.$orig.pic}}"></image>
+                                    </view>
+                                    <view class="movieinfo text-sm">
+                                        <view class="title text-black">{{item.$orig.name}}<text class="version"></text>
+                                        </view>
+                                        <view>评分<text class="sc">{{item.$orig.grade?item.$orig.grade:'暂无评分'}}</text>
+                                        </view>
+                                        <view>{{'主演:'+item.$orig.cast}}</view>
+                                        <view>{{item.g0+' 上映'}}</view>
+                                    </view>
+                                </view>
+                                <view class="text-right" style="flex-basis:170rpx;" wx:if="{{item.$orig.showStatus==1}}">
+                                    <button class="{{['cu-btn',item.$orig.status?'bgred':'bgblue']}}" style="margin:50% 10rpx 0 0;">{{''+(item.$orig.status?'特惠购票':'预售')+''}}</button>
+                                </view>
+                            </view>
+                        </view>
+                        <grace-empty-new bind:__l="__l" vueId="{{'baa77b08-5-'+index+','+'baa77b08-1'}}" vueSlots="{{['img','text']}}" wx:if="{{selectMenu1.length==0}}">
+                            <view class="empty-view" slot="img">
+                                <image class="empty-img" mode="widthFix" src="../../static/images/empty.png"></image>
+                            </view>
+                            <text class="grace-text-small grace-gray" slot="text">抱歉，没有搜索到任何数据</text>
+                        </grace-empty-new>
+                        <view class="grace-nowrap grace-flex-vcenter grace-border-b grace-fixed-top" style="background:#F6F7F8;" wx:if="{{index==1&&selectMenu1.length>0}}">
+                            <view class="graceSelectMenuItem">
+                                <grace-select-menu activeColor="#ff5756" bind:__l="__l" bind:close="__e" bind:select="__e" bind:showMenu="__e" data-event-opts="{{[ [ '^showMenu',[ ['showMenu1'] ] ],[ '^close',[ ['closeMenu1'] ] ],[ '^select',[ ['select1'] ] ] ]}}" fontSize="32rpx" items="{{selectMenu1}}" show="{{show1}}" vueId="{{'baa77b08-6-'+index+','+'baa77b08-1'}}"></grace-select-menu>
+                            </view>
+                        </view>
+                        <view class="film" style="margin-top:90rpx;" wx:if="{{index==1}}">
+                            <view class="list">
+                                <view bindtap="__e" class="cinema" data-cinemaid="{{item3}}" data-event-opts="{{[ [ 'tap',[ [ 'opencinema',['$event'] ] ] ] ]}}" wx:for="{{cinemalist}}" wx:for-index="index3" wx:for-item="item3" wx:key="index3">
+                                    <view class="left" style="text-align:left;">
+                                        <view class="name">{{item3.cinemaName}}</view>
+                                        <view class="address">{{item3.address}}</view>
+                                    </view>
+                                    <view class="right">
+                                        <text class="distance">{{item3.distance+'km'}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <grace-loading bind:__l="__l" loadingType="{{4}}" vueId="{{'baa77b08-7-'+index+','+'baa77b08-1'}}"></grace-loading>
+                    </scroll-view>
+                </swiper-item>
+            </swiper>
+            <sj-tab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="{{'baa77b08-8'+','+'baa77b08-1'}}" wx:if="{{tabBar&&setting.movie_tabbar_isindex==1}}"></sj-tab-bar>
+            <sj-movietab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="{{'baa77b08-9'+','+'baa77b08-1'}}" wx:if="{{tabBar&&setting.movie_tabbar_isindex==0}}"></sj-movietab-bar>
+        </view>
+    </grace-page>
+</view>

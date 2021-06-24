@@ -1,0 +1,14 @@
+{
+    "navigationBarBackgroundColor": "#161921",
+    "backgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "我的粉丝",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-nav-bar": "/graceUI/components/graceNavBar",
+        "grace-empty": "/graceUI/components/graceEmptyNew",
+        "grace-loading": "/graceUI/components/graceLoading"
+    }
+}

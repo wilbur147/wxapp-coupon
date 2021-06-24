@@ -1,0 +1,8 @@
+<scroll-view class="{{['data-v-91a185e8','grace-nav-bar',isCenter?'grace-nav-center':'']}}" scrollIntoView="{{'tab-'+currentIndex+autoLeft}}" scrollWithAnimation="{{scorllAnimation}}" scrollX="{{true}}" showScrollbar="{{false}}">
+    <view bindtap="__e" class="nav-item data-v-91a185e8" data-event-opts="{{[ [ 'tap',[ [ 'navchang',['$event'] ] ] ] ]}}" data-index="{{index}}" id="{{'tab-'+index}}" style="{{'width:'+(size<1?'auto':size+'rpx')+';'+'margin-right:'+margin+'rpx'+';'+'padding:'+'0rpx '+padding+';'}}" wx:for="{{items}}" wx:key="index">
+        <view class="{{['data-v-91a185e8','nav-item-title',currentIndex==index?'nav-active':'']}}" style="{{'color:'+(currentIndex==index?activeColor:color)+';'+'text-align:'+textAlign+';'+'line-height:'+lineHeight+';'+'font-size:'+(currentIndex==index?activeFontSize:fontSize)+';'+'font-weight:'+(currentIndex==index?activeFontWeight:'')+';'}}">{{item}}</view>
+        <view class="nav-active-line-wrap data-v-91a185e8" style="{{'justify-content:'+activeDirection+';'}}">
+            <view class="{{['nav-active-line data-v-91a185e8',currentIndex==index&&animatie?'grace-nav-scale':'']}}" style="{{'background:'+activeLineBg+';'+'width:'+activeLineWidth+';'+'height:'+activeLineHeight+';'+'border-radius:'+activeLineRadius+';'}}" wx:if="{{currentIndex==index}}"></view>
+        </view>
+    </view>
+</scroll-view>

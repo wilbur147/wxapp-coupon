@@ -1,0 +1,64 @@
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-direction-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.flex-1 {
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.flex-justify-center {
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.add-miniprogarm-box {
+    position: fixed;
+    top: 12rpx;
+    right: 100rpx;
+    background: rgba(0,0,0,.7);
+    z-index: 9999;
+    border-radius: 10rpx;
+    padding: 20rpx;
+    overflow: visible;
+    animation: fadein .6s both;
+}
+
+.add-miniprogarm-box::before {
+    content: "";
+    border: 16rpx solid transparent;
+    border-bottom: 16rpx solid rgba(0,0,0,.7);
+    position: absolute;
+    top: -28rpx;
+    right: 30rpx;
+}
+
+.add-miniprogarm-box .text {
+    margin-right: 20rpx;
+}
+
+.add-miniprogarm-box .close {
+    width: 26rpx;
+    height: 26rpx;
+    vertical-align: middle;
+    padding: 5rpx 0 5rpx 20rpx;
+    border-left: 1rpx solid #fff;
+}
+
+.font-26 {
+    font-size: 26rpx;
+}
+
+.color-white {
+    color: #fff;
+}

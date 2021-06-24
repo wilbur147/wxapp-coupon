@@ -1,0 +1,34 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" headerBG="#FFFFFF" isLoading="{{pageLoading}}" vueId="1333a3ce-1" vueSlots="{{['gBody']}}">
+        <view class="grace-flex-v1" id="gBody" slot="gBody">
+            <view id="nav" style="padding:20rpx 25rpx;">
+                <grace-nav-bar bind:__l="__l" bind:change="__e" currentIndex="{{swiperCurrentIndex}}" data-event-opts="{{[ [ '^change',[ ['navChange'] ] ] ]}}" items="{{tabs}}" vueId="{{'1333a3ce-2'+','+'1333a3ce-1'}}"></grace-nav-bar>
+            </view>
+            <swiper bindchange="__e" current="{{swiperCurrentIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" style="{{'height:'+mainHeight+'px'+';'}}">
+                <swiper-item wx:for="{{tabs}}" wx:key="index">
+                    <scroll-view bindscrolltolower="__e" data-event-opts="{{[ [ 'scrolltolower',[ [ 'scrollend',['$event'] ] ] ] ]}}" scrollY="{{true}}" style="{{'height:'+mainHeight+'px'+';'}}">
+                        <view style="margin-top:150rpx;" wx:if="{{loadingTypes[index]==5}}">
+                            <grace-empty bind:__l="__l" vueId="{{'1333a3ce-3-'+index+','+'1333a3ce-1'}}" vueSlots="{{['img','text']}}">
+                                <view class="empty-view" slot="img">
+                                    <image class="empty-img" mode="widthFix" src="../../../static/images/empty1.png"></image>
+                                </view>
+                                <text class="grace-text-small grace-margin-top grace-gray" slot="text">暂无粉丝信息~</text>
+                            </grace-empty>
+                        </view>
+                        <view class="grace-order grace-box-shadow" wx:for="{{orders[index]}}" wx:for-index="orderIndex" wx:for-item="order" wx:key="orderIndex">
+                            <view class="grace-order-goods">
+                                <image class="grace-order-goods-img" mode="widthFix" src="{{order.avatar}}" style="border-radius:50%;"></image>
+                                <text class="grace-order-goods-name">{{order.nickname}}</text>
+                                <text class="grace-order-goods-name">{{'ID：'+order.uid}}</text>
+                            </view>
+                            <view class="grace-order-footer grace-nowrap">
+                                <text class="grace-order-number" style="text-align:right;">{{'注册时间：'+order.create_time}}</text>
+                            </view>
+                        </view>
+                        <grace-loading bind:__l="__l" loadingType="{{loadingTypes[index]}}" vueId="{{'1333a3ce-4-'+index+','+'1333a3ce-1'}}"></grace-loading>
+                    </scroll-view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </grace-page>
+</view>

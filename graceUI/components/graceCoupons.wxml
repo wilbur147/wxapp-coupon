@@ -1,0 +1,18 @@
+<view class="grace-coupons data-v-bb2f5cea" style="{{'background:'+coupon.color+';'}}">
+    <view class="left data-v-bb2f5cea" style="{{'background:'+coupon.ltBg+';'+'height:'+coupon.height+';'}}">
+        <view class="number data-v-bb2f5cea">
+            <view class="show data-v-bb2f5cea" style="{{'color:'+coupon.color+';'}}">
+                <text class="data-v-bb2f5cea">{{coupon.unit}}</text>{{coupon.number}}</view>
+            <view class="txt data-v-bb2f5cea" style="{{'color:'+coupon.color+';'}}">{{coupon.txt}}</view>
+        </view>
+        <view class="body data-v-bb2f5cea">
+            <view class="title data-v-bb2f5cea">{{coupon.title}}</view>
+            <view class="desc data-v-bb2f5cea">{{coupon.desc}}</view>
+        </view>
+        <view class="status data-v-bb2f5cea" style="{{'background:'+coupon.color+';'}}" wx:if="{{coupon.drawed}}">{{coupon.drawed}}</view>
+    </view>
+    <view class="right data-v-bb2f5cea" style="{{'height:'+coupon.height+';'}}">{{coupon.btn}}</view>
+    <view class="sawtooth data-v-bb2f5cea" style="{{'height:'+coupon.height+';'}}">
+        <view class="circular data-v-bb2f5cea" wx:for="1234567890" wx:key="index"></view>
+    </view>
+</view>

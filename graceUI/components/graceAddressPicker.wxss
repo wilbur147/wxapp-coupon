@@ -1,0 +1,45 @@
+.gap.data-v-c633884a {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 998;
+}
+
+.gap-body.data-v-c633884a {
+    background-color: #fff;
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.gap-header.data-v-c633884a {
+    padding: 25rpx;
+}
+
+.gap-header-btn.data-v-c633884a {
+    width: 200rpx;
+    line-height: 38rpx;
+    height: 38rpx;
+    display: block;
+    font-size: 28rpx;
+}
+
+.gap-main.data-v-c633884a {
+    width: 100%;
+    height: 280px;
+}
+
+.gap-item.data-v-c633884a {
+    display: block;
+    width: 100%;
+    height: 35px;
+    font-size: 12px;
+    line-height: 35px;
+    overflow: hidden;
+    text-align: center;
+}

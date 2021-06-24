@@ -1,0 +1,11 @@
+{
+    "navigationBarBackgroundColor": "#161921",
+    "backgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "邀请排行榜",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage"
+    }
+}

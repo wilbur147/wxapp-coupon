@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/page",
+    "pages/index/list",
+    "pages/user/index",
+    "pages/user/movieorder",
+    "pages/user/creditorder",
+    "pages/kefu/webview",
+    "pages/kefu/index1",
+    "pages/kefu/index2",
+    "pages/movie/index",
+    "pages/shop/index",
+    "pages/shop/task"
+  ],
+  "window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#ff5756",
+		"navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+  }
+},
+  "tabBar": {
+    "custom": true,
+    "color": "#999",
+    "selectedColor": "#f86b4f",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/kefu/index1"
+      },
+      {
+        "pagePath": "pages/kefu/index2"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pagesA/",
+      "pages": [
+        "pages/eat/index",
+        "pages/elm/index",
+        "pages/userA/order",
+        "pages/userA/movieorderdetail",
+        "pages/userA/creditorderdetail",
+        "pages/userA/ranking",
+        "pages/userA/fans",
+        "pages/userA/info",
+        "pages/userA/account",
+        "pages/userA/cash",
+        "pages/userA/change",
+        "pages/meituan/index",
+        "pages/movieA/detail",
+        "pages/movieA/cinema",
+        "pages/movieA/page",
+        "pages/movieA/webview",
+        "pages/movieA/city",
+        "pages/movieA/order",
+        "pages/movieA/seat",
+        "pages/shopA/detail"
+      ]
+    },
+		{
+			"root": "subPages/",
+			"pages": [
+			  "pages/movie/movie",
+			  "pages/movie-detail/movie-detail",
+			  "pages/comment-page/comment-page",
+			  "pages/search-page/search-page"
+			]
+		},
+		{
+			"root": "pagesB/",
+			"pages": [
+			  "pages/HM-search/HM-search",
+			  "pages/shop-detail/shop-detail",
+			  "pages/shop-list/shop-list",
+			  "pages/shopping/shopping",
+			  "pages/shop-second-page/shop-second-page"
+			]
+		}
+  ],
+  "navigateToMiniProgramAppIdList": [],
+  "sitemapLocation": "sitemap.json"
+}

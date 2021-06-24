@@ -1,0 +1,35 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" headerBG="#FFFFFF" isLoading="{{pageLoading}}" vueId="34ed50d8-1" vueSlots="{{['gBody']}}">
+        <view class="ranking-list-wrap" slot="gBody" style="{{'margin-top: '+setting.ranking_list_top?setting.ranking_list_top:'0'+'rpx;'+'background-color: '+setting.ranking_list_bg?setting.ranking_list_bg:'#FFFFFF'+';'}}">
+            <view class="header-msg grace-space-between">
+                <view class="header-msg-item grace-rows grace-flex-center grace-flex-vcenter">
+                    <text class="header-msg-text">{{myfans}}</text>
+                    <text class="header-msg-text-small">粉丝</text>
+                </view>
+                <view class="header-msg-item grace-rows grace-flex-center">
+                    <image class="header-msg-face" mode="widthFix" src="{{userinfo.avatar}}"></image>
+                </view>
+                <view class="header-msg-item grace-rows grace-flex-center grace-flex-vcenter">
+                    <text class="header-msg-text">{{myranking}}</text>
+                </view>
+            </view>
+            <view class="ranking-lists">
+                <view class="ranking-lists-item grace-nowrap grace-flex-vcenter" wx:for="{{rankingList}}" wx:key="index">
+                    <view class="ranking-lists-num" style="color:#FF0036;" wx:if="{{index==0}}">{{index+1}}</view>
+                    <view class="ranking-lists-num" style="color:#FF9B00;" wx:if="{{index==1}}">{{index+1}}</view>
+                    <view class="ranking-lists-num" style="color:#FFCC00;" wx:if="{{index==2}}">{{index+1}}</view>
+                    <view class="ranking-lists-num" wx:if="{{index>2}}">{{index+1}}</view>
+                    <image class="ranking-lists-image" mode="widthFix" src="{{item.avatar}}" wx:if="{{item.avatar}}"></image>
+                    <image class="ranking-lists-image" mode="widthFix" src="../../../static/images/icon_nopic.png" wx:if="{{!item.avatar}}"></image>
+                    <view class="ranking-lists-content">
+                        <text class="ranking-lists-content-name">{{item.nickname}}</text>
+                    </view>
+                    <view class="ranking-lists-zan">
+                        <text class="grace-icons icon-friend ranking-lists-zan-icon"></text>
+                        <text class="ranking-lists-zan-num">{{item.invite_sum}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </grace-page>
+</view>

@@ -1,0 +1,11 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff5756",
+    "backgroundColor": "#ff5756",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "订单支付",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-count-down": "/graceUI/components/graceCountDown1"
+    }
+}

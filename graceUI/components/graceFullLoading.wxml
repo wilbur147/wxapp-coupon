@@ -1,0 +1,8 @@
+<view catchtap="__e" catchtouchmove="__e" class="grace-full-loading data-v-0650ca5a" data-event-opts="{{[ [ 'tap',[ [ 'stopFun',['$event'] ] ] ],[ 'touchmove',[ [ 'stopFun',['$event'] ] ] ] ]}}" style="{{'background:'+background+';'+'height:'+(graceFullLoading?'100%':'0px')+';'+'opacity:'+(graceFullLoading?1:0)+';'}}">
+    <view class="content data-v-0650ca5a">
+        <view class="image data-v-0650ca5a">
+            <image class="data-v-0650ca5a" mode="widthFix" src="{{logoUrl}}" style="{{'width:'+size+';'+'height:'+size+';'}}"></image>
+        </view>
+        <view class="text data-v-0650ca5a" style="{{'font-size:'+fontSize+';'+'color:'+textColor+';'}}">{{text}}</view>
+    </view>
+</view>

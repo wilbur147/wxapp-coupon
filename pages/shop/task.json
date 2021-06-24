@@ -1,0 +1,12 @@
+{
+    "navigationBarBackgroundColor": "#ff5756",
+    "backgroundColor": "#ff5756",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "任务中心",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-dialog": "/graceUI/components/graceDialog",
+        "grace-single-slider": "/graceUI/components/graceSingleSlider"
+    }
+}

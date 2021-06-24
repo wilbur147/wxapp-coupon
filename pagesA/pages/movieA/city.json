@@ -1,0 +1,11 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff5756",
+    "backgroundColor": "#ff5756",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "选择城市",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-search": "/graceUI/components/graceSearch"
+    }
+}

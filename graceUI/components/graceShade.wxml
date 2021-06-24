@@ -1,0 +1,5 @@
+<view catchtap="__e" catchtouchmove="__e" class="grace-shade data-v-737d7696" data-event-opts="{{[ [ 'tap',[ [ 'closeShade',['$event'] ] ] ],[ 'touchmove',[ [ 'stopfun',['$event'] ] ] ] ]}}" style="{{'z-index:'+zIndex+';'+'background:'+background+';'+'height:'+(shadeShow?'100%':'0px')+';'}}">
+    <view class="{{['data-v-737d7696',showInReal?'grace-shade-in':'grace-shade-out']}}">
+        <slot></slot>
+    </view>
+</view>

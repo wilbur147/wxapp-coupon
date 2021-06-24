@@ -1,0 +1,11 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" vueId="536c2a70-1" vueSlots="{{['gBody']}}">
+        <view slot="gBody" style="background-color:#FFFFFF;">
+            <view class="page-body grace-shadow" style="margin:0 20rpx;">
+                <view>
+                    <rich-text nodes="{{demoHtml}}" type="text"></rich-text>
+                </view>
+            </view>
+        </view>
+    </grace-page>
+</view>

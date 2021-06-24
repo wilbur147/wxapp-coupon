@@ -1,0 +1,106 @@
+.grace-add-list.data-v-6d05df1a {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grace-add-list-btn.data-v-6d05df1a {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.grace-add-list-btn-text.data-v-6d05df1a {
+    font-size: 26rpx;
+    line-height: 36rpx;
+    text-align: center;
+    color: #999;
+    width: 100%;
+}
+
+.grace-add-list-btn-icon.data-v-6d05df1a {
+    font-size: 80rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-bottom: 20rpx;
+    color: #999;
+}
+
+.grace-add-list-items.data-v-6d05df1a {
+    width: 222rpx;
+    height: 222rpx;
+    overflow: hidden;
+    margin-bottom: 10rpx;
+    margin-right: 11rpx;
+    background: #f6f7f8;
+    font-size: 0;
+    position: relative;
+    border-radius: 10rpx;
+}
+
+.grace-add-list-remove.data-v-6d05df1a {
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 40rpx;
+    position: absolute;
+    z-index: 5;
+    right: 10rpx;
+    top: 10rpx;
+    color: #888;
+}
+
+.upload-progress.data-v-6d05df1a {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 10rpx;
+    width: 180rpx;
+    padding: 0 21rpx;
+}
+
+.grace-add-list-reup.data-v-6d05df1a {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0rpx;
+    width: 222rpx;
+    height: 222rpx;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.3);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.grace-add-list-reup-icon.data-v-6d05df1a {
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    display: block;
+    font-size: 80rpx;
+    line-height: 100rpx;
+}
+
+.grace-add-list-reup-text.data-v-6d05df1a {
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    display: block;
+    font-size: 20rpx;
+    line-height: 30rpx;
+}
+
+.grace-add-list-img.data-v-6d05df1a {
+    width: 222rpx;
+    height: 222rpx;
+}

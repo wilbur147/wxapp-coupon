@@ -1,0 +1,12 @@
+<view catchtap="__e" catchtouchmove="__e" class="grace-dialog-shade data-v-0189a85c" data-event-opts="{{[ [ 'tap',[ [ 'closeDialogByShade',['$event'] ] ] ],[ 'touchmove',[ [ 'stopFun',['$event'] ] ] ] ]}}" style="{{'background-color:'+background+';'+'z-index:'+zIndex+';'+'height:'+(showIn?'100%':'0px')+';'}}">
+    <view catchtap="__e" class="{{['grace-dialog data-v-0189a85c',showIn?'grace-shade-in':'grace-shade-out']}}" data-event-opts="{{[ [ 'tap',[ [ 'stopFun',['$event'] ] ] ] ]}}" style="{{'width:'+width+';'+'border-radius:'+borderRadius+';'}}">
+        <view class="grace-dialog-title data-v-0189a85c" style="{{'font-size:'+titleSize+';'+'color:'+titleColor+';'+'font-weight:'+(titleWeight?'bold':'')+';'+'background:'+titleBg+';'+'line-height:'+titleHeight+';'}}" wx:if="{{isTitle}}">{{title}}</view>
+        <view catchtap="__e" class="grace-dialog-content data-v-0189a85c" data-event-opts="{{[ [ 'tap',[ [ 'stopFun',['$event'] ] ] ] ]}}">
+            <slot name="content"></slot>
+        </view>
+        <view catchtap="__e" class="grace-dialog-close-btn data-v-0189a85c" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['$event'] ] ] ] ]}}" style="{{'color:'+closeBtnColor+';'+'z-index:'+zIndex+1+';'}}" wx:if="{{isCloseBtn}}"></view>
+        <view class="data-v-0189a85c" wx:if="{{isBtns}}">
+            <slot name="btns"></slot>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,18 @@
+{
+    "navigationBarBackgroundColor": "#161921",
+    "backgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "用户中心",
+    "backgroundTextStyle": "dark",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "sj-tab-bar": "/components/sj-tab-bar/sj-tab-bar",
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-loading": "/graceUI/components/graceLoading",
+        "grace-full-loading": "/graceUI/components/graceFullLoading",
+        "grace-empty-new": "/graceUI/components/graceEmptyNew",
+        "grace-dialog": "/graceUI/components/graceDialog",
+        "grace-flex": "/graceUI/components/graceFlex"
+    }
+}

@@ -1,0 +1,81 @@
+<view class="w-100 data-v-4813b65c">
+    <view class="bg-f1 h-100vh data-v-4813b65c">
+        <view class="pt-f left-0 w-100 p-0-32 bg-white z1000 data-v-4813b65c" style="{{'height: 132rpx;top:0'}}">
+            <view class="data-v-4813b65c">
+                <view class="fz-34 fw-b pt-20 data-v-4813b65c">{{''+moviedetail.name+''}}</view>
+                <view class="mt-10 fz-28 color-666 data-v-4813b65c">{{''+showdetail.showDate+' '+showdetail.start_time+'-'+showdetail.end_time+' '+showdetail.showVersionType+''}}</view>
+            </view>
+        </view>
+        <movable-area class="pt-f left-0 data-v-4813b65c" style="{{'height:'+seatRow*40+350+'rpx;width: 750rpx;top:'+rpxNum*132+'px'}}">
+            <movable-view bindchange="__e" bindscale="__e" class="data-v-4813b65c" data-event-opts="{{[ [ 'change',[ [ 'onMove',['$event'] ] ] ],[ 'scale',[ [ 'onScale',['$event'] ] ] ] ]}}" direction="all" inertia="{{true}}" outOfBounds="{{true}}" scale="{{true}}" scaleMax="{{2}}" scaleMin="{{0.95}}" style="{{'width: 750rpx;height:'+seatRow*40+350+'rpx;'}}">
+                <view class="Stage dp-f jc-c ai-c fz-22 color-333 data-v-4813b65c">{{''+showdetail.hallName+''}}</view>
+                <view class="m-0-a mt-48 dp-f jc-c ai-c fz-20 color-999 b-1 br-5 data-v-4813b65c" style="width:100rpx;height:30rpx;">银幕中央</view>
+                <view class="pt-f pa-v-2 b-d-1 data-v-4813b65c" style="{{'height:'+seatRow*(20+seatSize*pxNum)+'rpx;top:165rpx;width:0'}}"></view>
+                <view class="dp-f jc-c mt-20 data-v-4813b65c" style="{{'width:'+boxWidth+'px;height:'+seatSize+'px'}}" wx:for="{{seatArray}}" wx:key="index">
+                    <view bindtap="__e" class="dp-ib data-v-4813b65c" data-event-opts="{{[ [ 'tap',[ [ 'handleChooseSeat',[index,col] ] ] ] ]}}" style="{{'width:'+seatSize+'px;height:'+seatSize+'px'}}" wx:for="{{item}}" wx:for-index="col" wx:for-item="seat" wx:key="col">
+                        <block wx:if="{{seat.lovestatus==0}}">
+                            <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/unselected.png" wx:if="{{seat.type===0}}"></image>
+                            <block wx:else>
+                                <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/selected.png" wx:if="{{seat.type===1}}"></image>
+                                <block wx:else>
+                                    <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/bought.png" wx:if="{{seat.type===2}}"></image>
+                                </block>
+                            </block>
+                        </block>
+                        <block wx:if="{{seat.lovestatus==1}}">
+                            <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/loveseatleft.png" wx:if="{{seat.type===0}}"></image>
+                            <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/icon_seat_lovers.png" wx:if="{{seat.type===1}}"></image>
+                            <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/loveseatysleft.png" wx:if="{{seat.type===2}}"></image>
+                        </block>
+                        <block wx:if="{{seat.lovestatus==2}}">
+                            <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/loveseatright.png" wx:if="{{seat.type===0}}"></image>
+                            <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/icon_seat_lovers.png" wx:if="{{seat.type===1}}"></image>
+                            <image class="w-100 h-100 data-v-4813b65c" mode="aspectFit" src="../../static/loveseatysright.png" wx:if="{{seat.type===2}}"></image>
+                        </block>
+                    </view>
+                </view>
+                <view class="pt-f bg-line br-15 over-h data-v-4813b65c" style="{{'left: '+10-moveX/scale+'px;top:109rpx;width:30rpx;'}}">
+                    <view class="w-100 dp-f ai-c jc-c fz-22 color-fff data-v-4813b65c" style="{{'height:'+seatSize+'px;margin-top:20rpx;'}}" wx:for="{{mArr}}" wx:for-index="mindex" wx:for-item="m" wx:key="mindex">{{m}}</view>
+                    <view class="data-v-4813b65c" style="{{'height: 20rpx;'}}"></view>
+                </view>
+            </movable-view>
+        </movable-area>
+        <view class="pt-f bottom-bar left-0 dp-f fd-cr z1000 data-v-4813b65c">
+            <view class="bg-white p-all-32 data-v-4813b65c">
+                <view class="dp-f ai-c jc-c fz-28 color-333 mb-20 data-v-4813b65c" wx:if="{{SelectNum===0}}">推荐选座<view bindtap="__e" class="b-1 br-5 dp-f ai-c jc-c fz-28 ml-20 data-v-4813b65c" data-event-opts="{{[ [ 'tap',[ [ 'smartChoose',[numindex+1] ] ] ] ]}}" style="width:106rpx;height:60rpx;" wx:for="{{4}}" wx:for-index="numindex" wx:for-item="n" wx:key="*this">{{''+numindex+1+'人'}}</view>
+                </view>
+                <view class="dp-f ai-c fw-w fz-28 color-333 mb-20 data-v-4813b65c" wx:if="{{SelectNum>0}}">
+                    <text class="data-v-4813b65c">已选</text>
+                    <view class="p-all-10 b-1 br-5 dp-f ai-c jc-c fz-28 ml-20 data-v-4813b65c" wx:for="{{optArr}}" wx:for-index="optindex" wx:for-item="optItem" wx:key="optindex">{{''+optItem.RowNum+'排'+optItem.ColumnNum+'座'+''}}</view>
+                </view>
+                <view bindtap="__e" class="{{['dp-f jc-c ai-c br-10 fz-34 color-fff data-v-4813b65c',SelectNum>0?'bg-red-1':'bg-unbtn']}}" data-event-opts="{{[ [ 'tap',[ [ 'openOrderPage',['$event'] ] ] ] ]}}" style="width:686rpx;height:90rpx;">
+                    <text class="originPrice data-v-4813b65c" wx:if="{{SelectNum>0}}">{{'￥'+yPrice+''}}</text>
+                    <text class="realPrice data-v-4813b65c">{{SelectNum>0?' 现价￥'+aPrice+'立即购买':'请选座位'}}</text>
+                </view>
+            </view>
+            <view class="dp-f jc-c ai-c mb-20 fz-28 data-v-4813b65c" wx:if="{{showTis}}">
+                <view class="dp-f jc-c ai-c m-0-10 data-v-4813b65c">
+                    <image class="data-v-4813b65c" mode="aspectFit" src="/static/unselected.png" style="{{'width:'+seatSize+'px;height:'+seatSize+'px'}}"></image>
+                    <label class="ml-10 _span data-v-4813b65c">可选</label>
+                </view>
+                <view class="dp-f jc-c ai-c m-0-10 data-v-4813b65c">
+                    <image class="data-v-4813b65c" mode="aspectFit" src="/static/bought.png" style="{{'width:'+seatSize+'px;height:'+seatSize+'px'}}"></image>
+                    <label class="ml-10 _span data-v-4813b65c">不可选</label>
+                </view>
+                <view class="dp-f jc-c ai-c m-0-10 data-v-4813b65c">
+                    <image class="data-v-4813b65c" mode="aspectFit" src="/static/selected.png" style="{{'width:'+seatSize+'px;height:'+seatSize+'px'}}"></image>
+                    <label class="ml-10 _span data-v-4813b65c">选中</label>
+                </view>
+                <view class="dp-f jc-c ai-c m-0-10 data-v-4813b65c">
+                    <image class="data-v-4813b65c" mode="aspectFit" src="/static/loveseatleft.png" style="{{'width:'+seatSize+'px;height:'+seatSize+'px'}}"></image>
+                    <image class="data-v-4813b65c" mode="aspectFit" src="/static/loveseatright.png" style="{{'width:'+seatSize+'px;height:'+seatSize+'px'}}"></image>
+                    <label class="ml-10 data-v-4813b65c">情侣座</label>
+                </view>
+                <view class="dp-f jc-c ai-c m-0-10 data-v-4813b65c">
+                    <image class="data-v-4813b65c" mode="aspectFit" src="/static/icon_seat_lovers.png" style="{{'width:'+seatSize+'px;height:'+seatSize+'px'}}"></image>
+                    <label class="ml-10 data-v-4813b65c">选中</label>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

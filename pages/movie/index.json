@@ -1,0 +1,19 @@
+{
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#161921",
+    "backgroundColor": "#FFFFFF",
+    "usingComponents": {
+        "sj-tab-bar": "/components/sj-tab-bar/sj-tab-bar",
+        "sj-movietab-bar": "/components/sj-movietab-bar/sj-movietab-bar",
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-header": "/graceUI/components/graceHeader",
+        "grace-nav-bar": "/graceUI/components/graceNavBar",
+        "grace-shade": "/graceUI/components/graceShade",
+        "grace-dialog": "/graceUI/components/graceDialog",
+        "grace-loading": "/graceUI/components/graceLoading",
+        "grace-flex": "/graceUI/components/graceFlex",
+        "grace-search": "/graceUI/components/graceSearch",
+        "grace-select-menu": "/graceUI/components/graceSelectMenu2",
+        "grace-empty-new": "/graceUI/components/graceEmptyNew"
+    }
+}

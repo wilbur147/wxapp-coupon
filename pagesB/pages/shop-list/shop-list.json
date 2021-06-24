@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-navbar": "/pagesB/uview-ui/components/u-navbar/u-navbar",
+    "u-search": "/pagesB/uview-ui/components/u-search/u-search",
+    "u-tabs-swiper": "/pagesB/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
+    "u-icon": "/pagesB/uview-ui/components/u-icon/u-icon",
+    "u-switch": "/pagesB/uview-ui/components/u-switch/u-switch",
+    "u-lazy-load": "/pagesB/uview-ui/components/u-lazy-load/u-lazy-load",
+    "u-loadmore": "/pagesB/uview-ui/components/u-loadmore/u-loadmore",
+    "u-empty": "/pagesB/uview-ui/components/u-empty/u-empty"
+  }
+}

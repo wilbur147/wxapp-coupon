@@ -1,0 +1,17 @@
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff5756",
+    "backgroundColor": "#ff5756",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "场次排期",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-header": "/graceUI/components/graceHeader",
+        "grace-nav-bar": "/graceUI/components/graceNavBar",
+        "grace-shade": "/graceUI/components/graceShade",
+        "grace-dialog": "/graceUI/components/graceDialog",
+        "grace-loading": "/graceUI/components/graceLoading",
+        "grace-flex": "/graceUI/components/graceFlex",
+        "grace-search": "/graceUI/components/graceSearch"
+    }
+}

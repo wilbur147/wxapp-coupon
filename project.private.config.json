@@ -1,0 +1,36 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "subPages/pages/movie/movie",
+          "pathName": "subPages/pages/movie/movie",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "subPages/pages/movie-detail/movie-detail",
+          "pathName": "subPages/pages/movie-detail/movie-detail",
+          "query": "movieId=343034",
+          "scene": null
+        },
+        {
+          "name": "pagesB/pages/shopping/shopping",
+          "pathName": "pagesB/pages/shopping/shopping",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

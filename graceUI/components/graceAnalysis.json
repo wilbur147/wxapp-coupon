@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "grace-link": "/graceUI/components/graceLink"
+    }
+}

@@ -1,0 +1,22 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" vueId="8e0fffdc-1" vueSlots="{{['gBody']}}">
+        <view class="grace-body" slot="gBody">
+            <view bindtap="__e" class="grace-news-list" data-event-opts="{{[ [ 'tap',[ [ 'openpageInfo',['$event'] ] ] ] ]}}" data-id="{{item.page_id}}" wx:for="{{pagelist}}" wx:key="index">
+                <view class="grace-news-item">
+                    <image class="grace-news-img grace-news-img-l" src="{{item.thumb}}"></image>
+                    <view class="grace-news-body">
+                        <text class="grace-news-title">{{item.title}}</text>
+                        <text class="grace-news-desc">{{item.desc}}</text>
+                    </view>
+                </view>
+            </view>
+            <grace-empty-new bind:__l="__l" vueId="{{'8e0fffdc-2'+','+'8e0fffdc-1'}}" vueSlots="{{['img','text']}}" wx:if="{{pagelist.length==0&&loadingType==4}}">
+                <view class="empty-view" slot="img" style="margin-top:50rpx;">
+                    <image class="empty-img" mode="widthFix" src="../../static/images/empty.png"></image>
+                </view>
+                <text class="grace-gray empty-text" slot="text">空空的什么也没有</text>
+            </grace-empty-new>
+            <grace-loading bind:__l="__l" loadingType="{{loadingType}}" vueId="{{'8e0fffdc-3'+','+'8e0fffdc-1'}}"></grace-loading>
+        </view>
+    </grace-page>
+</view>

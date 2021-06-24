@@ -1,0 +1,91 @@
+<view class="u-bg-gray data-v-5431af98">
+	<u-toast vue-id="3204c46e-1" data-ref="uToast" class="data-v-5431af98 vue-ref" bind:__l="__l"></u-toast>
+	<u-swiper vue-id="3204c46e-2" height="750" list="{{item.imges}}" mode="none" autoplay="{{false}}"
+		class="data-v-5431af98" bind:__l="__l"></u-swiper>
+	<view class="price-wrap-box data-v-5431af98">
+		<view class="price-wrap data-v-5431af98">
+			<view class="price-item-prefix data-v-5431af98">￥</view>
+			<view class="price-item data-v-5431af98">{{$root.m0}}</view>
+			<view class="price-item-end data-v-5431af98">券后</view>
+			<view class="item-price-origin data-v-5431af98">{{"￥"+$root.m1}}</view>
+			<block wx:if="{{item.sales}}">
+				<view class="item-sale data-v-5431af98">{{"已售"+item.sales+"笔"}}</view>
+			</block>
+		</view>
+		<view class="title-wrap data-v-5431af98" style="{{('height:'+boxTitleHe+'px;')}}">
+			<view class="item-cp data-v-5431af98">{{titleTag}}</view>
+			<view class="item-title data-v-5431af98">{{item.goodsName}}</view>
+		</view>
+		<block wx:if="{{item.discount>0}}">
+			<view data-event-opts="{{[['tap',[['mallTurnChain',['$event']]]]]}}"
+				class="item-coupon-wrap data-v-5431af98" bindtap="__e">
+				<view class="app data-v-5431af98">
+					<view class="wrapper data-v-5431af98">
+						<view class="content data-v-5431af98">
+							<view class="money data-v-5431af98"><text class="data-v-5431af98">¥</text>{{$root.m2+''}}
+							</view>
+							<view class="co data-v-5431af98">
+								<view class="co_w data-v-5431af98"></view>
+								<view class="title data-v-5431af98">隐藏优惠券</view>
+								<view class="co_l data-v-5431af98"></view>
+							</view>
+						</view>
+						<view class="split-line data-v-5431af98"></view>
+						<view class="tip data-v-5431af98">
+							<view class="conditions data-v-5431af98">领取时间</view>
+							<view class="get-time data-v-5431af98">{{$root.g0+"-"+$root.g1}}</view><button
+								class="useNow data-v-5431af98" bindtap>立即使用</button>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="shop-info-box data-v-5431af98">
+		<view class="item-shopname u-line-2 data-v-5431af98">{{item.shopName}}</view>
+		<view class="avg-wrap data-v-5431af98">
+			<view class="avg-title data-v-5431af98">{{"宝贝描述 "+item.avgDesc}}</view>
+			<u-icon class="avg-icon data-v-5431af98" vue-id="3204c46e-3"
+				name="{{item.avgDesc!='低'?'arrow-upward':'arrow-downward'}}" color="#f04044" size="12" bind:__l="__l">
+			</u-icon>
+			<view class="avg-title data-v-5431af98">{{"卖家服务 "+item.avgLgst}}</view>
+			<u-icon class="avg-icon data-v-5431af98" vue-id="3204c46e-4"
+				name="{{item.avgLgst!='低'?'arrow-upward':'arrow-downward'}}" color="#f04044" size="12" bind:__l="__l">
+			</u-icon>
+			<view class="avg-title data-v-5431af98">{{"物流服务 "+item.avgServ}}</view>
+			<u-icon class="avg-icon data-v-5431af98" vue-id="3204c46e-5"
+				name="{{item.avgServ!='低'?'arrow-upward':'arrow-downward'}}" color="#f04044" size="12" bind:__l="__l">
+			</u-icon>
+		</view>
+	</view>
+	<view class="shop-picturl-box data-v-5431af98">
+		<view data-event-opts="{{[['tap',[['hidChange',['$event']]]]]}}" class="picturl-title-wrap data-v-5431af98"
+			bindtap="__e">
+			<view class="title data-v-5431af98">宝贝详情</view>
+			<u-icon style="margin-left:74%;" vue-id="3204c46e-6" name="{{!hidStatus?'arrow-up':'arrow-down'}}"
+				color="#9a9c92" class="data-v-5431af98" bind:__l="__l"></u-icon>
+		</view>
+		<view hidden="{{!(!hidStatus)}}" class="picturl-list-wrap data-v-5431af98">
+			<block wx:for="{{item.imges}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+				<view class="data-v-5431af98" style="height: 750rpx;">
+					<image vue-id="{{'3204c46e-7-'+index}}" style="width: 100%;height: 750rpx;" src="{{item}}"
+						class="data-v-5431af98" bind:__l="__l"></image>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="footer-features-box data-v-5431af98">
+		<view data-event-opts="{{[['tap',[['toShopIndex',['$event']]]]]}}" class="shop-index-wrap data-v-5431af98"
+			bindtap="__e">
+			<view class="item-index-icon data-v-5431af98">
+				<u-icon vue-id="3204c46e-8" name="home" color="#5e5e5e" size="60" class="data-v-5431af98"
+					bind:__l="__l"></u-icon>
+			</view>
+			<view class="item-index-title data-v-5431af98">首页</view>
+		</view>
+		<view class="shop-buy-wrap data-v-5431af98">
+			<view data-event-opts="{{[['tap',[['mallTurnChain',['$event']]]]]}}" class="shop-btn data-v-5431af98"
+				bindtap="__e">领券下单</view>
+		</view>
+	</view>
+</view>

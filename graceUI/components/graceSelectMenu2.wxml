@@ -1,0 +1,23 @@
+<view class="grace-select-menu-wrap data-v-0dbea036">
+    <view catchtap="__e" class="grace-select-menu-title data-v-0dbea036" data-event-opts="{{[ [ 'tap',[ [ 'showMenu',['$event'] ] ] ] ]}}" id="menuMain">
+        <text class="data-v-0dbea036" style="{{'font-size:'+fontSize+';'}}">{{items[currentIndex]}}</text>
+        <text class="grace-select-menu-icon icon-allow-b data-v-0dbea036" wx:if="{{!show}}"></text>
+        <text class="grace-select-menu-icon icon-allow-t data-v-0dbea036" wx:if="{{show}}"></text>
+    </view>
+    <view catchtap="__e" catchtouchmove="__e" class="grace-select-menu data-v-0dbea036" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ],[ 'touchmove',[ [ 'stopfun',['$event'] ] ] ] ]}}" style="{{'top:'+top+'px'+';'+'height:'+heightIn+'px'+';'+'z-index:'+zIndex+';'}}" wx:if="{{show}}">
+        <view class="data-v-0dbea036" style="height:92rpx;width:100%;flex-shrink:0;"></view>
+        <scroll-view class="grace-select-menus data-v-0dbea036" scrollY="{{true}}" style="{{'padding:'+padding+';'}}">
+            <view catchtap="__e" class="grace-select-item data-v-0dbea036" data-event-opts="{{[ [ 'tap',[ [ 'stopfun',['$event'] ] ] ] ]}}" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;" wx:if="{{isInput}}">
+                <view class="grace-select-input-wrap data-v-0dbea036">
+                    <input bindconfirm="__e" bindinput="__e" class="grace-select-input data-v-0dbea036" data-event-opts="{{[ [ 'confirm',[ [ 'addTag',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','inputVal','$event',[] ] ] ] ] ]}}" placeholder="{{placeholder}}" type="text" value="{{inputVal}}"></input>
+                </view>
+                <view catchtap="__e" class="grace-select-input-btn data-v-0dbea036" data-event-opts="{{[ [ 'tap',[ [ 'addTag',['$event'] ] ] ] ]}}">{{addBtnName}}</view>
+            </view>
+            <view catchtap="__e" class="{{['data-v-0dbea036','grace-select-item',index==currentIndex?'grace-selected':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'select',['$event'] ] ] ] ]}}" data-index="{{index}}" style="{{'color:'+(index==currentIndex?activeColor:color)+';'}}" wx:for="{{items}}" wx:key="index">
+                <text class="grace-selected-icon data-v-0dbea036" wx:if="{{index==currentIndex}}"></text>
+                <text class="data-v-0dbea036" style="{{'font-size:'+fontSize+';'}}">{{item}}</text>
+            </view>
+            <view class="data-v-0dbea036" style="height:100rpx;width:100%;"></view>
+        </scroll-view>
+    </view>
+</view>

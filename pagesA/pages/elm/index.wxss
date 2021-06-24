@@ -1,0 +1,1002 @@
+.waimai {
+    background-color: #fdc413;
+    padding-bottom: 0rpx;
+}
+
+.waimai .nav-bar-tabs,.waimai .nav-bar-tabs .item {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 240rpx;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.waimai .nav-bar-tabs .item {
+    width: 120rpx;
+    height: 64rpx;
+    position: relative;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.waimai .nav-bar-tabs .item .title {
+    font-size: 28rpx;
+    letter-spacing: 1rpx;
+    color: hsla(0,0%,100%,.85);
+}
+
+.waimai .nav-bar-tabs .item.active {
+    font-weight: 600;
+}
+
+.waimai .nav-bar-tabs .item.active .title {
+    color: #fff;
+}
+
+.waimai .nav-bar-tabs .item.active::after {
+    content: "";
+    width: 40rpx;
+    height: 4rpx;
+    border-radius: 2rpx;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -20rpx;
+}
+
+.waimai .wm-banner {
+    position: relative;
+}
+
+.waimai .wm-banner .img {
+    width: 100%;
+    display: block;
+}
+
+.waimai .wm-coupon {
+    margin: 0 44rpx;
+    overflow: hidden;
+}
+
+.waimai .wm-coupon .header,.waimai .wm-coupon .header .step {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.waimai .wm-coupon .header {
+    height: 212rpx;
+    position: relative;
+    background-color: #fff;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    border-bottom: 3rpx dashed #fdc413;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.waimai .wm-coupon .header::after,.waimai .wm-coupon .header::before {
+    content: "";
+    position: absolute;
+    bottom: -22rpx;
+    width: 44rpx;
+    height: 44rpx;
+    border-radius: 50%;
+    background-color: #027dd8;
+}
+
+.waimai .wm-coupon .header::before {
+    left: -22rpx;
+}
+
+.waimai .wm-coupon .header::after {
+    right: -22rpx;
+}
+
+.waimai .wm-coupon .header .step {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.waimai .wm-coupon .header .step .img {
+    width: 84rpx;
+    height: 84rpx;
+}
+
+.waimai .wm-coupon .header .step .span {
+    font-weight: 600;
+    margin-top: 16rpx;
+    letter-spacing: 2rpx;
+}
+
+.waimai .wm-coupon .link {
+    width: 40rpx;
+    margin: 0 32rpx;
+    position: relative;
+    top: -24rpx;
+}
+
+.waimai .wm-coupon .content {
+    height: 520rpx;
+    position: relative;
+    background-color: #fff;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    text-align: center;
+}
+
+.waimai .wm-coupon .content::after,.waimai .wm-coupon .content::before {
+    content: "";
+    position: absolute;
+    top: -22rpx;
+    width: 44rpx;
+    height: 44rpx;
+    border-radius: 50%;
+    background-color: #027dd8;
+}
+
+.waimai .wm-coupon .content::before {
+    left: -22rpx;
+}
+
+.waimai .wm-coupon .content::after {
+    right: -22rpx;
+}
+
+.waimai .wm-coupon .content .qrcode {
+    width: 320rpx;
+    height: 320rpx;
+    margin-top: 32rpx;
+}
+
+.waimai .wm-coupon .content .qrcode.round {
+    border-radius: 50%;
+}
+
+.waimai .wm-btns,.waimai .wm-coupon .btn-wrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.waimai .wm-coupon .btn-wrapper {
+    position: absolute;
+    bottom: 48rpx;
+    left: 0;
+    right: 0;
+    padding: 0 88rpx;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.waimai .wm-coupon .btn-wrapper .btn {
+    border-radius: 50rpx;
+    font-size: 38rpx;
+    letter-spacing: 1rpx;
+    font-weight: 600;
+}
+
+.waimai .wm-btns {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 30rpx 48rpx 0;
+}
+
+.waimai .wm-btns .btn {
+    display: block;
+    width: calc(50% - 15rpx);
+    height: 76rpx;
+    line-height: 76rpx;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+    font-weight: 600;
+    text-align: center;
+}
+
+.waimai .wm-btns .left {
+    background-color: #ff4301;
+    color: #fff;
+}
+
+.waimai .wm-btns .right {
+    background-color: #fff;
+    color: #1b4e63;
+}
+
+.waimai .wm-btns .disabled {
+    background-color: #ccc;
+    color: #943d00;
+}
+
+.waimai .wm-tips {
+    margin: 0 80rpx;
+    color: hsla(0,0%,100%,.85);
+    padding: 50rpx 0;
+    letter-spacing: 1rpx;
+    word-break: break-all;
+}
+
+.waimai .wm-tips .h3 {
+    font-size: 28rpx;
+}
+
+.waimai .wm-tips .p {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.waimai .wm-tips .p .em {
+    color: #ff4301;
+}
+
+.top-view {
+    color: #fff;
+    position: fixed;
+    height: 88rpx;
+    width: 100%;
+    text-align: center;
+    z-index: 99999;
+}
+
+.top-view-dark {
+    background: #000;
+}
+
+.top-view-search {
+    position: absolute;
+    display: block;
+    color: #fff;
+    left: 25rpx;
+    width: 100rpx!important;
+    line-height: 60rpx;
+    height: 60rpx;
+    background: hsla(0,0%,100%,.3);
+    border-radius: 100rpx;
+    font-size: 30rpx;
+    box-sizing: border-box;
+    margin-top: 16rpx;
+    padding: 0;
+}
+
+.top-view-search::after {
+    display: none;
+}
+
+.waimai-sc {
+    padding-bottom: 0rpx;
+}
+
+.waimai-sc .nav-bar-tabs,.waimai-sc .nav-bar-tabs .item {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 240rpx;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.waimai-sc .nav-bar-tabs .item {
+    width: 120rpx;
+    height: 64rpx;
+    position: relative;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.waimai-sc .nav-bar-tabs .item .title {
+    font-size: 28rpx;
+    letter-spacing: 1rpx;
+    color: hsla(0,0%,100%,.85);
+}
+
+.waimai-sc .nav-bar-tabs .item.active {
+    font-weight: 600;
+}
+
+.waimai-sc .nav-bar-tabs .item.active .title {
+    color: #fff;
+}
+
+.waimai-sc .nav-bar-tabs .item.active::after {
+    content: "";
+    width: 40rpx;
+    height: 4rpx;
+    border-radius: 2rpx;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -20rpx;
+}
+
+.waimai-sc .wm-banner {
+    position: relative;
+}
+
+.waimai-sc .wm-banner .img {
+    width: 100%;
+    display: block;
+}
+
+.waimai-sc .wm-coupon {
+    margin: 0 44rpx;
+    overflow: hidden;
+}
+
+.waimai-sc .wm-coupon .header,.waimai-sc .wm-coupon .header .step {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.waimai-sc .wm-coupon .header {
+    height: 212rpx;
+    position: relative;
+    background-color: #fff;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    border-bottom: 3rpx dashed #027dd8;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.waimai-sc .wm-coupon .header::after,.waimai-sc .wm-coupon .header::before {
+    content: "";
+    position: absolute;
+    bottom: -22rpx;
+    width: 44rpx;
+    height: 44rpx;
+    border-radius: 50%;
+    background-color: #4ddba9;
+}
+
+.waimai-sc .wm-coupon .header::before {
+    left: -22rpx;
+}
+
+.waimai-sc .wm-coupon .header::after {
+    right: -22rpx;
+}
+
+.waimai-sc .wm-coupon .header .step {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.waimai-sc .wm-coupon .header .step .img {
+    width: 84rpx;
+    height: 84rpx;
+}
+
+.waimai-sc .wm-coupon .header .step .span {
+    font-size: 24rpx;
+    color: #000;
+    font-weight: 600;
+    margin-top: 16rpx;
+    letter-spacing: 2rpx;
+}
+
+.waimai-sc .wm-coupon .link {
+    width: 40rpx;
+    margin: 0 32rpx;
+    position: relative;
+    top: -24rpx;
+}
+
+.waimai-sc .wm-coupon .content {
+    height: 520rpx;
+    position: relative;
+    background-color: #fff;
+    border-bottom-left-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+    text-align: center;
+}
+
+.waimai-sc .wm-coupon .content::after,.waimai-sc .wm-coupon .content::before {
+    content: "";
+    position: absolute;
+    top: -22rpx;
+    width: 44rpx;
+    height: 44rpx;
+    border-radius: 50%;
+    background-color: #4ddba9;
+}
+
+.waimai-sc .wm-coupon .content::before {
+    left: -22rpx;
+}
+
+.waimai-sc .wm-coupon .content::after {
+    right: -22rpx;
+}
+
+.waimai-sc .wm-coupon .content .qrcode {
+    width: 320rpx;
+    height: 320rpx;
+    margin-top: 32rpx;
+}
+
+.waimai-sc .wm-coupon .content .qrcode.round {
+    border-radius: 50%;
+}
+
+.waimai-sc .wm-btns,.waimai-sc .wm-coupon .btn-wrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.waimai-sc .wm-coupon .btn-wrapper {
+    position: absolute;
+    bottom: 48rpx;
+    left: 0;
+    right: 0;
+    padding: 0 88rpx;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.waimai-sc .wm-coupon .btn-wrapper .btn {
+    border-radius: 50rpx;
+    background-color: #32b766;
+    color: #fff;
+    font-size: 38rpx;
+    letter-spacing: 1rpx;
+    font-weight: 600;
+}
+
+.waimai-sc .wm-btns {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 30rpx 48rpx 0;
+}
+
+.waimai-sc .wm-btns .btn {
+    display: block;
+    width: calc(50% - 15rpx);
+    height: 76rpx;
+    line-height: 76rpx;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+    font-weight: 600;
+    text-align: center;
+}
+
+.waimai-sc .wm-btns .left {
+    color: #9c7b44;
+    background: #fdf4ca;
+    background: -webkit-linear-gradient(0deg,#f7c277,#fdf4ca);
+    background: -webkit-gradient(linear,left bottom,left top,from(#f7c277),to(#fdf4ca));
+    background: -webkit-linear-gradient(bottom,#f7c277,#fdf4ca);
+    background: linear-gradient(0deg,#f7c277,#fdf4ca);
+}
+
+.waimai-sc .wm-btns .right {
+    background-color: #fff;
+    color: #44a718;
+}
+
+.waimai-sc .wm-btns .disabled {
+    background-color: #ccc;
+    color: #943d00;
+}
+
+.waimai-sc .wm-tips {
+    margin: 0 80rpx;
+    color: hsla(0,0%,100%,.85);
+    padding: 50rpx 0;
+    letter-spacing: 1rpx;
+    word-break: break-all;
+}
+
+.waimai-sc .wm-tips .h3 {
+    font-size: 28rpx;
+}
+
+.waimai-sc .wm-tips .p {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.waimai-sc .wm-tips .p .em {
+    color: #ff4301;
+}
+
+.box-alert-login {
+    border-top-left-radius: 4rpx!important;
+    border-top-right-radius: 4rpx!important;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.box-alert-login .hd {
+    width: 100%;
+}
+
+.box-alert-login .alert-banner {
+    width: 100%;
+    height: 230rpx;
+}
+
+.box-alert-login .bd {
+    padding: 20rpx 50rpx;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    letter-spacing: 3rpx;
+}
+
+.grace-dialog-buttons-login {
+    padding: 0!important;
+    font-weight: 400;
+    font-size: 34rpx;
+    color: #666;
+    background: #fff;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.poster-dialog {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.35);
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.poster-dialog .content {
+    width: 650rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+}
+
+.poster-dialog .content .header {
+    height: 40rpx;
+}
+
+.poster-dialog,.poster-dialog .content .body {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.poster-dialog .content .body {
+    padding: 0 50rpx;
+    box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.poster-dialog .content .body .img {
+    width: 80%;
+}
+
+.poster-dialog .content .body .tip {
+    font-size: 25rpx;
+    color: #f60;
+    margin: 16rpx 0;
+}
+
+.poster-dialog .content .footer,.poster-dialog .content .footer .btn {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.poster-dialog .content .footer {
+    text-align: center;
+    height: 120rpx;
+    border-top: 1rpx solid #e9e9e9;
+}
+
+.poster-dialog .content .footer .btn {
+    height: 100%;
+    font-size: 34rpx;
+    color: grey;
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.poster-dialog .content .footer .divider {
+    border-right: 1rpx solid #e9e9e9;
+}
+
+.box-alert-login {
+    border-top-left-radius: 4rpx!important;
+    border-top-right-radius: 4rpx!important;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.box-alert-login .hd {
+    width: 100%;
+}
+
+.box-alert-login .alert-banner {
+    width: 100%;
+    height: 230rpx;
+}
+
+.box-alert-login .bd {
+    padding: 20rpx 50rpx;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    letter-spacing: 3rpx;
+}
+
+.grace-dialog-buttons-login {
+    padding: 0!important;
+    font-weight: 400;
+    font-size: 34rpx;
+    color: #666;
+    background: #fff;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.content2 {
+    padding: 30rpx;
+    line-height: 50rpx;
+    font-size: 26rpx;
+}
+
+.grace-step-item {
+    padding: 10rpx 10rpx;
+    width: 130rpx;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.grace-step-icon {
+    width: 100rpx;
+    font-size: 70rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    margin: 10rpx;
+    border-radius: 100%;
+    background-color: #f5f6f7;
+    color: #fff;
+}
+
+.grace-step-text {
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    color: #a5a7b2;
+}
+
+.grace-step-line {
+    width: 500rpx;
+    height: 45rpx;
+    border-bottom: 1px solid #a5a7b2;
+}
+
+.grace-step-line-active {
+    border-color: #ce0000;
+}
+
+.grace-step-arrow-point {
+    line-height: 140rpx;
+    text-align: center;
+    width: 750rpx;
+    font-size: 60rpx;
+    color: #d6d6da;
+}
+
+.at-float-layout,.layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.layer,.layer .auth-dialog .body {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.layer {
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.35);
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 1100;
+}
+
+.layer .auth-dialog {
+    width: 560rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 8rpx;
+}
+
+.layer .auth-dialog .body {
+    padding: 30rpx;
+}
+
+.layer .auth-dialog .avatar {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -90rpx;
+}
+
+.layer .auth-dialog .nickname {
+    font-size: 28rpx;
+    margin-top: 22rpx;
+    text-align: center;
+}
+
+.layer .auth-dialog .btn-wrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 66rpx;
+    width: 100%;
+}
+
+.layer .auth-dialog .btn-wrapper .btn {
+    margin: 0 8rpx;
+    font-size: 28rpx;
+    height: 84rpx;
+    line-height: 84rpx;
+    border-radius: 38rpx;
+}
+
+.layer .auth-dialog .btn-wrapper .btn.login {
+    -webkit-box-flex: 1;
+    flex: 1;
+    color: #fff;
+    background-color: #2aa121;
+    border: 0;
+}
+
+.layer .auth-dialog .cancel-login {
+    margin-top: 28rpx;
+    color: #666;
+    font-size: 28rpx;
+}
+
+.layer .auth-dialog .agreement {
+    margin-top: 34rpx;
+    font-size: 24rpx;
+    color: #888;
+    letter-spacing: 0.2rpx;
+}
+
+.layer .bind-dialog {
+    width: 560rpx;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.layer .bind-dialog .head {
+    position: relative;
+    background: -webkit-gradient(linear,left top,right top,from(#fe7026),to(#f11715));
+    background: -webkit-linear-gradient(left,#fe7026,#f11715);
+    background: linear-gradient(90deg,#fe7026,#f11715);
+    padding: 20rpx 0;
+}
+
+.layer .bind-dialog .head .title {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 60rpx;
+    color: #fff;
+}
+
+.layer .bind-dialog .body {
+    background-color: #fff;
+    padding: 20rpx 0 50rpx;
+}
+
+.layer .bind-dialog .body .content {
+    padding: 25rpx 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.layer .bind-dialog .body .content .item {
+    position: relative;
+}
+
+.layer .bind-dialog .body .content .item .input {
+    height: 84rpx;
+    line-height: 84rpx;
+    font-size: 26rpx;
+    border-bottom: 1rpx solid #e9e9e9;
+    box-sizing: border-box;
+}
+
+.layer .bind-dialog .body .content .item .extra {
+    position: absolute;
+    top: 12rpx;
+    right: 0;
+    width: 160rpx;
+    height: 60rpx;
+    border: 1rpx solid #f01614;
+    background-color: #fff;
+    color: #f01614;
+    font-size: 26rpx;
+    text-align: center;
+    border-radius: 6rpx;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.layer .bind-dialog .body .button-wrap,.layer .bind-dialog .body .button-wrap .button,.layer .bind-dialog .body .content .item .extra {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.layer .bind-dialog .body .button-wrap .button {
+    width: 415rpx;
+    height: 92rpx;
+    border-radius: 46rpx;
+    background: -webkit-gradient(linear,left top,right top,from(#fe7026),to(#f11715));
+    background: -webkit-linear-gradient(left,#fe7026,#f11715);
+    background: linear-gradient(90deg,#fe7026,#f11715);
+    color: #fff;
+    position: relative;
+    font-size: 33rpx;
+    box-shadow: 0 1rpx 8rpx 2rpx rgba(246,66,26,.5);
+}
+
+.at-float-layout {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    z-index: 5050;
+    transition: visibility .3s cubic-bezier(.36,.66,.04,1);
+}
+
+.at-float-layout__overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,.3);
+    opacity: 0;
+    transition: opacity .15s ease-in;
+}
+
+.at-float-layout__container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translate3d(0,100%,0);
+    transition: transform .3s cubic-bezier(.36,.66,.04,1);
+    transition: transform .3s cubic-bezier(.36,.66,.04,1),-webkit-transform .3s cubic-bezier(.36,.66,.04,1);
+    transition: transform .3s cubic-bezier(.36,.66,.04,1),-webkit-transform .3s cubic-bezier(.36,.66,.04,1);
+}
+
+.at-float-layout .layout-body {
+    font-size: 28rpx;
+    height: 464rpx;
+}
+
+.at-float-layout--active {
+    visibility: visible;
+}
+
+.at-float-layout--active .at-float-layout__overlay {
+    opacity: 1;
+}
+
+.at-float-layout--active .at-float-layout__container {
+    transform: translateZ(0);
+}
+
+.layout-opacity {
+    height: 81rpx;
+}
+
+.layout-body {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.layout-body .avatar {
+    position: absolute;
+    background-color: #fff;
+    width: 162rpx;
+    height: 162rpx;
+    border-radius: 50%;
+    top: -81rpx;
+    border: 20rpx solid #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.layout-body .nickname {
+    margin-top: 95rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.layout-body .btn {
+    width: 542rpx;
+    height: 96rpx;
+    border-radius: 48rpx;
+    color: #fff;
+    margin-top: 55rpx;
+}
+
+.layout-body .btn.taoker {
+    background-color: #ed8f36;
+}
+
+.layout-body .btn.takeout {
+    background-color: #ff5b73;
+}
+
+.layout-body .btn::after {
+    border: 0;
+}
+
+.layout-body .cancel-login {
+    color: #666;
+    font-size: 30rpx;
+    margin-top: 38rpx;
+}
+
+.layout-body .agreement {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-top: 50rpx;
+}
+
+.layout-body .agreement .line {
+    width: 41rpx;
+    height: 1rpx;
+    background-color: #666;
+}
+
+.layout-body .agreement .word {
+    color: #666;
+    font-size: 22rpx;
+    margin: 0 30rpx;
+}

@@ -1,0 +1,20 @@
+.grace-countdown.data-v-3f2e7e6c {
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.grace-countdown-splitor.data-v-3f2e7e6c {
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0 5rpx;
+}
+
+.grace-countdown-numbers.data-v-3f2e7e6c {
+    border-radius: 8rpx;
+    margin: 0;
+    text-align: center;
+    border: 1px solid #000;
+    font-size: 22rpx;
+}

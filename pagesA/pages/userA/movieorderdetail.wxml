@@ -1,0 +1,89 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" headerBG="#FFFFFF" vueId="badb7e02-1" vueSlots="{{['gBody']}}">
+        <view class="grace-flex-v1" id="gBody" slot="gBody" style="background-color:#ff5756;">
+            <view class="moviedetail">
+                <view class="moviecontainer">
+                    <view class="header">
+                        <view class="content">
+                            <view class="left">
+                                <view class="name">{{order.filmName}}</view>
+                                <view class="item">{{order.showTime}}</view>
+                                <view class="item">{{order.cinemaName}}</view>
+                                <view class="item">{{order.hallName}}</view>
+                                <view class="item">{{order.seat}}</view>
+                            </view>
+                            <view class="right">
+                                <image class="pic" src="{{order.filmPic}}"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="moviebody" wx:if="{{order.orderStatus==2}}">
+                        <view class="movietitle">
+                            <text class="label">受理中</text>
+                        </view>
+                        <view class="item left">
+                            <view class="code orange">正在受理您的订单</view>
+                            <view class="code orange">[大约需要5分钟]</view>
+                        </view>
+                    </view>
+                    <view class="moviebody" wx:if="{{order.orderStatus==3}}">
+                        <view class="movietitle">
+                            <text class="label">出票中</text>
+                        </view>
+                        <view class="item left">
+                            <view class="code orange">正在为您出票，请耐心等待…</view>
+                            <view class="code orange">[大约需要60分钟]</view>
+                        </view>
+                    </view>
+                    <view class="moviebody" wx:if="{{order.orderStatus==10}}">
+                        <view class="movietitle">
+                            <text class="label">订单关闭</text>
+                        </view>
+                        <view class="item left">
+                            <view class="code">您的订单受理失败，请留意系统退款。如有疑问，请联系客服处理。</view>
+                        </view>
+                    </view>
+                    <view class="moviebody" wx:if="{{order.ticketCode.length}}">
+                        <view class="movietitle">
+                            <text class="label">取票码</text>
+                            <text bindtap="__e" class="extra red" data-event-opts="{{[ [ 'tap',[ [ 'openScreenshotPage',['$event'] ] ] ] ]}}" style="display:none;" wx:if="{{order.cinemaOrigin!=2}}">无法出票，点这里 >></text>
+                        </view>
+                        <view class="item" wx:for="{{order.ticketImage}}" wx:key="index">
+                            <view style="padding:0 70rpx;">
+                                <grace-img bind:__l="__l" height="{{0}}" src="{{item}}" vueId="{{'badb7e02-2-'+index+','+'badb7e02-1'}}" width="{{500}}"></grace-img>
+                            </view>
+                            <view class="code">
+                                <view class="value">序列号或验证码：<view class="splitCode">
+                                        <text class="chunk">{{order.ticketCode[index]}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="item">
+                            <view class="code orange bold">
+                                <text class="normal">出票问题请联系</text>影院前台<text class="normal">，还有问题请</text>
+                                <button class="btn" openType="contact" wx:if="{{mp.miniKfStatus}}">
+                                    <text class="grace-icons icon-kf3 icon-font iconfont-kefu"></text>咨询客服</button>
+                                <text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'openServiceDialog',['$event'] ] ] ] ]}}" wx:else>
+                                    <text class="grace-icons icon-kf3 icon-font iconfont-kefu"></text>咨询客服</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="footer">
+                        <view class="movietitle">
+                            <text class="label">订单详情</text>
+                        </view>
+                        <view class="cell">
+                            <text>订单号码：</text>
+                            <text>{{order.userOrderId}}</text>
+                        </view>
+                        <view class="cell">
+                            <text>购买时间：</text>
+                            <text>{{order.pay_time}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </grace-page>
+</view>

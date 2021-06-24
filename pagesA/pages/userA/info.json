@@ -1,0 +1,13 @@
+{
+    "navigationBarBackgroundColor": "#161921",
+    "backgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "个人资料",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-address-picker": "/graceUI/components/graceAddressPicker",
+        "grace-select-img-and-upload": "/graceUI/components/graceSelectImgAndUpload"
+    }
+}

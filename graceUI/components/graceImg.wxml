@@ -1,0 +1,4 @@
+<view class="grace-img data-v-4c0bf1ad" style="{{'width:'+width+'rpx'+';'+'height:'+(height==0?imgHeight+'rpx':height+'rpx')+';'}}">
+    <image bindload="__e" class="data-v-4c0bf1ad" data-event-opts="{{[ [ 'load',[ [ 'imgLoad',['$event'] ] ] ] ]}}" src="{{src}}" style="{{'width:'+width+'rpx'+';'+'height:'+imgHeight+'rpx'+';'+'border-radius:'+borderRadius+';'+'opacity:'+opacity+';'}}"></image>
+    <text class="{{['grace-img-loading grace-icons data-v-4c0bf1ad',animate?'grace-shade-out':'']}}" style="{{'width:'+width+'rpx'+';'+'height:'+(height==0?imgHeight+'rpx':height+'rpx')+';'+'line-height:'+(height==0?imgHeight+'rpx':height+'rpx')+';'+'border-radius:'+borderRadius+';'}}" wx:if="{{isLoading}}"></text>
+</view>

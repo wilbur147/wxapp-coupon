@@ -1,0 +1,85 @@
+@-webkit-keyframes grace-fade-data-v-0650ca5a {
+    0% {
+        opacity: .6;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .6;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .6;
+    }
+}
+
+@keyframes grace-fade-data-v-0650ca5a {
+    0% {
+        opacity: .6;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .6;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .6;
+    }
+}
+
+.grace-full-loading.data-v-0650ca5a {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.grace-full-loading .content.data-v-0650ca5a {
+    width: 300rpx;
+    height: auto;
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation: grace-fade-data-v-0650ca5a 3.5s infinite linear;
+    opacity: .6;
+    padding: 10rpx;
+}
+
+.grace-full-loading .image.data-v-0650ca5a {
+    text-align: center;
+    font-size: 0;
+}
+
+.grace-full-loading .image image.data-v-0650ca5a {
+    width: 138rpx;
+    height: 138rpx;
+    border-radius: 138rpx;
+}
+
+.grace-full-loading .text.data-v-0650ca5a {
+    line-height: 1.5em;
+    font-size: 22rpx;
+    margin-top: 6px;
+    text-align: center;
+}

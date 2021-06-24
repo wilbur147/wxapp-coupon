@@ -1,0 +1,4 @@
+<view class="add-miniprogarm-box flex flex-alignitem-center" style="margin-top:{0px;" wx:if="{{showAddMiniProgramTips}}">
+    <view class="font-26 color-white text">添加到我的小程序</view>
+    <image catchtap="__e" class="close" data-event-opts="{{[ [ 'tap',[ [ 'closeAddMiniProgramTips',['$event'] ] ] ] ]}}" src="/static/components/add-mini-tip/close_white.png"></image>
+</view>

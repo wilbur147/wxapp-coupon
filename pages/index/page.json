@@ -1,0 +1,12 @@
+{
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "文章详情",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-analysis": "/graceUI/components/graceAnalysis",
+        "grace-dialog": "/graceUI/components/graceDialog"
+    }
+}

@@ -1,0 +1,40 @@
+.form-btn-row {
+    margin-bottom: 30rpx;
+    margin: 20rpx auto;
+}
+
+.form-btn-row .grace-button {
+    width: 100%;
+}
+
+.account-body .body-hd {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 30rpx;
+    border-bottom: 1rpx solid #eee;
+    font-weight: 550;
+}
+
+.grace-list-body {
+    padding-right: 30rpx;
+}
+
+.grace-list-title-text {
+    font-family: font-price;
+}
+
+.empty-view {
+    width: 280rpx;
+    height: 280rpx;
+    margin-top: 100rpx;
+}
+
+.empty-img {
+    width: 220rpx;
+    height: 200rpx;
+    margin: 40rpx;
+}
+
+.empty-text {
+    margin-bottom: 100rpx;
+}

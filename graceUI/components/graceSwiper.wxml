@@ -1,0 +1,23 @@
+<view class="grace-swiper-card-wrap data-v-ec366746">
+    <swiper autoplay="{{autoplay}}" bindchange="__e" circular="{{true}}" class="grace-swiper-card data-v-ec366746" current="{{currentIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperchange',['$event'] ] ] ] ]}}" indicatorDots="{{false}}" interval="{{interval}}" nextMargin="{{spacing+'rpx'}}" previousMargin="{{spacing+'rpx'}}" style="{{'width:'+width+'rpx'+';'+'height:'+heightIn+'rpx'+';'}}">
+        <swiper-item class="grace-swiper-card-item data-v-ec366746" wx:for="{{swiperItems}}" wx:key="index">
+            <navigator class="grace-swiper-card-nav data-v-ec366746" hoverClass="none" openType="{{item.opentype}}" style="{{'padding-left:'+(current!=index?padding+'rpx':'0rpx')+';'+'padding-right:'+(current!=index?padding+'rpx':'0rpx')+';'+'padding-top:'+(current!=index?paddingY+'rpx':'0rpx')+';'+'padding-bottom:'+(current!=index?paddingY+'rpx':'0rpx')+';'+'transition:'+'all 0.2s ease-in 0s'+';'}}" url="{{item.url}}" wx:if="{{item.opentype!='click'}}">
+                <image class="grace-swiper-card-image data-v-ec366746" src="{{item.img}}" style="{{'border-radius:'+borderRadius+';'+'transition:'+'all 0.2s ease-in 0s'+';'+'width:'+(current!=index?widthInSamll+'rpx':widthIn+'rpx')+';'+'height:'+(current!=index?heightInSmall+'rpx':heightIn+'rpx')+';'+'opacity:'+(current!=index?opacity:1)+';'}}"></image>
+            </navigator>
+            <view catchtap="__e" class="grace-swiper-card-nav data-v-ec366746" data-event-opts="{{[ [ 'tap',[ [ 'taped',['$event'] ] ] ] ]}}" data-index="{{index}}" hoverClass="none" style="{{'padding-left:'+(current!=index?padding+'rpx':'0rpx')+';'+'padding-right:'+(current!=index?padding+'rpx':'0rpx')+';'+'padding-top:'+(current!=index?paddingY+'rpx':'0rpx')+';'+'padding-bottom:'+(current!=index?paddingY+'rpx':'0rpx')+';'+'transition:'+'all 0.2s ease-in 0s'+';'}}" wx:if="{{item.opentype=='click'}}">
+                <image class="grace-swiper-card-image data-v-ec366746" src="{{item.img}}" style="{{'border-radius:'+borderRadius+';'+'transition:'+'all 0.2s ease-in 0s'+';'+'width:'+(current!=index?widthInSamll+'rpx':widthIn+'rpx')+';'+'height:'+(current!=index?heightInSmall+'rpx':heightIn+'rpx')+';'+'opacity:'+(current!=index?opacity:1)+';'}}"></image>
+            </view>
+            <view class="grace-indicator-dot-numbers data-v-ec366746" style="{{'height:'+indicatorBarHeight+'rpx'+';'+'background:'+indicatorBarBgColor+';'+'width:'+(current!=index?widthInSamll+'rpx':widthIn+'rpx')+';'+'left:'+(current!=index?padding+'rpx':'0rpx')+';'+'bottom:'+(current!=index?paddingY+'rpx':'0rpx')+';'}}" wx:if="{{indicatorType=='number'}}">
+                <text class="grace-indicator-dot-text data-v-ec366746" style="{{'padding-left:'+'20rpx'+';'+'font-style:'+'italic'+';'+'color:'+titleColor+';'}}">{{index+1}}</text>
+                <text class="grace-indicator-dot-text data-v-ec366746" style="{{'font-size:'+'36rpx'+';'+'color:'+titleColor+';'}}">/</text>
+                <text class="grace-indicator-dot-text data-v-ec366746" style="{{'font-size:'+'28rpx'+';'+'padding-right:'+'20rpx'+';'+'font-style:'+'italic'+';'+'color:'+titleColor+';'}}">{{swiperItems.length}}</text>
+                <text class="grace-swiper-text data-v-ec366746" style="{{'color:'+titleColor+';'+'font-size:'+titleSize+';'+'height:'+indicatorBarHeight+'rpx'+';'+'line-height:'+indicatorBarHeight+'rpx'+';'}}">{{item.title}}</text>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="grace-indicator-dots data-v-ec366746" style="{{'width:'+width+'rpx'+';'+'height:'+indicatorBarHeight+'rpx'+';'+'position:'+indicatorPosition+';'+'padding-left:'+spacing+'rpx'+';'+'padding-right:'+spacing+'rpx'+';'+'justify-content:'+indicatorDirection+';'}}" wx:if="{{indicatorType=='dot'}}">
+        <view class="grace-indicator-dots-wrap data-v-ec366746">
+            <view class="{{['data-v-ec366746','grace-indicator-dot',current==index?'dot-show':'']}}" style="{{'width:'+(current!=index?indicatorWidth+'rpx':indicatorActiveWidth+'rpx')+';'+'height:'+indicatorHeight+'rpx'+';'+'border-radius:'+indicatorRadius+'rpx'+';'+'background:'+(current!=index?indicatorColor:indicatorActiveColor)+';'}}" wx:for="{{swiperItems}}" wx:key="index"></view>
+        </view>
+    </view>
+</view>

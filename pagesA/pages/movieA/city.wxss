@@ -1,0 +1,39 @@
+.grace-city-AZ {
+    background: #fff;
+    border-bottom: 1px solid #f6f7f8;
+    font-weight: 700;
+    line-height: 88rpx;
+}
+
+.grace-city-AZ-right {
+    background: #fff;
+    width: 50rpx;
+    position: fixed;
+    right: 0;
+    top: 60px;
+}
+
+.grace-city-AZ-right view {
+    line-height: 42rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.hotcity-item {
+    width: 210rpx;
+    font-size: 26rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    overflow: hidden;
+    margin: 5rpx;
+    background-color: #f6f7f8;
+}
+
+.city-item {
+    line-height: 88rpx;
+    height: 88rpx;
+    font-size: 26rpx;
+    border-bottom: 1px solid #f6f7f8;
+}

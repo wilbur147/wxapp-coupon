@@ -1,0 +1,10 @@
+<view catchtap="__e" catchtouchmove="__e" class="grace-btdialog-shade data-v-5be53cbe" data-event-opts="{{[ [ 'tap',[ [ 'closeDialog',['$event'] ] ] ],[ 'touchmove',[ [ 'stopFun',['$event'] ] ] ] ]}}" style="{{'background-color:'+background+';'+'z-index:'+zIndex+';'+'top:'+(realShow?'0rpx':'-3000px')+';'}}">
+    <view catchtap="__e" class="{{['data-v-5be53cbe','dialog',isIpx&&!isSwitchPage?'grace-ipx-bottom':'',isOut?'gdOut':'gdIn']}}" data-event-opts="{{[ [ 'tap',[ [ 'stopFun',['$event'] ] ] ] ]}}" style="{{'width:'+width+';'+'left:'+left+';'+'border-top-left-radius:'+borderRadius+';'+'border-top-right-radius:'+borderRadius+';'}}">
+        <view class="data-v-5be53cbe">
+            <slot name="btns"></slot>
+        </view>
+        <view catchtap="__e" class="data-v-5be53cbe" data-event-opts="{{[ [ 'tap',[ [ 'stopFun',['$event'] ] ] ] ]}}">
+            <slot name="content"></slot>
+        </view>
+    </view>
+</view>

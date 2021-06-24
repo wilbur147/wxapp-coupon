@@ -1,0 +1,80 @@
+.cu-bar {
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 104rpx;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.cu-bar.tabbar {
+    padding: 0;
+    padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+}
+
+.bg-white {
+    background-color: #fff;
+    color: #666;
+}
+
+.cu-bar.tabbar.shadow {
+    box-shadow: 0 -1rpx 6rpx rgba(0,0,0,.1);
+}
+
+.cu-bar.foot {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 1024;
+    box-shadow: 0 -1rpx 6rpx rgba(0,0,0,.1);
+}
+
+.flex-direction {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.align-center {
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.justify-center {
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.cu-bar.tabbar .action {
+    font-size: 22rpx;
+    position: relative;
+    -webkit-box-flex: 1;
+    flex: 1;
+    text-align: center;
+    padding: 0;
+    display: block;
+    height: auto;
+    line-height: 1;
+    margin: 0;
+    background-color: inherit;
+    overflow: initial;
+}
+
+.cu-bar.tabbar.shadow {
+    box-shadow: 0 -1rpx 6rpx rgba(0,0,0,.1);
+}
+
+.cu-bar.tabbar .action .cuIcon-cu-image {
+    margin: 0 auto;
+}

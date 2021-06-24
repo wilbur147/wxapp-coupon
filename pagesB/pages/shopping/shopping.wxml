@@ -1,0 +1,137 @@
+<view class="u-bg-gray data-v-24f06b86">
+	<u-navbar vue-id="791d8640-1" is-back="{{false}}" background="{{background}}" class="data-v-24f06b86" bind:__l="__l"
+		vue-slots="{{['default']}}">
+		<view class="slot-wrap data-v-24f06b86">
+			<view class="u-flex-c data-v-24f06b86">
+				<image class="navbar-images data-v-24f06b86" src="/pagesB/static/shop/pdd_logo_1.png" mode="widthFix"></image>
+				<image class="navbar-images data-v-24f06b86" src="/pagesB/static/shop/jd_logo_1.png" mode="widthFix"></image>
+				<image class="navbar-images data-v-24f06b86" src="/pagesB/static/shop/wph_logo_1.png" mode="widthFix"></image>
+			</view>
+			<view class="navbar-title data-v-24f06b86">购物领券全场优惠</view>
+		</view>
+	</u-navbar>
+	<u-search vue-id="791d8640-2" placeholder="输入商品名称或粘贴标题" clearabled="{{false}}" margin="30rpx 20rpx"
+		show-action="{{true}}" border-color="#feda2a" disabled="{{true}}" height="86"
+		action-style="{{searchActionStyle}}" action-text="搜索优惠券" input-style="position: relative;"
+		value="{{searchValue}}"
+		data-event-opts="{{[['^click',[['toSearch']]],['^input',[['__set_model',['','searchValue','$event',[]]]]]]}}"
+		bind:click="__e" bind:input="__e" class="data-v-24f06b86" bind:__l="__l"></u-search>
+	<block wx:if="{{adOne.src&&adOne.src!=''}}">
+		<view style="text-align:center;" class="data-v-24f06b86">
+			<image class="ad-image data-v-24f06b86" src="{{adOne.src}}" mode="widthFix"
+				data-event-opts="{{[['tap',[['toPath',['$0'],['adOne.item']]]]]}}" bindtap="__e"></image>
+		</view>
+	</block>
+	<block wx:if="{{features.length > 0}}">
+		<view class="section data-v-24f06b86">
+			<view class="section-bottom data-v-24f06b86">
+				<scroll-view class="scroll-view_X data-v-24f06b86" scroll-x="true">
+					<block wx:for="{{features}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+						<view class="section-bottom-item data-v-24f06b86">
+							<image src="{{item.src}}" mode="aspectFit"
+								data-event-opts="{{[['tap',[['toPath',['$0'],[[['features','',index]]]]]]]}}"
+								bindtap="__e" class="data-v-24f06b86"></image>
+						</view>
+					</block>
+				</scroll-view>
+			</view>
+		</view>
+	</block>
+	<block wx:if="{{bigAdImges.length > 0}}">
+		<view class="tx-wrap data-v-24f06b86">
+			<image class="first-image data-v-24f06b86" src="{{bigAdImges[0].src}}" mode="widthFix"
+				data-event-opts="{{[['tap',[['toPath',['$0'],['bigAdImges.__$n0']]]]]}}" bindtap="__e"></image>
+			<image class="second-image data-v-24f06b86" src="{{bigAdImges[1].src}}" mode="widthFix"
+				data-event-opts="{{[['tap',[['toPath',['$0'],['bigAdImges.__$n1']]]]]}}" bindtap="__e"></image>
+			<image class="third-image data-v-24f06b86" src="{{bigAdImges[2].src}}" mode="widthFix"
+				data-event-opts="{{[['tap',[['toPath',['$0'],['bigAdImges.__$n2']]]]]}}" bindtap="__e"></image>
+		</view>
+	</block>
+	<block wx:if="{{adSecond.src&&adSecond.src!=''}}">
+		<view style="text-align:center;" class="data-v-24f06b86">
+			<image class="ad-image data-v-24f06b86" src="{{adSecond.src}}" mode="widthFix"
+				data-event-opts="{{[['tap',[['toPath',['$0'],['adSecond.item']]]]]}}" bindtap="__e"></image>
+		</view>
+	</block>
+	<view class="sell-wrap data-v-24f06b86">
+		<u-row vue-id="791d8640-3" gutter="{{100}}" class="data-v-24f06b86" bind:__l="__l" vue-slots="{{['default']}}">
+			<u-col vue-id="{{('791d8640-4')+','+('791d8640-3')}}" span="{{4}}" class="data-v-24f06b86" bind:__l="__l"
+				vue-slots="{{['default']}}">
+				<view data-event-opts="{{[['tap',[['switchCpType',['pdd']]]]]}}" class="type-title data-v-24f06b86"
+					bindtap="__e">拼多多</view>
+				<view class="{{['type-desc data-v-24f06b86',(queryParams.cpType=='pdd')?'active':'']}}">精选宝贝</view>
+			</u-col>
+			<u-col vue-id="{{('791d8640-5')+','+('791d8640-3')}}" span="{{4}}" class="data-v-24f06b86" bind:__l="__l"
+				vue-slots="{{['default']}}">
+				<view data-event-opts="{{[['tap',[['switchCpType',['jd']]]]]}}" class="type-title data-v-24f06b86"
+					bindtap="__e">京东</view>
+				<view class="{{['type-desc data-v-24f06b86',(queryParams.cpType=='jd')?'active':'']}}">件件必抢</view>
+			</u-col>
+			<u-col vue-id="{{('791d8640-6')+','+('791d8640-3')}}" span="{{4}}" class="data-v-24f06b86" bind:__l="__l"
+				vue-slots="{{['default']}}">
+				<view data-event-opts="{{[['tap',[['switchCpType',['wph']]]]]}}" class="type-title data-v-24f06b86"
+					bindtap="__e">唯品会</view>
+				<view class="{{['type-desc data-v-24f06b86',(queryParams.cpType=='wph')?'active':'']}}">品牌特卖</view>
+			</u-col>
+		</u-row>
+	</view>
+	<view class="item-list data-v-24f06b86" style="{{'margin-bottom: '+bottomHe+'px;'}}">
+		<block wx:if="{{list&&list.length}}">
+			<block class="data-v-24f06b86">
+				<block wx:for="{{$root.l0}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+					<view data-event-opts="{{[['tap',[['goDetail',['$0'],[[['list','',index]]]]]]]}}"
+						class="item-item data-v-24f06b86" bindtap="__e">
+						<u-lazy-load class="item-thumbnail data-v-24f06b86" vue-id="{{'791d8640-7-'+index}}"
+							image="{{item.$orig.img}}" threshold="300" bind:__l="__l"></u-lazy-load>
+						<image class="item-shop-type data-v-24f06b86" src="{{shopTypeIcon}}"></image>
+						<view class="item-title data-v-24f06b86">{{item.$orig.goodsName}}</view>
+						<view class="item-price-box data-v-24f06b86">
+							<view class="item-price-prefix data-v-24f06b86">￥</view>
+							<view class="item-price data-v-24f06b86">{{item.m0}}</view>
+						</view>
+						<block wx:if="{{item.$orig.discount>0}}">
+							<view class="item-coupon-box data-v-24f06b86">
+								<image style="width:100%;height:100%;" src="../../static/shop/img_coupon.png"
+									class="data-v-24f06b86"></image>
+								<view class="item-coupon-prefix data-v-24f06b86">券</view>
+								<view class="item-coupon-price data-v-24f06b86">{{item.m1}}</view>
+							</view>
+						</block>
+						<view class="item-line data-v-24f06b86"></view>
+						<view class="item-price-origin data-v-24f06b86">{{"￥"+item.m2}}</view>
+						<block wx:if="{{item.$orig.sales}}">
+							<view class="item-sale data-v-24f06b86">{{"已售"+(item.$orig.sales||0)+"笔"}}</view>
+						</block>
+						<view class="item-money-earn data-v-24f06b86" style="background-color:#FFE262;color:#2D2D2D;">
+							领券下单</view>
+					</view>
+				</block>
+				<u-loadmore style="margin:auto;width:100%;" vue-id="791d8640-8" status="{{loadStatus}}" font-size="26"
+					data-event-opts="{{[['^loadmore',[['loadmore']]]]}}" bind:loadmore="__e" class="data-v-24f06b86"
+					bind:__l="__l"></u-loadmore>
+			</block>
+		</block>
+		<block wx:else>
+			<block class="data-v-24f06b86">
+				<u-empty style="margin:30rpx auto;" vue-id="791d8640-9" text="数据为空" mode="data" class="data-v-24f06b86"
+					bind:__l="__l"></u-empty>
+			</block>
+		</block>
+	</view>
+	<u-popup vue-id="791d8640-10" mode="center" closeable="true" border-radius="14" width="500rpx" height="400rpx"
+		value="{{clipboardShow}}"
+		data-event-opts="{{[['^close',[['hidClipboard']]],['^input',[['__set_model',['','clipboardShow','$event',[]]]]]]}}"
+		bind:close="__e" bind:input="__e" class="data-v-24f06b86" bind:__l="__l" vue-slots="{{['default']}}">
+		<view class="clipboard-content-box data-v-24f06b86">
+			<u-divider vue-id="{{('791d8640-11')+','+('791d8640-10')}}" margin-bottom="40" class="data-v-24f06b86"
+				bind:__l="__l" vue-slots="{{['default']}}">是否搜索以下商品</u-divider>
+			<view class="u-line-2 data-v-24f06b86" style="text-align:center;margin-bottom:50rpx;min-height:76rpx;">
+				{{clipboardText}}</view>
+			<u-button vue-id="{{('791d8640-12')+','+('791d8640-10')}}" shape="circle"
+				custom-style="{{clipboardBtnCustomStyle}}" hair-line="{{false}}" ripple="{{true}}"
+				data-event-opts="{{[['^click',[['clipboardToSearch']]]]}}" bind:click="__e" class="data-v-24f06b86"
+				bind:__l="__l" vue-slots="{{['default']}}">立即搜索</u-button>
+		</view>
+	</u-popup>
+	<sj-tab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="791d8640-10" wx:if="{{tabBar}}"></sj-tab-bar>
+</view>

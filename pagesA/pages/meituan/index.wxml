@@ -1,0 +1,190 @@
+<view>
+    <grace-page bind:__l="__l" style="{{'background-color: '+pagebgcolor+';'}}" vueId="5527a673-1" vueSlots="{{['gHeader','gBody']}}">
+        <view class="grace-header-body" slot="gHeader">
+            <view class="grace-header-leader grace-nowrap grace-space-between grace-flex-vcenter" style="background:rgba(0,0,0,0);"></view>
+            <view class="grace-header-content grace-flex-center" style="margin-right:0rpx;">
+                <grace-nav-bar activeColor="#FFFFFF" activeDirection="center" activeFontSize="35rpx" activeFontWeight="{{900}}" activeLineBg="#FFFFFF" bind:__l="__l" bind:change="__e" color="#FFFFFF" currentIndex="{{currentIndex}}" data-event-opts="{{[ [ '^change',[ ['navChange'] ] ] ]}}" fontSize="32rpx" isCenter="{{true}}" items="{{tabs}}" vueId="{{'5527a673-2'+','+'5527a673-1'}}"></grace-nav-bar>
+            </view>
+        </view>
+        <view class="grace-flex-v1" id="gBody" slot="gBody" style="margin-bottom:100rpx;">
+            <swiper bindchange="__e" class="swiper" current="{{currentIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" style="{{'height:'+mainHeight+'px'}}">
+                <swiper-item class="demo" wx:for="{{tabs}}" wx:key="index">
+                    <scroll-view scrollY="true" style="{{'height:'+mainHeight+'px'}}">
+                        <view class="waimai" style="{{'background-color: '+pagebgcolor+';'}}" wx:if="{{index==0}}">
+                            <view class="wm-banner">
+                                <image class="img" mode="widthFix" src="{{setting.waimaitt_meituanwm_toppic?setting.waimaitt_meituanwm_toppic:setting.static_domain+'addons/'+module_name+'/static/images/takeout/banner-mt.jpg'}}"></image>
+                            </view>
+                            <view class="wm-coupon">
+                                <view class="header">
+                                    <view class="step">
+                                        <image class="img" mode="widthFix" src="{{setting.waimaitt_meituanwm_step1pic?setting.waimaitt_meituanwm_step1pic:'../../../static/images/takeout/3.png'}}"></image>
+                                        <text class="span" style="{{'font-size: '+(setting.waimaitt_meituanwm_step1textsize?setting.waimaitt_meituanwm_step1textsize:24)+'rpx;color: '+(setting.waimaitt_meituanwm_step1textcolor?setting.waimaitt_meituanwm_step1textcolor:'#000')+';'}}">{{setting.waimaitt_meituanwm_step1text?setting.waimaitt_meituanwm_step1text:'先领券'}}</text>
+                                    </view>
+                                    <image class="link" mode="widthFix" src="{{setting.waimaitt_meituanwm_step4pic?setting.waimaitt_meituanwm_step4pic:'../../../static/images/takeout/9.png'}}"></image>
+                                    <view class="step">
+                                        <image class="img" mode="widthFix" src="{{setting.waimaitt_meituanwm_step2pic?setting.waimaitt_meituanwm_step2pic:'../../../static/images/takeout/4.png'}}"></image>
+                                        <text class="span" style="{{'font-size: '+(setting.waimaitt_meituanwm_step2textsize?setting.waimaitt_meituanwm_step2textsize:24)+'rpx;color: '+(setting.waimaitt_meituanwm_step2textcolor?setting.waimaitt_meituanwm_step2textcolor:'#000')+';'}}">{{setting.waimaitt_meituanwm_step2text?setting.waimaitt_meituanwm_step2text:'再下单'}}</text>
+                                    </view>
+                                    <image class="link" mode="widthFix" src="{{setting.waimaitt_meituanwm_step4pic?setting.waimaitt_meituanwm_step4pic:'../../../static/images/takeout/9.png'}}"></image>
+                                    <view class="step">
+                                        <image class="img" mode="widthFix" src="{{setting.waimaitt_meituanwm_step3pic?setting.waimaitt_meituanwm_step3pic:'../../../static/images/takeout/5.png'}}"></image>
+                                        <text class="span" style="{{'font-size: '+(setting.waimaitt_meituanwm_step3textsize?setting.waimaitt_meituanwm_step3textsize:24)+'rpx;color: '+(setting.waimaitt_meituanwm_step3textcolor?setting.waimaitt_meituanwm_step3textcolor:'#000')+';'}}">{{setting.waimaitt_meituanwm_step3text?setting.waimaitt_meituanwm_step3text:'拿返利'}}</text>
+                                    </view>
+                                </view>
+                                <view class="content">
+                                    <image class="qrcode" mode="widthFix" src="{{mtwmqrcode}}"></image>
+                                    <view class="btn-wrapper">
+                                        <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'gethongbao_mtwm',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituanwm_lingtextbgcolor?setting.waimaitt_meituanwm_lingtextbgcolor:'#ff6100')+';color: '+(setting.waimaitt_meituanwm_lingtextcolor?setting.waimaitt_meituanwm_lingtextcolor:'#ffffff')+';font-size: '+(setting.waimaitt_meituanwm_lingtextsize?setting.waimaitt_meituanwm_lingtextsize:38)+'rpx;line-height: '+(setting.waimaitt_meituanwm_lingtextlh?setting.waimaitt_meituanwm_lingtextlh:50)+'rpx;'}}" wx:if="{{userinfo.nickname}}">{{setting.waimaitt_meituanwm_lingtext?setting.waimaitt_meituanwm_lingtext:'领红包点外卖'}}</button>
+                                        <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'userlogin',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituanwm_lingtextbgcolor?setting.waimaitt_meituanwm_lingtextbgcolor:'#ff6100')+';color: '+(setting.waimaitt_meituanwm_lingtextcolor?setting.waimaitt_meituanwm_lingtextcolor:'#ffffff')+';font-size: '+(setting.waimaitt_meituanwm_lingtextsize?setting.waimaitt_meituanwm_lingtextsize:38)+'rpx;line-height: '+(setting.waimaitt_meituanwm_lingtextlh?setting.waimaitt_meituanwm_lingtextlh:50)+'rpx;'}}" wx:if="{{!userinfo.nickname}}">{{setting.waimaitt_meituanwm_lingtext?setting.waimaitt_meituanwm_lingtext:'领红包点外卖'}}</button>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="wm-btns">
+                                <view bindtap="__e" class="btn left" data-event-opts="{{[ [ 'tap',[ [ 'getposter_mtwm1',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituanwm_sharetextbgcolor?setting.waimaitt_meituanwm_sharetextbgcolor:'#ff430')+';color: '+(setting.waimaitt_meituanwm_sharetextcolor?setting.waimaitt_meituanwm_sharetextcolor:'#FFFFFF')+';font-size: '+(setting.waimaitt_meituanwm_sharetextsize?setting.waimaitt_meituanwm_sharetextsize:36)+'rpx;line-height: '+(setting.waimaitt_meituanwm_sharetextlh?setting.waimaitt_meituanwm_sharetextlh:76)+'rpx;'}}" wx:if="{{userinfo.nickname}}">{{setting.waimaitt_meituanwm_sharetext?setting.waimaitt_meituanwm_sharetext:'分享赚钱'}}</view>
+                                <view bindtap="__e" class="btn left" data-event-opts="{{[ [ 'tap',[ [ 'userlogin',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituanwm_sharetextbgcolor?setting.waimaitt_meituanwm_sharetextbgcolor:'#ff430')+';color: '+(setting.waimaitt_meituanwm_sharetextcolor?setting.waimaitt_meituanwm_sharetextcolor:'#FFFFFF')+';font-size: '+(setting.waimaitt_meituanwm_sharetextsize?setting.waimaitt_meituanwm_sharetextsize:36)+'rpx;line-height: '+(setting.waimaitt_meituanwm_sharetextlh?setting.waimaitt_meituanwm_sharetextlh:76)+'rpx;'}}" wx:if="{{!userinfo.nickname}}">{{setting.waimaitt_meituanwm_sharetext?setting.waimaitt_meituanwm_sharetext:'分享赚钱'}}</view>
+                                <view bindtap="__e" class="btn right" data-event-opts="{{[ [ 'tap',[ [ 'copy_wm',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituanwm_tuantextbgcolor?setting.waimaitt_meituanwm_tuantextbgcolor:'#ffffff')+';color: '+(setting.waimaitt_meituanwm_tuantextcolor?setting.waimaitt_meituanwm_tuantextcolor:'#44a718')+';font-size: '+(setting.waimaitt_meituanwm_tuantextsize?setting.waimaitt_meituanwm_tuantextsize:36)+'rpx;line-height: '+(setting.waimaitt_meituanwm_tuantextlh?setting.waimaitt_meituanwm_tuantextlh:76)+'rpx;'}}" wx:if="{{userinfo.nickname}}">{{setting.waimaitt_meituanwm_tuantext?setting.waimaitt_meituanwm_tuantext:'复制文案'}}</view>
+                                <view bindtap="__e" class="btn right" data-event-opts="{{[ [ 'tap',[ [ 'userlogin',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituanwm_tuantextbgcolor?setting.waimaitt_meituanwm_tuantextbgcolor:'#ffffff')+';color: '+(setting.waimaitt_meituanwm_tuantextcolor?setting.waimaitt_meituanwm_tuantextcolor:'#44a718')+';font-size: '+(setting.waimaitt_meituanwm_tuantextsize?setting.waimaitt_meituanwm_tuantextsize:36)+'rpx;line-height: '+(setting.waimaitt_meituanwm_tuantextlh?setting.waimaitt_meituanwm_tuantextlh:76)+'rpx;'}}" wx:if="{{!userinfo.nickname}}">{{setting.waimaitt_meituanwm_tuantext?setting.waimaitt_meituanwm_tuantext:'复制文案'}}</view>
+                            </view>
+                            <view class="wm-tips">
+                                <view class="h3">注意事项：</view>
+                                <view class="p">
+                                    <text>1.领券后请在红包有效期内下单；</text>
+                                </view>
+                                <view class="p">
+                                    <text>2.美团绑定的手机号，需与领券登录的手机号一致；</text>
+                                </view>
+                                <view class="p">
+                                    <text>3.下单后第二天上午10:00会有订单提醒；</text>
+                                </view>
+                                <view class="p">
+                                    <text>4.无论美团新老用户，每个手机号每天可领一次，红包金额随机发放；</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="waimai-sc" style="{{'background-color: '+pagebgcolor+';'}}" wx:if="{{index==1}}">
+                            <view class="wm-banner">
+                                <image class="img" mode="widthFix" src="{{setting.waimaitt_meituansc_toppic?setting.waimaitt_meituansc_toppic:setting.static_domain+'addons/'+module_name+'/static/images/takeout/banner-mt-sc.jpg'}}"></image>
+                            </view>
+                            <view class="wm-coupon">
+                                <view class="header">
+                                    <view class="step">
+                                        <image class="img" mode="widthFix" src="{{setting.waimaitt_meituansc_step1pic?setting.waimaitt_meituansc_step1pic:'../../../static/images/takeout/mt-sc-3.png'}}"></image>
+                                        <text class="span" style="{{'font-size: '+(setting.waimaitt_meituansc_step1textsize?setting.waimaitt_meituansc_step1textsize:24)+'rpx;color: '+(setting.waimaitt_meituansc_step1textcolor?setting.waimaitt_meituansc_step1textcolor:'#000')+';'}}">{{setting.waimaitt_meituansc_step1text?setting.waimaitt_meituansc_step1text:'先领券'}}</text>
+                                    </view>
+                                    <image class="link" mode="widthFix" src="{{setting.waimaitt_meituansc_step4pic?setting.waimaitt_meituansc_step4pic:'../../../static/images/takeout/mt-sc-4.png'}}"></image>
+                                    <view class="step">
+                                        <image class="img" mode="widthFix" src="{{setting.waimaitt_meituansc_step2pic?setting.waimaitt_meituansc_step2pic:'../../../static/images/takeout/mt-sc-2.png'}}"></image>
+                                        <text class="span" style="{{'font-size: '+(setting.waimaitt_meituansc_step2textsize?setting.waimaitt_meituansc_step2textsize:24)+'rpx;color: '+(setting.waimaitt_meituansc_step2textcolor?setting.waimaitt_meituansc_step2textcolor:'#000')+';'}}">{{setting.waimaitt_meituansc_step2text?setting.waimaitt_meituansc_step2text:'再下单'}}</text>
+                                    </view>
+                                    <image class="link" mode="widthFix" src="{{setting.waimaitt_meituansc_step4pic?setting.waimaitt_meituansc_step4pic:'../../../static/images/takeout/mt-sc-4.png'}}"></image>
+                                    <view class="step">
+                                        <image class="img" mode="widthFix" src="{{setting.waimaitt_meituansc_step3pic?setting.waimaitt_meituansc_step3pic:'../../../static/images/takeout/mt-sc-1.png'}}"></image>
+                                        <text class="span" style="{{'font-size: '+(setting.waimaitt_meituansc_step3textsize?setting.waimaitt_meituansc_step3textsize:24)+'rpx;color: '+(setting.waimaitt_meituansc_step3textcolor?setting.waimaitt_meituansc_step3textcolor:'#000')+';'}}">{{setting.waimaitt_meituansc_step3text?setting.waimaitt_meituansc_step3text:'拿返利'}}</text>
+                                    </view>
+                                </view>
+                                <view class="content">
+                                    <image class="qrcode" mode="widthFix" src="{{mtscqrcode}}"></image>
+                                    <view class="btn-wrapper">
+                                        <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'gethongbao_mtwm',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituansc_lingtextbgcolor?setting.waimaitt_meituansc_lingtextbgcolor:'#32b766')+';color: '+(setting.waimaitt_meituansc_lingtextcolor?setting.waimaitt_meituansc_lingtextcolor:'#ffffff')+';font-size: '+(setting.waimaitt_meituansc_lingtextsize?setting.waimaitt_meituansc_lingtextsize:38)+'rpx;line-height: '+(setting.waimaitt_meituansc_lingtextlh?setting.waimaitt_meituansc_lingtextlh:50)+'rpx;'}}" wx:if="{{userinfo.nickname}}">{{setting.waimaitt_meituansc_lingtext?setting.waimaitt_meituansc_lingtext:'领红包点外卖'}}</button>
+                                        <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'userlogin',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituansc_lingtextbgcolor?setting.waimaitt_meituansc_lingtextbgcolor:'#32b766')+';color: '+(setting.waimaitt_meituansc_lingtextcolor?setting.waimaitt_meituansc_lingtextcolor:'#ffffff')+';font-size: '+(setting.waimaitt_meituansc_lingtextsize?setting.waimaitt_meituansc_lingtextsize:38)+'rpx;line-height: '+(setting.waimaitt_meituansc_lingtextlh?setting.waimaitt_meituansc_lingtextlh:50)+'rpx;'}}" wx:if="{{!userinfo.nickname}}">{{setting.waimaitt_meituansc_lingtext?setting.waimaitt_meituansc_lingtext:'领红包点外卖'}}</button>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="wm-btns">
+                                <view bindtap="__e" class="btn left" data-event-opts="{{[ [ 'tap',[ [ 'getposter_mtwm1',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituansc_sharetextbgcolor?setting.waimaitt_meituansc_sharetextbgcolor:'linear-gradient(to top,#f7c277,#fdf4ca)')+';color: '+(setting.waimaitt_meituansc_sharetextcolor?setting.waimaitt_meituansc_sharetextcolor:'#9c7b44')+';font-size: '+(setting.waimaitt_meituansc_sharetextsize?setting.waimaitt_meituansc_sharetextsize:36)+'rpx;line-height: '+(setting.waimaitt_meituansc_sharetextlh?setting.waimaitt_meituansc_sharetextlh:76)+'rpx;'}}" wx:if="{{userinfo.nickname}}">{{setting.waimaitt_meituansc_sharetext?setting.waimaitt_meituansc_sharetext:'分享赚钱'}}</view>
+                                <view bindtap="__e" class="btn left" data-event-opts="{{[ [ 'tap',[ [ 'userlogin',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituansc_sharetextbgcolor?setting.waimaitt_meituansc_sharetextbgcolor:'linear-gradient(to top,#f7c277,#fdf4ca)')+';color: '+(setting.waimaitt_meituansc_sharetextcolor?setting.waimaitt_meituansc_sharetextcolor:'#9c7b44')+';font-size: '+(setting.waimaitt_meituansc_sharetextsize?setting.waimaitt_meituansc_sharetextsize:36)+'rpx;line-height: '+(setting.waimaitt_meituansc_sharetextlh?setting.waimaitt_meituansc_sharetextlh:76)+'rpx;'}}" wx:if="{{!userinfo.nickname}}">{{setting.waimaitt_meituansc_sharetext?setting.waimaitt_meituansc_sharetext:'分享赚钱'}}</view>
+                                <view bindtap="__e" class="btn right" data-event-opts="{{[ [ 'tap',[ [ 'copy_sc',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituansc_tuantextbgcolor?setting.waimaitt_meituansc_tuantextbgcolor:'#ffffff')+';color: '+(setting.waimaitt_meituansc_tuantextcolor?setting.waimaitt_meituansc_tuantextcolor:'#44a718')+';font-size: '+(setting.waimaitt_meituansc_tuantextsize?setting.waimaitt_meituansc_tuantextsize:36)+'rpx;line-height: '+(setting.waimaitt_meituansc_tuantextlh?setting.waimaitt_meituansc_tuantextlh:76)+'rpx;'}}" wx:if="{{userinfo.nickname}}">{{setting.waimaitt_meituansc_tuantext?setting.waimaitt_meituansc_tuantext:'复制文案'}}</view>
+                                <view bindtap="__e" class="btn right" data-event-opts="{{[ [ 'tap',[ [ 'userlogin',['$event'] ] ] ] ]}}" style="{{'background-color: '+(setting.waimaitt_meituansc_tuantextbgcolor?setting.waimaitt_meituansc_tuantextbgcolor:'#ffffff')+';color: '+(setting.waimaitt_meituansc_tuantextcolor?setting.waimaitt_meituansc_tuantextcolor:'#44a718')+';font-size: '+(setting.waimaitt_meituansc_tuantextsize?setting.waimaitt_meituansc_tuantextsize:36)+'rpx;line-height: '+(setting.waimaitt_meituansc_tuantextlh?setting.waimaitt_meituansc_tuantextlh:76)+'rpx;'}}" wx:if="{{!userinfo.nickname}}">{{setting.waimaitt_meituansc_tuantext?setting.waimaitt_meituansc_tuantext:'复制文案'}}</view>
+                            </view>
+                            <view class="wm-tips">
+                                <view class="h3">注意事项：</view>
+                                <view class="p">
+                                    <text>1.领券后请在红包有效期内下单；</text>
+                                </view>
+                                <view class="p">
+                                    <text>2.美团绑定的手机号，需与领券登录的手机号一致；</text>
+                                </view>
+                                <view class="p">
+                                    <text>3.下单后第二天上午10:00会有订单提醒；</text>
+                                </view>
+                                <view class="p">
+                                    <text>4.无论美团新老用户，每个手机号每天可领一次，红包金额随机发放；</text>
+                                </view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </swiper-item>
+            </swiper>
+            <grace-dialog bind:__l="__l" bind:closeDialog="__e" class="vue-ref" data-event-opts="{{[ [ '^closeDialog',[ ['closeDialog2'] ] ] ]}}" data-ref="showAlert_login" isBtns="{{true}}" isCloseBtn="{{false}}" isTitle="{{false}}" show="{{showAlert_login}}" vueId="{{'5527a673-3'+','+'5527a673-1'}}" vueSlots="{{['content']}}" zIndex="{{9999999}}">
+                <view class="layer" slot="content">
+                    <view class="auth-dialog auth">
+                        <view class="body">
+                            <view class="avatar">
+                                <open-data type="userAvatarUrl"></open-data>
+                            </view>
+                            <view class="nickname">
+                                <open-data type="userNickName"></open-data>
+                            </view>
+                            <view class="btn-wrapper">
+                                <button bindgetuserinfo="__e" class="btn login" data-event-opts="{{[ [ 'getuserinfo',[ [ 'login',['$event'] ] ] ] ]}}" openType="getUserInfo" type="primary">微信一键登录</button>
+                            </view>
+                            <text bindtap="__e" class="cancel-login" data-event-opts="{{[ [ 'tap',[ [ 'closeAlert',['$event'] ] ] ] ]}}">暂不登录</text>
+                        </view>
+                    </view>
+                </view>
+            </grace-dialog>
+            <grace-dialog bind:__l="__l" bind:closeDialog="__e" class="vue-ref" data-event-opts="{{[ [ '^closeDialog',[ ['closeDialog1'] ] ] ]}}" data-ref="showAlert_taobaoauth" isBtns="{{true}}" show="{{showAlert_taobaoauth}}" vueId="{{'5527a673-4'+','+'5527a673-1'}}" vueSlots="{{['content','btns']}}" zIndex="{{9999999}}">
+                <view class="content2" slot="content">
+                    <view style="margin:20rpx 20rpx 10rpx 20rpx;font-size:35rpx;font-weight:520;">{{''+(setting.taobaoauth_text?setting.taobaoauth_text:'您好，授权绑定淘宝账号才能获得返现哦~')+''}}</view>
+                    <view class="grace-nowrap">
+                        <view class="grace-step-item">
+                            <text class="grace-step-icon grace-icons icon-order" style="font-size:75rpx;background-color:#fe5400;"></text>
+                            <text class="grace-step-text grace-black6">复制授权码</text>
+                        </view>
+                        <text class="grace-step-arrow-point grace-icons icon-arrow-right"></text>
+                        <view class="grace-step-item">
+                            <text class="grace-step-icon ali-icon ali-icon-taobao" style="font-size:75rpx;background-color:#fe5400;"></text>
+                            <text class="grace-step-text grace-black6">打开淘宝</text>
+                        </view>
+                        <text class="grace-step-arrow-point grace-icons icon-arrow-right"></text>
+                        <view class="grace-step-item">
+                            <text class="grace-step-icon grace-icons icon-safe" style="font-size:80rpx;background-color:#fe5400;"></text>
+                            <text class="grace-step-text grace-black6">同意授权</text>
+                        </view>
+                    </view>
+                </view>
+                <view slot="btns">
+                    <view wx:if="{{is_qudao_tkl==0}}">
+                        <button bindtap="__e" class="grace-button" data-event-opts="{{[ [ 'tap',[ [ 'taobaoauth',['$event'] ] ] ] ]}}" style="margin-bottom:10rpx;border-radius:50rpx;background-color:#fe5400;color:#FFF;width:400rpx;">复制授权码，去淘宝授权</button>
+                    </view>
+                    <view wx:if="{{is_qudao_tkl==1}}">
+                        <button bindtap="__e" class="grace-button" data-event-opts="{{[ [ 'tap',[ [ 'taobaoauth_done',['$event'] ] ] ] ]}}" style="margin-bottom:10rpx;border-radius:50rpx;background-color:#09a500;color:#FFF;width:400rpx;">已完成授权，去领红包</button>
+                    </view>
+                    <view wx:if="{{is_qudao_tkl==0}}">
+                        <button bindtap="__e" class="grace-button" data-event-opts="{{[ [ 'tap',[ [ 'notaobaoauth',['$event'] ] ] ] ]}}" style="margin-bottom:10rpx;border-radius:50rpx;color:#003a91;font-weight:500;background-color:#ffffff;width:400rpx;">有钱任性，直接领红包</button>
+                    </view>
+                    <view wx:if="{{is_qudao_tkl==1}}">
+                        <button bindtap="__e" class="grace-button" data-event-opts="{{[ [ 'tap',[ [ 'retaobaoauth',['$event'] ] ] ] ]}}" style="margin-bottom:10rpx;border-radius:50rpx;font-weight:500;color:#FFFFFF;background-color:#c4c4c4;width:400rpx;">授权失败，重新获取授权码</button>
+                    </view>
+                </view>
+            </grace-dialog>
+            <view class="poster-dialog" wx:if="{{show_poster}}">
+                <view class="content">
+                    <view class="header" wx:if="{{imgSrc}}"></view>
+                    <view class="body" wx:if="{{imgSrc}}">
+                        <image bindtap="__e" class="img" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',['$event'] ] ] ] ]}}" data-src="{{imgSrc}}" mode="widthFix" showMenuByLongpress="true" src="{{imgSrc}}"></image>
+                        <text class="tip">长按图片发送给朋友或者保存到相册</text>
+                    </view>
+                    <view class="footer" wx:if="{{imgSrc}}">
+                        <view bindtap="__e" class="btn divider" data-event-opts="{{[ [ 'tap',[ [ 'tapButton',['$event'] ] ] ] ]}}">复制文案</view>
+                        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'close_poster',['$event'] ] ] ] ]}}">关闭</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </grace-page>
+    <view class="canvas-in" style="width:0px;height:0px;overflow:hidden;">
+        <canvas canvasId="graceCanvas" class="grace-canvas" style="{{'width:'+widthIn+'px'+'; height:'+heightIn+'px'+';background: rgba(0,0,0,0);'}}"></canvas>
+    </view>
+    <sj-tab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="5527a673-5"></sj-tab-bar>
+</view>

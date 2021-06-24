@@ -1,0 +1,19 @@
+<view catchtap="__e" catchtouchmove="__e" class="gap data-v-c633884a" data-event-opts="{{[ [ 'touchmove',[ [ 'stopfun',['$event'] ] ] ],[ 'tap',[ [ 'stopfun',['$event'] ] ] ] ]}}" style="{{'background-color:'+background+';'+'left:'+(realshow?'0':'-2000px')+';'}}">
+    <view class="gap-body data-v-c633884a">
+        <view class="gap-header grace-space-between data-v-c633884a">
+            <text bindtap="__e" class="gap-header-btn data-v-c633884a" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" style="{{'color:'+cancelTColor+';'}}">{{cancelText}}</text>
+            <text bindtap="__e" class="gap-header-btn data-v-c633884a" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}" style="{{'text-align:'+'right'+';'+'color:'+confirmColor+';'}}">{{confirmText}}</text>
+        </view>
+        <picker-view bindchange="__e" class="gap-main data-v-c633884a" data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ] ]}}" indicatorStyle="{{indicatorStyle}}" value="{{defaultVal}}">
+            <picker-view-column class="data-v-c633884a" wx:if="{{level>=1}}">
+                <text class="gap-item data-v-c633884a" wx:for="{{province}}" wx:key="index">{{item.label}}</text>
+            </picker-view-column>
+            <picker-view-column class="data-v-c633884a" wx:if="{{level>=2}}">
+                <text class="gap-item data-v-c633884a" wx:for="{{city[ defaultVal[0] ]}}" wx:key="index">{{item.label}}</text>
+            </picker-view-column>
+            <picker-view-column class="data-v-c633884a" wx:if="{{level>=3}}">
+                <text class="gap-item data-v-c633884a" wx:for="{{area[ defaultVal[0] ][ defaultVal[1] ]}}" wx:key="index">{{item.label}}</text>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

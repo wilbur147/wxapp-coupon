@@ -1,0 +1,27 @@
+<view class="grace-editor-show data-v-243241b1">
+    <view class="grace-editor-show-item data-v-243241b1" wx:for="{{article}}" wx:key="index">
+        <text class="grace-editor-show-txt data-v-243241b1" wx:if="{{item.type=='txt'}}">{{item.content}}</text>
+        <block wx:else>
+            <view class="grace-flex-center data-v-243241b1" wx:if="{{item.type=='center'}}">
+                <text class="grace-editor-show-center data-v-243241b1">{{item.content}}</text>
+            </view>
+            <block wx:else>
+                <image bindtap="__e" class="grace-editor-show-image data-v-243241b1" data-event-opts="{{[ [ 'tap',[ [ 'showImgs',['$event'] ] ] ] ]}}" data-url="{{item.content}}" mode="widthFix" src="{{item.content}}" wx:if="{{item.type=='img'}}"></image>
+                <block wx:else>
+                    <text class="grace-editor-show-quote data-v-243241b1" wx:if="{{item.type=='quote'||item.type=='pre'}}">{{item.content}}</text>
+                    <block wx:else>
+                        <text class="grace-editor-show-strong data-v-243241b1" wx:if="{{item.type=='strong'}}">{{item.content}}</text>
+                        <block wx:else>
+                            <view class="grace-editor-show-link data-v-243241b1" wx:if="{{item.type=='link'}}">
+                                <grace-link bind:__l="__l" class="data-v-243241b1" title="{{item.content}}" url="{{item.content}}" vueId="{{'0402961a-1-'+index}}"></grace-link>
+                            </view>
+                            <block wx:else>
+                                <text class="grace-editor-show-spline data-v-243241b1" wx:if="{{item.type=='spline'}}">● ● ●</text>
+                            </block>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,454 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* page不能写带scope的style标签中，否则无效 */
+page {
+	background-color: rgb(240, 240, 240);
+}
+
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.price-wrap-box.data-v-5431af98 {
+  background-color: #FFFFFF;
+  width: 100vw;
+  padding: 26rpx;
+}
+.price-wrap-box .price-wrap.data-v-5431af98 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  position: relative;
+  color: #ff3624;
+}
+.price-wrap-box .price-wrap .price-item-prefix.data-v-5431af98, .price-wrap-box .price-wrap .price-item.data-v-5431af98, .price-wrap-box .price-wrap .price-item-end.data-v-5431af98 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
+  font-weight: 600;
+}
+.price-wrap-box .price-wrap .price-item.data-v-5431af98 {
+  font-size: 60rpx;
+  line-height: 56rpx;
+}
+.price-wrap-box .price-wrap .item-price-origin.data-v-5431af98, .price-wrap-box .price-wrap .item-sale.data-v-5431af98 {
+  font-size: 20rpx;
+  color: #a9a9a9;
+  font-weight: lighter;
+}
+.price-wrap-box .price-wrap .item-price-origin.data-v-5431af98 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
+  text-decoration: line-through;
+}
+.price-wrap-box .price-wrap .item-sale.data-v-5431af98 {
+  position: absolute;
+  right: 30rpx;
+  top: 27rpx;
+}
+.price-wrap-box .title-wrap.data-v-5431af98 {
+  margin-top: 15rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  height: 80rpx;
+  position: relative;
+}
+.price-wrap-box .title-wrap .item-cp.data-v-5431af98 {
+  background-color: #ff3624;
+  border-radius: 15rpx;
+  padding: 5rpx 12rpx;
+  margin-right: 5rpx;
+  font-size: 22rpx;
+  text-align: center;
+  color: #FFFFFF;
+  letter-spacing: 3rpx;
+  height: 40rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-top: 5rpx;
+}
+.price-wrap-box .title-wrap .item-title.data-v-5431af98 {
+  position: absolute;
+  left: 11rpx;
+  text-indent: 96rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+.price-wrap-box .item-coupon-wrap .app.data-v-5431af98 {
+  padding: 20rpx;
+  background: #eee;
+  margin-top: 20rpx;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper.data-v-5431af98 {
+  margin: 0 auto;
+  width: 100%;
+  height: 220rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  background: -webkit-linear-gradient(right, #faad52, #fe3267);
+  background: linear-gradient(-90deg, #faad52, #fe3267);
+  /*实现颜色渐变 */
+  /*前半部分样式*/
+  /*给前半部分加两个伪类，基本样式如下*/
+  /*中间竖直虚线样式*/
+  /*给虚线加两个伪类，基本样式如下*/
+  /*后半部分样式*/
+  /*给前半部分加两个伪类，基本样式如下*/
+  /*几个伪类化成的圆弧的样式以及位置（置于顶部）我把它放在一起了*/
+  /*几个伪类化成的圆弧的样式以及位置（置于底部）我把它放在一起了*/
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content.data-v-5431af98 {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 20rpx 30rpx;
+  text-align: center;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content .money.data-v-5431af98 {
+  font-size: 100rpx;
+  color: #eee;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content .money text.data-v-5431af98 {
+  font-size: 50rpx;
+  padding-right: 20rpx;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content .co.data-v-5431af98 {
+  padding-top: 10rpx;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content .co .co_w.data-v-5431af98 {
+  width: 64rpx;
+  height: 1rpx;
+  background: #fff;
+  margin-bottom: -20rpx;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content .co .title.data-v-5431af98 {
+  color: #eee;
+  font-size: 30rpx;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content .co .co_l.data-v-5431af98 {
+  width: 64rpx;
+  height: 1rpx;
+  background: #fff;
+  margin-left: 260rpx;
+  margin-top: -20rpx;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content.data-v-5431af98:before, .price-wrap-box .item-coupon-wrap .app .wrapper .content.data-v-5431af98:after {
+  content: '';
+  position: absolute;
+  width: 32rpx;
+  height: 16rpx;
+  background: #eee;
+  left: -16rpx;
+  z-index: 1;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .split-line.data-v-5431af98 {
+  position: relative;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 0;
+          flex: 0 0 0;
+  margin: 0 10rpx 0 6rpx;
+  border-left: 4rpx dashed #eee;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .split-line.data-v-5431af98:before, .price-wrap-box .item-coupon-wrap .app .wrapper .split-line.data-v-5431af98:after {
+  content: '';
+  position: absolute;
+  width: 32rpx;
+  height: 16rpx;
+  background: #eee;
+  left: -18rpx;
+  z-index: 1;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .tip.data-v-5431af98 {
+  position: relative;
+  padding: 20rpx 60rpx;
+  padding-left: 20rpx;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 300rpx;
+          flex: 0 0 300rpx;
+  text-align: center;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .tip .conditions.data-v-5431af98 {
+  color: #eee;
+  font-size: 30rpx;
+  padding: 15rpx;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .tip .get-time.data-v-5431af98 {
+  font-size: 20rpx;
+  color: #eee;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .tip .useNow.data-v-5431af98 {
+  margin-top: 20rpx;
+  color: #fe3267;
+  font-size: 20rpx;
+  border-radius: 50rpx;
+  border-style: none;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .tip.data-v-5431af98:before, .price-wrap-box .item-coupon-wrap .app .wrapper .tip.data-v-5431af98:after {
+  content: '';
+  position: absolute;
+  width: 32rpx;
+  height: 16rpx;
+  background: #eee;
+  right: 32rpx;
+  z-index: 1;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content.data-v-5431af98:before, .price-wrap-box .item-coupon-wrap .app .wrapper .tip.data-v-5431af98:before, .price-wrap-box .item-coupon-wrap .app .wrapper .split-line.data-v-5431af98:before {
+  border-radius: 0 0 16rpx 16rpx;
+  top: 0;
+}
+.price-wrap-box .item-coupon-wrap .app .wrapper .content.data-v-5431af98:after, .price-wrap-box .item-coupon-wrap .app .wrapper .tip.data-v-5431af98:after, .price-wrap-box .item-coupon-wrap .app .wrapper .split-line.data-v-5431af98:after {
+  border-radius: 16rpx 16rpx 0 0;
+  bottom: 0;
+}
+.shop-info-box.data-v-5431af98 {
+  margin: 24rpx 0;
+  background-color: #FFFFFF;
+  padding: 26rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.shop-info-box .item-shopname.data-v-5431af98 {
+  font-size: 27rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+          flex: 4;
+  font-weight: 700;
+}
+.shop-info-box .avg-wrap.data-v-5431af98 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+          flex: 8;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.shop-info-box .avg-wrap .avg-title.data-v-5431af98 {
+  font-size: 22rpx;
+  color: #a9a9a9;
+  font-weight: lighter;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin: 0 6rpx;
+}
+.shop-info-box .avg-wrap .avg-icon.data-v-5431af98 {
+  margin: 0 6rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.shop-picturl-box.data-v-5431af98 {
+  margin-bottom: 100rpx;
+}
+.shop-picturl-box .picturl-title-wrap.data-v-5431af98 {
+  padding: 0 26rpx;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  height: 80rpx;
+}
+.shop-picturl-box .picturl-title-wrap .title.data-v-5431af98 {
+  font-size: 32rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.footer-features-box.data-v-5431af98 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 110rpx;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.footer-features-box .shop-index-wrap.data-v-5431af98 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column;
+          flex-flow: column;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.footer-features-box .shop-index-wrap .item-index-title.data-v-5431af98 {
+  font-size: 24rpx;
+}
+.footer-features-box .shop-buy-wrap.data-v-5431af98 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 9;
+  -webkit-flex: 9;
+          flex: 9;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.footer-features-box .shop-buy-wrap .shop-btn.data-v-5431af98 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  background-color: #f4513d;
+  color: #FFFFFF;
+  font-size: 44rpx;
+  border-radius: 45rpx;
+  width: 80%;
+  height: 80%;
+}
+

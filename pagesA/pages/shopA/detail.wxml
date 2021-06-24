@@ -1,0 +1,58 @@
+<grace-page bind:__l="__l" customHeader="{{false}}" footerBg="#FFFFFF" headerBG="#FFFFFF" vueId="6e765c92-1" vueSlots="{{['gBody','gFooter']}}">
+    <view slot="gBody" style="padding-bottom:120rpx;">
+        <swiper autoplay="true" class="grace-swiper" indicatorActiveColor="#3688FF" indicatorColor="rgba(255, 255, 255, 1)" indicatorDots="{{true}}" interval="5000" style="height:750rpx;" wx:if="{{detail.photos}}">
+            <swiper-item class="grace-swiper-item" wx:for="{{detail.photos}}" wx:key="index">
+                <image class="grace-swiper-image" mode="widthFix" src="{{item}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="grace-product-padding">
+            <view class=" grace-space-between grace-flex-vcenter">
+                <text class="grace-product-title grace-bold">{{detail.title}}</text>
+            </view>
+            <view class="grace-product-desc">{{''+detail.desc+''}}</view>
+            <view class="grace-nowrap grace-flex-vcenter">
+                <text class="grace-product-price" wx:if="{{detail.price==0&&detail.market_price==0}}">免费</text>
+                <text class="grace-product-price" wx:if="{{detail.price>0}}">
+                    <text class="grace-icons ali-icon ali-icon-jifen icon-right-margin grace-yellow"></text>{{detail.price}}</text>
+                <text class="grace-product-price" wx:if="{{detail.market_price>0}}">
+                    <text class="grace-icons grace-black">+</text>{{'￥'+detail.market_price}}</text>
+            </view>
+        </view>
+        <view class="grace-common-line"></view>
+        <view class="grace-margin-top">
+            <view class="grace-h5 grace-blod grace-text-center">
+                <text class="grace-icons icon-spliter"></text>
+                <text class="grace-black" style="margin:0 20rpx;">商品详情</text>
+                <text class="grace-icons icon-spliter"></text>
+            </view>
+        </view>
+        <view class="grace-product-padding">
+            <view class="grace-margin-top grace-product-info">
+                <image class="grace-product-info-img" mode="widthFix" src="{{item}}" wx:for="{{detail.details}}" wx:key="index"></image>
+                <grace-analysis article="{{detail.details2}}" bind:__l="__l" vueId="{{'6e765c92-2'+','+'6e765c92-1'}}"></grace-analysis>
+            </view>
+        </view>
+    </view>
+    <view class="grace-nowrap grace-flex-center grace-bg-white" slot="gFooter">
+        <view class="bar">
+            <view class="bar-l">
+                <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'backHome',['$event'] ] ] ] ]}}">
+                    <view class="grace-grids-items grace-relative">
+                        <text class="grace-grids-icon grace-icons icon-home"></text>
+                        <text class="grace-grids-text grace-grids-text">首页</text>
+                    </view>
+                </button>
+                <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'myitemorder',['$event'] ] ] ] ]}}">
+                    <view class="grace-grids-items grace-relative">
+                        <text class="grace-grids-icon grace-icons icon-order"></text>
+                        <text class="grace-grids-text grace-grids-text">我的订单</text>
+                    </view>
+                </button>
+            </view>
+            <view class="bar-r">
+                <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'tapToOrder',['$event'] ] ] ] ]}}" style="font-size:35rpx;" wx:if="{{detail.market_price>0}}">立即购买</button>
+                <button bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'tapToOrder',['$event'] ] ] ] ]}}" style="font-size:35rpx;" wx:else>立即兑换</button>
+            </view>
+        </view>
+    </view>
+</grace-page>

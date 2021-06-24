@@ -1,0 +1,39 @@
+<grace-page bind:__l="__l" customHeader="{{false}}" vueId="19cc55de-1" vueSlots="{{['gBody']}}">
+    <view class="grace-body" slot="gBody">
+        <form bindsubmit="__e" class="grace-form grace-margin-top" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+            <view class="grace-form-item grace-border-b">
+                <text class="grace-form-label">兑换数量</text>
+                <view class="grace-form-body">
+                    <input bindinput="__e" class="grace-form-input" data-event-opts="{{[ [ 'input',[ [ 'numChange',['$event'] ] ] ] ]}}" name="num" placeholder="{{'兑换比例：1:'+setting.credit_money_rate}}" type="text" value="{{num}}"></input>
+                </view>
+                <text bindtap="__e" class="grace-icons icon-close grace-form-icon grace-text-center" data-event-opts="{{[ [ 'tap',[ [ 'clearInput',['$event'] ] ] ] ]}}" wx:if="{{num!=''}}"></text>
+            </view>
+            <view class="form-btn-row">
+                <button class="grace-button grace-gtbg-green" formType="submit" style="line-height:32px;" type="primary">立即兑换</button>
+            </view>
+        </form>
+        <view class="account-body">
+            <view class="body-hd">积分明细</view>
+            <view class="body-bd">
+                <view class="grace-list">
+                    <view class="grace-list-items" wx:for="{{logs}}" wx:key="index">
+                        <view class="grace-list-body grace-border-b">
+                            <view class="grace-list-title">
+                                <text class="grace-list-title-text">{{item.num}}</text>
+                                <text class="grace-list-title-desc">{{item.create_time}}</text>
+                            </view>
+                            <view class="grace-list-body-desc">{{item.status}}</view>
+                        </view>
+                    </view>
+                </view>
+                <grace-empty-new bind:__l="__l" vueId="{{'19cc55de-2'+','+'19cc55de-1'}}" vueSlots="{{['img','text']}}" wx:if="{{logs.length==0&&loadingType==4}}">
+                    <view class="empty-view" slot="img">
+                        <image class="empty-img" mode="widthFix" src="../../../static/images/empty.png"></image>
+                    </view>
+                    <text class="grace-gray empty-text" slot="text">暂时没有任何记录</text>
+                </grace-empty-new>
+                <grace-loading bind:__l="__l" loadingType="{{loadingType}}" vueId="{{'19cc55de-3'+','+'19cc55de-1'}}"></grace-loading>
+            </view>
+        </view>
+    </view>
+</grace-page>

@@ -1,0 +1,53 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" headerBG="#FFFFFF" isLoading="{{pageLoading}}" vueId="3f02bcc0-1" vueSlots="{{['gBody']}}">
+        <view class="grace-flex-v1" id="gBody" slot="gBody">
+            <view id="nav" style="padding:20rpx 25rpx;">
+                <grace-nav-bar bind:__l="__l" bind:change="__e" currentIndex="{{swiperCurrentIndex}}" data-event-opts="{{[ [ '^change',[ ['navChange'] ] ] ]}}" items="{{tabs}}" vueId="{{'3f02bcc0-2'+','+'3f02bcc0-1'}}"></grace-nav-bar>
+            </view>
+            <swiper bindchange="__e" current="{{swiperCurrentIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" style="{{'height:'+mainHeight+'px'+';'}}">
+                <swiper-item wx:for="{{tabs}}" wx:key="index">
+                    <scroll-view bindscrolltolower="__e" data-event-opts="{{[ [ 'scrolltolower',[ [ 'scrollend',['$event'] ] ] ] ]}}" scrollY="{{true}}" style="{{'height:'+mainHeight+'px'+';'}}">
+                        <view style="margin-top:150rpx;" wx:if="{{loadingTypes[index]==5}}">
+                            <grace-empty bind:__l="__l" vueId="{{'3f02bcc0-3-'+index+','+'3f02bcc0-1'}}" vueSlots="{{['img','text']}}">
+                                <view class="empty-view" slot="img">
+                                    <image class="empty-img" mode="widthFix" src="../../../static/images/empty.png"></image>
+                                </view>
+                                <text class="grace-text-small grace-margin-top grace-gray" slot="text">暂无订单信息~</text>
+                            </grace-empty>
+                        </view>
+                        <view class="grace-order grace-box-shadow" wx:for="{{orders[index]}}" wx:for-index="orderIndex" wx:for-item="order" wx:key="orderIndex">
+                            <view class="grace-space-between grace-flex-center">
+                                <text class="grace-order-number">{{'订单号 : '+order.orderNumber}}</text>
+                                <view wx:if="{{order.pingtai=='meituan'}}">
+                                    <text class="grace-text">平台：</text>
+                                    <text class="grace-text" style="margin-left:10rpx;">美团</text>
+                                </view>
+                                <view wx:if="{{order.pingtai=='elm'}}">
+                                    <text class="grace-text">平台：</text>
+                                    <text class="grace-text" style="margin-left:10rpx;">饿了么</text>
+                                </view>
+                                <view wx:if="{{order.pingtai=='movie'}}">
+                                    <text class="grace-text">平台：</text>
+                                    <text class="grace-text" style="margin-left:10rpx;">电影票</text>
+                                </view>
+                            </view>
+                            <view class="grace-title">
+                                <text class="grace-black">{{order.shopName}}</text>
+                            </view>
+                            <view class="grace-order-goods">
+                                <image class="grace-order-goods-img" mode="widthFix" src="{{order.goods_img}}"></image>
+                                <text class="grace-order-goods-name">{{order.goods_name}}</text>
+                                <view class="grace-order-goods-price">{{'￥'+order.goods_price}}</view>
+                            </view>
+                            <view class="grace-order-footer grace-nowrap">
+                                <text class="grace-order-number" style="text-align:left;">{{'时间：'+order.orderDate}}</text>
+                                <text class="grace-order-number" style="text-align:right;color:red;">{{order.ji+setting.user_order_ygyj+order.fee}}</text>
+                            </view>
+                        </view>
+                        <grace-loading bind:__l="__l" loadingType="{{loadingTypes[index]}}" vueId="{{'3f02bcc0-4-'+index+','+'3f02bcc0-1'}}"></grace-loading>
+                    </scroll-view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </grace-page>
+</view>

@@ -1,0 +1,99 @@
+<view>
+    <grace-page bind:__l="__l" customHeader="{{false}}" vueId="6717c966-1" vueSlots="{{['gBody']}}">
+        <view class="grace-flex-v1" id="gBody" slot="gBody">
+            <view class="container_movie">
+                <view class="cinemaInfo">
+                    <view class="address">
+                        <text class="title">{{cinemadetail.cinemaName}}</text>
+                        <text class="loca">{{cinemadetail.address}}</text>
+                    </view>
+                    <view class="action" wx:if="{{cinemadetail.latitude&&cinemadetail.longitude}}">
+                        <view bindtap="__e" class="locate" data-event-opts="{{[ [ 'tap',[ [ 'openLocation',['$event'] ] ] ] ]}}">
+                            <view class="grace-icons icon-address" style="font-size:50rpx;"></view>
+                        </view>
+                    </view>
+                </view>
+                <view class="filmArea" wx:if="{{film.filmId}}">
+                    <view class="bgBox">
+                        <image class="bg" src="{{film.pic}}"></image>
+                    </view>
+                    <swiper bindchange="__e" circular="true" class="film" current="{{current}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChangeHandler',['$event'] ] ] ] ]}}" nextMargin="130px" previousMargin="130px">
+                        <swiper-item class="item" data-movie="{{item}}" wx:for="{{cinemaMovieList_list}}" wx:key="index">
+                            <image class="filmPic active" src="{{item.pic}}" wx:if="{{item.filmId==film.filmId}}"></image>
+                            <image class="filmPic" src="{{item.pic}}" wx:if="{{item.filmId!=film.filmId}}"></image>
+                            <view class="triangle" wx:if="{{item.filmId==film.filmId}}"></view>
+                        </swiper-item>
+                    </swiper>
+                    <view class="filmInfo">
+                        <view class="title">
+                            <text class="name">{{film.name}}</text>
+                            <text class="scoreNum" wx:if="{{film.grade}}">
+                                <text>{{film.grade}}</text>
+                                <text class="score">分</text>
+                            </text>
+                            <text class="score" wx:else>暂无评分</text>
+                        </view>
+                        <view class="detail">
+                            <text class="time">{{film.duration+'分钟'}}</text>
+                            <view class="line">|</view>
+                            <text class="type">{{film.filmTypes}}</text>
+                            <view class="line">|</view>
+                            <text class="actor">{{film.cast}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view style="margin:10rpx 20rpx 0 20rpx;">
+                    <grace-nav-bar activeColor="#ec4300" activeDirection="center" activeFontSize="32rpx" activeLineBg="#ec4300" activeLineWidth="250rpx" bind:__l="__l" bind:change="__e" currentIndex="{{currentIndex}}" data-event-opts="{{[ [ '^change',[ ['navChange'] ] ] ]}}" fontSize="30rpx" items="{{day}}" lineHeight="50rpx" margin="20" padding="10" size="250" textAlign="center" vueId="{{'6717c966-2'+','+'6717c966-1'}}"></grace-nav-bar>
+                </view>
+                <view class="list">
+                    <view class="info" data-showsid="{{item.id}}" wx:for="{{shows}}" wx:for-index="__index1" wx:key="__index1">
+                        <view class="time">
+                            <view class="start">{{item.start_time}}</view>
+                            <view class="end">{{item.end_time+'散场'}}</view>
+                        </view>
+                        <view class="hall">
+                            <view class="type">{{item.showVersionType}}</view>
+                            <view class="name">{{item.hallName}}</view>
+                        </view>
+                        <view class="price">
+                            <view class="{{[item.stop==1?'now stop':'now']}}">
+                                <text>{{item.price}}</text>
+                                <text class="unit">元</text>
+                            </view>
+                            <view class="origin">{{'市场价'+item.netPrice+'元'}}</view>
+                        </view>
+                        <view class="btn">
+                            <view class="invalid" wx:if="{{item.stop==1}}">停售</view>
+                            <view bindtap="__e" class="valid" data-event-opts="{{[ [ 'tap',[ [ 'buy',['$event'] ] ] ] ]}}" data-show="{{item}}" data-showid="{{item.showId}}" wx:else>特惠购票</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <grace-dialog bind:__l="__l" bind:closeDialog="__e" class="vue-ref" data-event-opts="{{[ [ '^closeDialog',[ ['closeDialog2'] ] ] ]}}" data-ref="showAlert_login" isBtns="{{true}}" isCloseBtn="{{false}}" isTitle="{{false}}" show="{{showAlert_login}}" vueId="{{'6717c966-3'+','+'6717c966-1'}}" vueSlots="{{['content','btns']}}" zIndex="{{9999999}}">
+                <view class="box-alert-login" slot="content">
+                    <view class="hd">
+                        <image class="alert-banner" src="{{setting.login_pic?setting.login_pic:'../../static/images/welcome.jpg'}}"></image>
+                    </view>
+                    <view class="bd">{{''+(setting.login_text?setting.login_text:'您好，您还没有登录，请使用微信账号登录。')+''}}</view>
+                </view>
+                <view class="grace-space-between grace-border-t" slot="btns">
+                    <button bindgetuserinfo="__e" class="grace-dialog-buttons-login grace-border-r" data-event-opts="{{[ [ 'getuserinfo',[ [ 'login',['$event'] ] ] ] ]}}" lang="zh_CN" openType="getUserInfo" style="border-radius:0px;color:#00a51f;width:50%;">立即登录</button>
+                    <button bindtap="__e" class="grace-dialog-buttons-login" data-event-opts="{{[ [ 'tap',[ [ 'closeAlert',['$event'] ] ] ] ]}}" style="border-radius:0px;width:50%;border-right:0px solid #e9e9e9;">稍后登录</button>
+                </view>
+            </grace-dialog>
+            <grace-dialog bind:__l="__l" bind:closeDialog="__e" canCloseByShade="{{true}}" class="vue-ref" data-event-opts="{{[ [ '^closeDialog',[ ['closeDialog3'] ] ] ]}}" data-ref="showAlert" isCloseBtn="{{true}}" isTitle="{{false}}" show="{{showAlert}}" vueId="{{'6717c966-4'+','+'6717c966-1'}}" vueSlots="{{['content','btns']}}" zIndex="{{99999999}}">
+                <view class="box-alert" slot="content">
+                    <view class="bd" wx:if="{{contact_title_desc!=''}}">{{''+contact_title_desc+''}}</view>
+                    <view class="bd" wx:else>点击“ 立即购票”进入客服会话后，再点击右下角“点我发送”，即可获取优惠购票链接。</view>
+                    <view class="hd">
+                        <image class="alert-banner" src="../../static/images/kefu_send.png"></image>
+                    </view>
+                </view>
+                <view class="grace-space-between" slot="btns">
+                    <button class="grace-dialog-buttons" openType="contact" sendMessageImg="{{contact_thumb}}" sendMessagePath="pages/index/index" sendMessageTitle="{{contact_title}}" sessionFrom="{{'{type:'+contact_type+',id:'+contact_id+'}'}}" showMessageCard="true" wx:if="{{contact_title_text!=''}}">{{contact_title_text}}</button>
+                    <button class="grace-dialog-buttons" openType="contact" sendMessageImg="{{contact_thumb}}" sendMessagePath="pages/index/index" sendMessageTitle="{{contact_title}}" sessionFrom="{{'{type:'+contact_type+',id:'+contact_id+'}'}}" showMessageCard="true" wx:else>立即购票</button>
+                </view>
+            </grace-dialog>
+        </view>
+    </grace-page>
+</view>

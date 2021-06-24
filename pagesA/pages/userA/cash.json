@@ -1,0 +1,13 @@
+{
+    "navigationBarBackgroundColor": "#161921",
+    "backgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "提现管理",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-loading": "/graceUI/components/graceLoading",
+        "grace-empty-new": "/graceUI/components/graceEmptyNew"
+    }
+}

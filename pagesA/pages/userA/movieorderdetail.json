@@ -1,0 +1,13 @@
+{
+    "navigationBarBackgroundColor": "#ff5756",
+    "backgroundColor": "#ff5756",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "电影票订单",
+    "backgroundTextStyle": "light",
+    "usingComponents": {
+        "grace-page": "/graceUI/components/gracePage",
+        "grace-empty": "/graceUI/components/graceEmptyNew",
+        "grace-loading": "/graceUI/components/graceLoading",
+        "grace-img": "/graceUI/components/graceImg2"
+    }
+}
