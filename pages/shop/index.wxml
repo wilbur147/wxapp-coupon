@@ -121,5 +121,5 @@
             </grace-dialog>
         </view>
     </grace-page>
-    <sj-tab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="a932cbd8-8" wx:if="{{tabBar}}"></sj-tab-bar>
+    <!-- <sj-tab-bar bind:__l="__l" bind:change="__e" bind:fatherHeight="__e" ckey="{{pageKey}}" data-event-opts="{{[ [ '^fatherHeight',[ ['fatherHeight'] ] ],[ '^change',[ ['change'] ] ] ]}}" mode="1" tabBar="{{tabBar}}" vueId="a932cbd8-8" wx:if="{{tabBar}}"></sj-tab-bar> -->
 </view>

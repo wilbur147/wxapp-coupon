@@ -304,21 +304,21 @@
                                 delta: i
                             });
                             if (-1 == a.url.indexOf("../index/") && -1 == a.url.indexOf("../user/") && -1 == a.url.indexOf("../movie/") && -1 == a.url.indexOf("../shop/") && -1 == a.url.indexOf("../kefu/")) return -1 != a.url.indexOf("../../../pages/index/") || -1 != a.url.indexOf("../../../pages/user/") || -1 != a.url.indexOf("../../../pages/kefu/") ? (o = a.url.replace("../../../pages/", "../"), 
-                            void r.navigateTo({
+                            void r.redirectTo({
                                 url: o
                             })) : -1 != a.url.indexOf("../../../pages/meituan/") || -1 != a.url.indexOf("../../../pages/elm/") || -1 != a.url.indexOf("../../../pages/eat/") ? (o = a.url.replace("../../../pages/", "../../pagesA/pages/"), 
-                            void r.navigateTo({
+                            void r.redirectTo({
                                 url: o
                             })) : -1 != a.url.indexOf("../../pagesA/pages/movie/") || -1 != a.url.indexOf("../../pagesA/pages/shop/") ? (o = a.url.replace("../../pagesA/pages/", "../"), 
-                            void r.navigateTo({
+                            void r.redirectTo({
                                 url: o
                             })) : -1 == a.url.indexOf("../../pagesA/pages/movieA/") && -1 == a.url.indexOf("../../pagesA/pages/shopA/") && -1 == a.url.indexOf("../../pagesA/pages/meituan/") && -1 == a.url.indexOf("../../pagesA/pages/elm/") && -1 == a.url.indexOf("../../pagesA/pages/eat/") && -1 == a.url.indexOf("../../pagesA/pages/userA/") && (-1 != a.url.indexOf("../meituan/") || -1 != a.url.indexOf("../elm/") || -1 != a.url.indexOf("../eat/")) ? (o = a.url.replace("../", "../../pagesA/pages/"), 
-                            void r.navigateTo({
+                            void r.redirectTo({
                                 url: o
-                            })) : void r.navigateTo({
+                            })) : void r.redirectTo({
                                 url: a.url
                             });
-                            r.navigateTo({
+                            r.redirectTo({
                                 url: a.url
                             });
                         } else r.navigateTo({

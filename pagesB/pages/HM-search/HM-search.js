@@ -247,26 +247,31 @@ var _request = __webpack_require__(/*! ../../utils/request */ 46);function _inte
                   _this2.hotKeywordList = result.data;
                 }case 5:case "end":return _context.stop();}}}, _callee);}))();
     },
-    //监听输入
-    inputChange: function inputChange(event) {var _this3 = this;
-      //兼容引入组件时传入参数情况
-      var keyword = event.detail ? event.detail.value : event;
-      if (!keyword) {
-        this.keywordList = [];
-        this.isShowKeywordList = false;
-        return;
-      }
-      this.isShowKeywordList = true;
-      //以下示例截取淘宝的关键字，请替换成你的接口
-      uni.request({
-        url: 'https://suggest.taobao.com/sug?code=utf-8&q=' + keyword, //仅为示例
-        success: function success(res) {
-          _this3.keywordList = [];
-          _this3.keywordList = _this3.drawCorrelativeKeyword(res.data.result, keyword);
+  //监听输入
+  inputChange: function inputChange(event) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var keyword, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+	  //兼容引入组件时传入参数情况
+	  keyword = event.detail ? event.detail.value : event;if (
+	  keyword) {_context2.next = 5;break;}
+	  _this3.keywordList = [];
+	  _this3.isShowKeywordList = false;return _context2.abrupt("return");case 5:
 
-        } });
 
-    },
+	  _this3.isShowKeywordList = true;
+	  //以下示例截取淘宝的关键字，请替换成你的接口
+	  _context2.next = 8;return (0, _request.request)({ url: '/program/mall/mallKeyWordsSearch?keyword=' + keyword, method: 'GET' });case 8:res = _context2.sent;
+	  if (res && res.code == 200) {
+		_this3.keywordList = [];
+		_this3.keywordList = _this3.drawCorrelativeKeyword(res.data.result, keyword);
+	  }
+	  // uni.request({
+	  // 	url: 'https://suggest.taobao.com/sug?code=utf-8&q=' + keyword, //仅为示例
+	  // 	success: (res) => {
+	  // 		this.keywordList = [];
+	  // 		this.keywordList = this.drawCorrelativeKeyword(res.data.result, keyword);
+
+	  // 	}
+	  // });
+	case 10:case "end":return _context2.stop();}}}, _callee2);}))();},
     //高亮关键字
     drawCorrelativeKeyword: function drawCorrelativeKeyword(keywords, keyword) {
       var len = keywords.length,
