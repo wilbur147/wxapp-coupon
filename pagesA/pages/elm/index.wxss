@@ -120,7 +120,7 @@
 }
 
 .waimai .wm-coupon .content {
-    height: 520rpx;
+    height: 600rpx;
     position: relative;
     background-color: #fff;
     border-bottom-left-radius: 20rpx;
