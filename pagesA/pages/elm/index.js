@@ -512,15 +512,16 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                     userlogin: function() {
                         r.getStorageSync("userinfo").nickname ? this.closeDialog2() : this.showDialog2();
                     },
-                    login: function(t) {
+                    login: function() {
                         var a = this;
                         this.closeDialog2(), r.getSetting({
                             success: function(e) {
-                                e.authSetting["scope.userInfo"] ? r.getUserInfo({
-                                    success: function(e) {
-                                        a.userAuth(t, e.userInfo, "login");
+                                e.authSetting["scope.userInfo"] ? r.getUserProfile({
+									desc: '用于完善会员资料',
+                                    success: (e) => {
+                                        a.userAuth(e, "login");
                                     }
-                                }) : a.userAuth(t, null, "login");
+                                }) : a.userAuth(null, "login");
                             }
                         });
                     },
@@ -532,20 +533,21 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                             }
                         });
                     },
-                    userAuth: function(a, e, o) {
+                    userAuth: function(ee, o) {
                         var n = this;
-                        "getUserInfo:ok" == a.detail.errMsg ? wx.login({
+                        "getUserProfile:ok" == ee.errMsg ? wx.login({
                             success: function(e) {
                                 var t = i.globalData.util.url("entry/wxapp/api", {
                                     m: i.globalData.module_name,
                                     o: "userinfo"
                                 }), e = {
                                     code: e.code,
-                                    encryptedData: a.detail.encryptedData,
-                                    iv: a.detail.iv,
+                                    encryptedData: ee.encryptedData,
+                                    iv: ee.iv,
                                     openid: r.getStorageSync("openid"),
-                                    invite_uid: wx.getStorageSync("invite_uid")
+                                    invite_uid: r.getStorageSync("invite_uid")
                                 };
+								console.log(e);
                                 r.request({
                                     url: t,
                                     method: "POST",

@@ -567,25 +567,26 @@
                         var a = this;
                         this.closeDialog2(), o.getSetting({
                             success: function(e) {
-                                e.authSetting["scope.userInfo"] ? o.getUserInfo({
+                                e.authSetting["scope.userInfo"] ? o.getUserProfile({
+									desc: '用于完善会员资料',
                                     success: function(e) {
-                                        a.userAuth(t, e.userInfo, "login");
+                                        a.userAuth(t, e, "login");
                                     }
                                 }) : a.userAuth(t, null, "login");
                             }
                         });
                     },
-                    userAuth: function(a, e, i) {
+                    userAuth: function(a, ee, i) {
                         var n = this;
-                        "getUserInfo:ok" == a.detail.errMsg ? wx.login({
+                        "getUserProfile:ok" == ee.errMsg ? wx.login({
                             success: function(e) {
                                 var t = s.globalData.util.url("entry/wxapp/api", {
                                     m: s.globalData.module_name,
                                     o: "userinfo"
                                 }), e = {
                                     code: e.code,
-                                    encryptedData: a.detail.encryptedData,
-                                    iv: a.detail.iv,
+                                    encryptedData: ee.encryptedData,
+                                    iv: ee.iv,
                                     openid: o.getStorageSync("openid"),
                                     invite_uid: wx.getStorageSync("invite_uid")
                                 };

@@ -190,7 +190,7 @@
                                 <open-data type="userNickName"></open-data>
                             </view>
                             <view class="btn-wrapper">
-                                <button bindgetuserinfo="__e" class="btn login" data-event-opts="{{[ [ 'getuserinfo',[ [ 'login',['$event'] ] ] ] ]}}" openType="getUserInfo" type="primary">微信一键登录</button>
+								<button bindtap="__e" class="btn login" data-event-opts="{{[ [ 'tap',[ [ 'login',['$event'] ] ] ] ]}}" type="primary">微信一键登录</button>
                             </view>
                             <text bindtap="__e" class="cancel-login" data-event-opts="{{[ [ 'tap',[ [ 'closeAlert',['$event'] ] ] ] ]}}">暂不登录</text>
                         </view>

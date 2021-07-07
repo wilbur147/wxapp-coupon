@@ -148,9 +148,10 @@
                         var n = this;
                         this.closeDialog2(), r.getSetting({
                             success: function(e) {
-                                e.authSetting["scope.userInfo"] ? r.getUserInfo({
+                                e.authSetting["scope.userInfo"] ? r.getUserProfile({
+									desc: '用于完善会员资料',
                                     success: function(e) {
-                                        n.userAuth(t, e.userInfo, "login");
+                                        n.userAuth(t, e, "login");
                                     }
                                 }) : n.userAuth(t, null, "login");
                             }
@@ -164,19 +165,19 @@
                             }
                         });
                     },
-                    userAuth: function(n, e, a) {
+                    userAuth: function(n, ee, a) {
                         var o = this;
-                        "getUserInfo:ok" == n.detail.errMsg ? wx.login({
+                        "getUserProfile:ok" == ee.errMsg ? wx.login({
                             success: function(e) {
                                 var t = i.globalData.util.url("entry/wxapp/api", {
                                     m: i.globalData.module_name,
                                     o: "userinfo"
                                 }), e = {
                                     code: e.code,
-                                    encryptedData: n.detail.encryptedData,
-                                    iv: n.detail.iv,
+                                    encryptedData: ee.encryptedData,
+                                    iv: ee.iv,
                                     openid: r.getStorageSync("openid"),
-                                    invite_uid: wx.getStorageSync("invite_uid")
+                                    invite_uid: r.getStorageSync("invite_uid")
                                 };
                                 r.request({
                                     url: t,

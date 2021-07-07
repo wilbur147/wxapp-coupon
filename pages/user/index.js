@@ -522,9 +522,10 @@
                         var a = this;
                         this.closeDialog2(), i.getSetting({
                             success: function(t) {
-                                t.authSetting["scope.userInfo"] ? i.getUserInfo({
+                                t.authSetting["scope.userInfo"] ? i.getUserProfile({
+									desc: '用于完善会员资料',
                                     success: function(t) {
-                                        a.userAuth(e, t.userInfo, "login");
+                                        a.userAuth(e, t, "login");
                                     }
                                 }) : a.userAuth(e, null, "login");
                             }
@@ -538,17 +539,17 @@
                             }
                         });
                     },
-                    userAuth: function(a, t, n) {
+                    userAuth: function(a, tt, n) {
                         var o = this;
-                        "getUserInfo:ok" == a.detail.errMsg ? wx.login({
+                        "getUserProfile:ok" == tt.errMsg ? wx.login({
                             success: function(t) {
                                 var e = s.globalData.util.url("entry/wxapp/api", {
                                     m: s.globalData.module_name,
                                     o: "userinfo"
                                 }), t = {
                                     code: t.code,
-                                    encryptedData: a.detail.encryptedData,
-                                    iv: a.detail.iv,
+                                    encryptedData: tt.encryptedData,
+                                    iv: tt.iv,
                                     openid: i.getStorageSync("openid"),
                                     invite_uid: wx.getStorageSync("invite_uid")
                                 };

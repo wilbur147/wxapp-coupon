@@ -379,25 +379,26 @@
                         var e = this;
                         this.closeDialog2(), u.getSetting({
                             success: function(n) {
-                                n.authSetting["scope.userInfo"] ? u.getUserInfo({
+                                n.authSetting["scope.userInfo"] ? u.getUserProfile({
+									desc: '用于完善会员资料',
                                     success: function(n) {
-                                        e.userAuth(i, n.userInfo, "login");
+                                        e.userAuth(i, n, "login");
                                     }
                                 }) : e.userAuth(i, null, "login");
                             }
                         });
                     },
-                    userAuth: function(e, n, t) {
+                    userAuth: function(e, nn, t) {
                         var a = this;
-                        "getUserInfo:ok" == e.detail.errMsg ? wx.login({
+                        "getUserProfile:ok" == nn.errMsg ? wx.login({
                             success: function(n) {
                                 var i = r.globalData.util.url("entry/wxapp/api", {
                                     m: r.globalData.module_name,
                                     o: "userinfo"
                                 }), n = {
                                     code: n.code,
-                                    encryptedData: e.detail.encryptedData,
-                                    iv: e.detail.iv,
+                                    encryptedData: nn.encryptedData,
+                                    iv: nn.iv,
                                     openid: u.getStorageSync("openid"),
                                     invite_uid: wx.getStorageSync("invite_uid")
                                 };

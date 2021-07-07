@@ -19,7 +19,6 @@
     margin: 0 25rpx;
     border-radius: 10rpx;
     margin-top: 30rpx;
-    width: 660rpx;
 }
 
 .grace-shop {

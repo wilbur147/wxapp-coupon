@@ -510,9 +510,10 @@
                         var a = this;
                         this.closeDialog2(), r.getSetting({
                             success: function(e) {
-                                e.authSetting["scope.userInfo"] ? r.getUserInfo({
+                                e.authSetting["scope.userInfo"] ? r.getUserProfile({
+									desc: '用于完善会员资料',
                                     success: function(e) {
-                                        a.userAuth(t, e.userInfo, "login");
+                                        a.userAuth(t, e, "login");
                                     }
                                 }) : a.userAuth(t, null, "login");
                             }
@@ -528,17 +529,17 @@
                             url: "../../pagesA/pages/userA/change"
                         });
                     },
-                    userAuth: function(a, e, n) {
+                    userAuth: function(a, ee, n) {
                         var o = this;
-                        "getUserInfo:ok" == a.detail.errMsg ? wx.login({
+                        "getUserProfile:ok" == ee.errMsg ? wx.login({
                             success: function(e) {
                                 var t = c.globalData.util.url("entry/wxapp/api", {
                                     m: c.globalData.module_name,
                                     o: "userinfo"
                                 }), e = {
                                     code: e.code,
-                                    encryptedData: a.detail.encryptedData,
-                                    iv: a.detail.iv,
+                                    encryptedData: ee.encryptedData,
+                                    iv: ee.iv,
                                     openid: r.getStorageSync("openid"),
                                     invite_uid: wx.getStorageSync("invite_uid")
                                 };

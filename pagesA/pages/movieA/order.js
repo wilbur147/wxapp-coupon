@@ -150,9 +150,10 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                         var a = this;
                         n.getSetting({
                             success: function(e) {
-                                e.authSetting["scope.userInfo"] ? n.getUserInfo({
+                                e.authSetting["scope.userInfo"] ? n.getUserProfile({
+									desc: '用于完善会员资料',
                                     success: function(e) {
-                                        a.userAuth(t, e.userInfo, "call");
+                                        a.userAuth(t, e, "call");
                                     }
                                 }) : a.userAuth(t, null, "call");
                             }
@@ -492,9 +493,10 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                         var a = this;
                         this.closeDialog2(), n.getSetting({
                             success: function(e) {
-                                e.authSetting["scope.userInfo"] ? n.getUserInfo({
+                                e.authSetting["scope.userInfo"] ? n.getUserProfile({
+									desc: '用于完善会员资料',
                                     success: function(e) {
-                                        a.userAuth(t, e.userInfo, "login");
+                                        a.userAuth(t, e, "login");
                                     }
                                 }) : a.userAuth(t, null, "login");
                             }
@@ -508,17 +510,17 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                             }
                         });
                     },
-                    userAuth: function(a, e, i) {
+                    userAuth: function(a, ee, i) {
                         var o = this;
-                        "getPhoneNumber:ok" == a.detail.errMsg ? n.login({
+                        "getUserProfile:ok" == ee.errMsg ? n.login({
                             success: function(e) {
                                 var t = r.globalData.util.url("entry/wxapp/api", {
                                     m: r.globalData.module_name,
                                     o: "userinfo"
                                 }), e = {
                                     code: e.code,
-                                    encryptedData: a.detail.encryptedData,
-                                    iv: a.detail.iv,
+                                    encryptedData: ee.encryptedData,
+                                    iv: ee.iv,
                                     openid: n.getStorageSync("openid"),
                                     invite_uid: wx.getStorageSync("invite_uid")
                                 };

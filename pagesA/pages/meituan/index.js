@@ -419,9 +419,10 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                         var a = this;
                         this.closeDialog2(), r.getSetting({
                             success: function(t) {
-                                t.authSetting["scope.userInfo"] ? r.getUserInfo({
+                                t.authSetting["scope.userInfo"] ? r.getUserProfile({
+									desc: '用于完善会员资料',
                                     success: function(t) {
-                                        a.userAuth(e, t.userInfo, "login");
+                                        a.userAuth(e, t, "login");
                                     }
                                 }) : a.userAuth(e, null, "login");
                             }
@@ -435,17 +436,17 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                             }
                         });
                     },
-                    userAuth: function(a, t, o) {
+                    userAuth: function(a, tt, o) {
                         var n = this;
-                        "getUserInfo:ok" == a.detail.errMsg ? wx.login({
+                        "getUserProfile:ok" == tt.errMsg ? wx.login({
                             success: function(t) {
                                 var e = i.globalData.util.url("entry/wxapp/api", {
                                     m: i.globalData.module_name,
                                     o: "userinfo"
                                 }), t = {
                                     code: t.code,
-                                    encryptedData: a.detail.encryptedData,
-                                    iv: a.detail.iv,
+                                    encryptedData: tt.encryptedData,
+                                    iv: tt.iv,
                                     openid: r.getStorageSync("openid"),
                                     invite_uid: wx.getStorageSync("invite_uid")
                                 };
