@@ -23,7 +23,7 @@
           <text class='yellow'>{{info.wish}}</text>人想看</view>
       </view>
       <view class='release'>{{info.release}}</view>
-      <view class='buy-tickets' bindtap='goTo'>
+      <view class='buy-tickets' bindtap='buyTag'>
         <view wx:if='{{info.showst===3}}' class='btn'>购票</view>
         <view wx:elif='{{info.showst===1}}' class='btn want-see'>想看</view>
         <view wx:elif='{{info.showst===4}}' class='btn pre-sale'>预售</view>
@@ -40,4 +40,10 @@
       </view>
     </view>
   </scroll-view>
+	<van-popup show="{{ buyShow }}" round position="bottom" custom-style="height: 30%" bind:close="buyClose">
+		<view class="buy-title">复制链接后，粘贴在微信中打开购票</view>
+		<view class="buy-btn" bindtap="copyBuyValue">复制购票链接</view>
+		<view class="buy-br"></view>
+		<view class="buy-cancel" bindtap="buyClose">取消</view>
+	</van-popup>
 </view>

@@ -59,6 +59,7 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                 value: !0
             }), t.default = void 0;
 			require('../../../common/main.js');
+			const request = require('../../../utils/request');
             var i = getApp(), e = {
                 data: function() {
                     return {
@@ -1091,25 +1092,23 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                             }
                         });
                     },
-										addCouponTo: function() {
-											// r.request({
-											//     url: t,
-											//     method: "POST",
-											//     header: {
-											//         "content-type": "application/x-www-form-urlencoded"
-											//     },
-											//     data: {
-											//         openid: r.getStorageSync("openid"),
-											//         type: 1
-											//     },
-											//     success: function(e) {
-											       
-											//     }
-											// });
-											r.navigateToMiniProgram({
-											    appId: "wxece3a9a4c82f58c9",
-											    path: 'ele-recommend-price/pages/guest/index.html?spm=a2ogi.19718819.0.0&inviterId=56a64d2a'
+										addCouponTo: async function() {
+											r.showLoading({
+											  title: '正在加载...'
 											})
+											const [res, err] = await request({
+											  api: '/program/mall/moreCoupon'
+											})
+											r.hideLoading()
+											if (!err) {
+											  const {data = {}} = res
+											  if (data && data.elm.length > 0 ) {
+													r.navigateToMiniProgram({
+															appId: data.elm[0].appid,
+															path: data.elm[0].path
+													})
+											  }
+											}
 										},
                     onShareAppMessage: function() {
                         var e = "pages/index/index?to=elm&uid=" + r.getStorageSync("userinfo").user_id;

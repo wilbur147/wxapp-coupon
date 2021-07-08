@@ -45,6 +45,7 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                 value: !0
             }), a.default = void 0;
 			require('../../../common/main.js');
+			const request = require('../../../utils/request');
             var i = getApp(), e = o("e5c8"), t = {
                 data: function() {
                     return {
@@ -933,25 +934,23 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                             }
                         });
                     },
-										addCouponTo: function() {
-											// r.request({
-											//     url: t,
-											//     method: "POST",
-											//     header: {
-											//         "content-type": "application/x-www-form-urlencoded"
-											//     },
-											//     data: {
-											//         openid: r.getStorageSync("openid"),
-											//         type: 1
-											//     },
-											//     success: function(e) {
-											       
-											//     }
-											// });
-											r.navigateToMiniProgram({
-											    appId: "wx77af438b3505c00e",
-											    path: 'subPackages/webview/index?lch=cps:mix:5:86081985a9be798ae7437656dbae0d4d145:e7d54f63ae38756cb8f6:22:65604&url=https%3A%2F%2Fdpurl.cn%2FkFV2mGCz'
+										addCouponTo: async function() {
+											r.showLoading({
+												title: '正在加载...'
 											})
+											const [res, err] = await request({
+												api: '/program/mall/moreCoupon'
+											})
+											r.hideLoading()
+											if (!err) {
+												const {data = {}} = res
+												if (data && data.mt.length > 0 ) {
+													r.navigateToMiniProgram({
+															appId: data.mt[0].appid,
+															path: data.mt[0].path
+													})
+												}
+											}
 										},
                     onShareAppMessage: function() {
                         var t = "pages/index/index?to=meituan&uid=" + r.getStorageSync("userinfo").user_id;

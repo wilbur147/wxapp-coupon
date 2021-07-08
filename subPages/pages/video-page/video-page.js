@@ -5,7 +5,8 @@ Page({
   data: {
     info: null,
     videoList: [], //播放列表
-    current: -1 //当前播放视频索引
+    current: -1, //当前播放视频索引
+    buyShow:false,
   },
   onLoad(opt) {
     const paramsObj = JSON.parse(opt.paramsStr)
@@ -79,18 +80,24 @@ Page({
       icon: 'none'
     })
   },
-  //购票
-  goTo() {
-    // const info = this.data.info;
-    // const VideoContext = wx.createVideoContext('my-video', this);
-    // VideoContext.pause()
-    // wx.navigateTo({
-    //   url: `../select-cinema/select-cinema?movieId=${info.id}&movieName=${info.movieName}&showTime=${info.rt}`,
-    // })
+	/* 购买 */
+	buyTag(){
+		this.setData({
+			buyShow: true
+		})
+	},
+	buyClose(){
+		this.setData({
+			buyShow: false
+		})
+	},
+	/* 复制购买链接 */
+	copyBuyValue(){
 		request({
 		  api: `/program/movie/movieBuy`
 		}).then(([res]) => {
 		  wx.setClipboardData({data: res.data})
 		})
-  }
+		
+	}
 })
