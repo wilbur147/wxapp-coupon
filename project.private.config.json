@@ -1,42 +1,48 @@
 {
-  "setting": {},
-  "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "name": "subPages/pages/movie/movie",
-          "pathName": "subPages/pages/movie/movie",
-          "query": "",
-          "scene": null
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
         },
-        {
-          "name": "subPages/pages/movie-detail/movie-detail",
-          "pathName": "subPages/pages/movie-detail/movie-detail",
-          "query": "movieId=343034",
-          "scene": null
+        "game": {
+            "list": []
         },
-        {
-          "name": "pagesB/pages/shopping/shopping",
-          "pathName": "pagesB/pages/shopping/shopping",
-          "query": "",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
-        {
-          "name": "pages/user/index",
-          "pathName": "pages/user/index",
-          "query": "",
-          "scene": 1011
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "subPages/pages/movie/movie",
+                    "pathName": "subPages/pages/movie/movie",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "subPages/pages/movie-detail/movie-detail",
+                    "pathName": "subPages/pages/movie-detail/movie-detail",
+                    "query": "movieId=343034",
+                    "scene": null
+                },
+                {
+                    "name": "pagesB/pages/shopping/shopping",
+                    "pathName": "pagesB/pages/shopping/shopping",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/user/index",
+                    "pathName": "pages/user/index",
+                    "query": "",
+                    "scene": 1011
+                },
+                {
+                    "name": "pagesA/pages/elm/index",
+                    "pathName": "pagesA/pages/elm/index",
+                    "query": "",
+                    "scene": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

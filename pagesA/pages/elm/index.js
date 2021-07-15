@@ -103,7 +103,9 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                         footerCurrent: 0,
                         pageKey: "",
                         height: "",
-                        tabBar: []
+                        tabBar: [],
+						btnBar: [],
+						btnBarHeight: 600,
                     };
                 },
                 components: {
@@ -144,6 +146,7 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                 },
                 onShow: function() {
                     this.tabBar = r.getStorageSync("tabbar");
+					this.showBtnBar();
                     for (var e = 0; e < this.tabBar.list.length; e++) -1 != this.tabBar.list[e].url.indexOf("elm/index") && (this.pageKey = e);
                     this.userinfo = r.getStorageSync("userinfo"), -1 != r.getStorageSync("index_nav").indexOf("elmsc") ? this.currentIndex = 1 : r.getStorageSync("index_nav") && (this.currentIndex = 0), 
                     1 == this.currentIndex ? (this.h5 = r.getStorageSync("elmsc_h5"), this.load_elmscqrcode2()) : (this.h5 = r.getStorageSync("elmwm_h5"), 
@@ -1092,24 +1095,27 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                             }
                         });
                     },
-										addCouponTo: async function() {
-											r.showLoading({
-											  title: '正在加载...'
-											})
-											const [res, err] = await request({
-											  api: '/program/mall/moreCoupon'
-											})
-											r.hideLoading()
-											if (!err) {
-											  const {data = {}} = res
-											  if (data && data.elm.length > 0 ) {
-													r.navigateToMiniProgram({
-															appId: data.elm[0].appid,
-															path: data.elm[0].path
-													})
-											  }
-											}
-										},
+					showBtnBar: async function() {
+						const [res, err] = await request({
+						  api: '/program/mall/moreCoupon'
+						})
+						if (!err) {
+						  const {data = {}} = res
+						  if (data && data.elm.length > 0 ) {
+							  this.btnBar = data.elm;
+							  if (this.btnBar.length > 0) {
+							  	this.btnBarHeight = 600 + (this.btnBar.length * 50)
+							  }
+						  }
+						}
+					},
+					addCouponTo: function(e) {
+						const {index} = e.currentTarget.dataset
+						r.navigateToMiniProgram({
+							appId: this.btnBar[index].appid,
+							path: this.btnBar[index].path
+						})
+					},
                     onShareAppMessage: function() {
                         var e = "pages/index/index?to=elm&uid=" + r.getStorageSync("userinfo").user_id;
                         return {

@@ -101,7 +101,9 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                         pageKey: "",
                         height: "",
                         tabBar: [],
-                        mtpic: 0
+                        mtpic: 0,
+						btnBar: [],
+						btnBarHeight: 600,
                     };
                 },
                 components: {
@@ -144,6 +146,7 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                 props: {},
                 onShow: function() {
                     this.tabBar = r.getStorageSync("tabbar");
+					this.showBtnBar();
                     for (var t = 0; t < this.tabBar.list.length; t++) -1 != this.tabBar.list[t].url.indexOf("meituan/index") && (this.pageKey = t);
                     this.userinfo = r.getStorageSync("userinfo"), -1 != r.getStorageSync("index_nav").indexOf("mtsc") ? this.currentIndex = 1 : r.getStorageSync("index_nav") && (this.currentIndex = 0), 
                     1 == this.currentIndex ? (this.h5 = r.getStorageSync("mtsc_h5"), this.load_mtscqrcode2()) : (this.h5 = r.getStorageSync("mtwm_h5"), 
@@ -934,24 +937,27 @@ require("../../common/vendor.js"), (global.webpackJsonp = global.webpackJsonp ||
                             }
                         });
                     },
-										addCouponTo: async function() {
-											r.showLoading({
-												title: '正在加载...'
-											})
-											const [res, err] = await request({
-												api: '/program/mall/moreCoupon'
-											})
-											r.hideLoading()
-											if (!err) {
-												const {data = {}} = res
-												if (data && data.mt.length > 0 ) {
-													r.navigateToMiniProgram({
-															appId: data.mt[0].appid,
-															path: data.mt[0].path
-													})
-												}
-											}
-										},
+					showBtnBar: async function() {
+						const [res, err] = await request({
+						  api: '/program/mall/moreCoupon'
+						})
+						if (!err) {
+						  const {data = {}} = res
+						  if (data && data.mt.length > 0 ) {
+							  this.btnBar = data.mt;
+							  if (this.btnBar.length > 0) {
+							  	this.btnBarHeight = 600 + (this.btnBar.length * 50)
+							  }
+						  }
+						}
+					},
+					addCouponTo: function(e) {
+						const {index} = e.currentTarget.dataset
+						r.navigateToMiniProgram({
+							appId: this.btnBar[index].appid,
+							path: this.btnBar[index].path
+						})
+					},
                     onShareAppMessage: function() {
                         var t = "pages/index/index?to=meituan&uid=" + r.getStorageSync("userinfo").user_id;
                         return {
