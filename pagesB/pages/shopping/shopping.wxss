@@ -397,9 +397,9 @@ page {
 .tx-wrap .first-image.data-v-24f06b86 {
   position: absolute;
   left: 20rpx;
-  top: 18rpx;
+  top: 22rpx;
   width: 306rpx;
-  height: 392rpx !important;
+  height: 388rpx !important;
   border-top-left-radius: 20rpx;
   border-bottom-left-radius: 30rpx;
 }
@@ -407,7 +407,7 @@ page {
   width: 410rpx;
   height: 210rpx;
   position: absolute;
-  top: 18rpx;
+  top: 22rpx;
   right: 18rpx;
   border-top-right-radius: 20rpx;
 }

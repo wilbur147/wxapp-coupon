@@ -16,7 +16,7 @@
 .grace-order {
     background-color: #fff;
     padding: 20rpx;
-    margin: 0 25rpx;
+    margin: 0 auto;
     border-radius: 10rpx;
     margin-top: 30rpx;
     width: 660rpx;
